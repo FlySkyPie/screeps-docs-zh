@@ -6,7 +6,7 @@
 
 
 <h2 id="constructor" class="api-property   "><span class="api-property__name">constructor</span><span class="api-property__args">(roomName)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -27,7 +27,7 @@ const terrain = new Room.Terrain(Game.creeps.John.room.name);
 
 
 <h2 id="get" class="api-property api-property--method  "><span class="api-property__name">get</span><span class="api-property__args">(x, y)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -96,7 +96,7 @@ for(let y = 0; y < 50; y++) {
 
 
 <h2 id="getRawBuffer" class="api-property api-property--method  "><span class="api-property__name">getRawBuffer</span><span class="api-property__args">([destinationArray])</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript

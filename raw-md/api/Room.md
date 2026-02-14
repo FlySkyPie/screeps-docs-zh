@@ -68,7 +68,7 @@ room.memory.stage = 2;
 
 
 <h2 id="Room.serializePath" class="api-property api-property--method  "><span class="api-property__name">Room.serializePath</span><span class="api-property__args">(path)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -91,7 +91,7 @@ creep.moveByPath(Memory.path);
 參數路徑的序列化字符串。
 
 <h2 id="Room.deserializePath" class="api-property api-property--method  "><span class="api-property__name">Room.deserializePath</span><span class="api-property__args">(path)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -113,7 +113,7 @@ creep.moveByPath(path);
 一個路徑數組
 
 <h2 id="createConstructionSite" class="api-property api-property--method  "><span class="api-property__name">createConstructionSite</span><span class="api-property__args">(x, y, structureType, [name])<br>(pos, structureType, [name])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -164,7 +164,7 @@ Game.rooms.sim.createConstructionSite(10, 15, STRUCTURE_SPAWN,
 
 
 <h2 id="createFlag" class="api-property api-property--method  "><span class="api-property__name">createFlag</span><span class="api-property__args">(x, y, [name], [color], [secondaryColor])<br>(pos, [name], [color], [secondaryColor])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -206,7 +206,7 @@ Game.rooms.sim.createFlag(5, 12, 'Flag1');
 
 
 <h2 id="find" class="api-property api-property--method  "><span class="api-property__name">find</span><span class="api-property__args">(type, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 
 ```javascript
@@ -282,7 +282,7 @@ const targets = creep.room.find(FIND_HOSTILE_CREEPS, {
 `FIND_RUINS` | Ruin | 所有廢墟。
 
 <h2 id="findExitTo" class="api-property api-property--method  "><span class="api-property__name">findExitTo</span><span class="api-property__args">(room)</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -325,7 +325,7 @@ creep.moveTo(new RoomPosition(25,25, anotherCreep.pos.roomName));
 
 
 <h2 id="findPath" class="api-property api-property--method  "><span class="api-property__name">findPath</span><span class="api-property__args">(fromPos, toPos, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -455,7 +455,7 @@ if( path.length ) {
 ```
 
 <h2 id="getEventLog" class="api-property api-property--method  "><span class="api-property__name">getEventLog</span><span class="api-property__args">([raw])</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -620,7 +620,7 @@ _.forEach(Game.rooms, room => {
 </table>
 
 <h2 id="getPositionAt" class="api-property api-property--method  "><span class="api-property__name">getPositionAt</span><span class="api-property__args">(x, y)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -646,7 +646,7 @@ const source = pos.findClosestByRange(FIND_SOURCES_ACTIVE);
 對象，如果無法獲取則返回 null。
 
 <h2 id="getTerrain" class="api-property api-property--method  "><span class="api-property__name">getTerrain</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -668,7 +668,7 @@ switch(terrain.get(10,15)) {
 返回一個新的 <a href="#Room-Terrain">`Room.Terrain`</a> 對象。
 
 <h2 id="lookAt" class="api-property api-property--method  "><span class="api-property__name">lookAt</span><span class="api-property__args">(x, y)<br>(target)</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 
 ```javascript
@@ -709,7 +709,7 @@ look.forEach(function(lookObject) {
 
 
 <h2 id="lookAtArea" class="api-property api-property--method  "><span class="api-property__name">lookAtArea</span><span class="api-property__args">(top, left, bottom, right, [asArray])</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 
 ```javascript
@@ -773,7 +773,7 @@ const look = creep.room.lookAtArea(10,5,11,7);
 
 
 <h2 id="lookForAt" class="api-property api-property--method  "><span class="api-property__name">lookForAt</span><span class="api-property__args">(type, x, y)<br>(type, target)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -803,7 +803,7 @@ if(found.length && found[0].getActiveBodyparts(ATTACK) == 0) {
 在指定位置找到的指定類型的對象數組。
 
 <h2 id="lookForAtArea" class="api-property api-property--method  "><span class="api-property__name">lookForAtArea</span><span class="api-property__args">(type, top, left, bottom, right, [asArray])</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript

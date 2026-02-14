@@ -8,13 +8,13 @@
 該數據和 `Memory` 完全不相關，它是一個獨立的數據容器。     
 
 <h2 id="InterShardMemory.getLocal" class="api-property api-property--method  "><span class="api-property__name">InterShardMemory.getLocal</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 返回當前 shard 的數據字符串內容。
 
 <h2 id="InterShardMemory.setLocal" class="api-property api-property--method  "><span class="api-property__name">InterShardMemory.setLocal</span><span class="api-property__args">(value)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -33,7 +33,7 @@ InterShardMemory.setLocal(JSON.stringify(data));
 
 
 <h2 id="InterShardMemory.getRemote" class="api-property api-property--method  "><span class="api-property__name">InterShardMemory.getRemote</span><span class="api-property__args">(shard)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript

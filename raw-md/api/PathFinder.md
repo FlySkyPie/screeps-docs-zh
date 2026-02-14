@@ -3,7 +3,7 @@
  包含了在游戲中進行尋路的強大方法。這個模塊使用原生的高性能 C++ 代碼實現，並支持跨越多個房間的自定義尋路成本及路徑。
 
 <h2 id="PathFinder.search" class="api-property api-property--method  "><span class="api-property__name">PathFinder.search</span><span class="api-property__args">(origin, goal, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -138,9 +138,9 @@
 
 
 <h2 id="PathFinder.use" class="api-property api-property--method  api-property--deprecated"><span class="api-property__name">PathFinder.use</span><span class="api-property__args">(isEnabled)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
-<div class="api-deprecated"><p>此方法已被弃用，不久将被删除。</p>
+<div class="api-deprecated"><p>此方法已被棄用，不久將被刪除。</p>
 </div> 
 
 ```javascript

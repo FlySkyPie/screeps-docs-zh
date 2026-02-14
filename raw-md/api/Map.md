@@ -4,7 +4,7 @@
 
 
 <h2 id="Game.map.describeExits" class="api-property api-property--method  "><span class="api-property__name">Game.map.describeExits</span><span class="api-property__args">(roomName)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -35,7 +35,7 @@ const exits = Game.map.describeExits('W8N3');
 
 
 <h2 id="Game.map.findExit" class="api-property api-property--method  "><span class="api-property__name">Game.map.findExit</span><span class="api-property__args">(fromRoom, toRoom, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -87,7 +87,7 @@ creep.moveTo(new RoomPosition(25, 25, anotherRoomName));
 
 
 <h2 id="Game.map.findRoute" class="api-property api-property--method  "><span class="api-property__name">Game.map.findRoute</span><span class="api-property__args">(fromRoom, toRoom, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -189,7 +189,7 @@ console.log(ret.path);
 
 
 <h2 id="Game.map.getRoomLinearDistance" class="api-property api-property--method  "><span class="api-property__name">Game.map.getRoomLinearDistance</span><span class="api-property__args">(roomName1, roomName2, [continuous])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -217,7 +217,7 @@ Game.map.getRoomLinearDistance('E65S55','W65S55', true) // 11
 
 
 <h2 id="Game.map.getRoomTerrain" class="api-property api-property--method  "><span class="api-property__name">Game.map.getRoomTerrain</span><span class="api-property__args">(roomName)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -247,9 +247,9 @@ switch(terrain.get(10,15)) {
 
 
 <h2 id="Game.map.getTerrainAt" class="api-property api-property--method  api-property--deprecated"><span class="api-property__name">Game.map.getTerrainAt</span><span class="api-property__args">(x, y, roomName)<br>(pos)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
-<div class="api-deprecated"><p>此方法已被弃用，不久将被删除。 請使用更高效的方法<a href="#Game.map.getRoomTerrain"><code>Game.map.getRoomTerrain</code></a>替代.</p>
+<div class="api-deprecated"><p>此方法已被棄用，不久將被刪除。 請使用更高效的方法<a href="#Game.map.getRoomTerrain"><code>Game.map.getRoomTerrain</code></a>替代.</p>
 </div>
 
 ```javascript
@@ -286,15 +286,15 @@ console.log(Game.map.getTerrainAt(new RoomPosition(25,20,'W10N10'));
 
 
 <h2 id="Game.map.getWorldSize" class="api-property api-property--method  "><span class="api-property__name">Game.map.getWorldSize</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 返回世界尺寸，即世界對角之間的房間數。例如對於一個從 W50N50 至 E50S50 的世界這個方法返回102。
 
 <h2 id="Game.map.isRoomAvailable" class="api-property api-property--method  api-property--deprecated"><span class="api-property__name">Game.map.isRoomAvailable</span><span class="api-property__args">(roomName)</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
-<div class="api-deprecated"><p>此方法已被弃用，不久将被删除。 Please use <a href="#Game.map.getRoomStatus"><code>Game.map.getRoomStatus</code></a> instead.</p>
+<div class="api-deprecated"><p>此方法已被棄用，不久將被刪除。 Please use <a href="#Game.map.getRoomStatus"><code>Game.map.getRoomStatus</code></a> instead.</p>
 </div>
 
 ```javascript
@@ -317,7 +317,7 @@ if(Game.map.isRoomAvailable(room.name)) {
 布爾值
 
 <h2 id="Game.map.getRoomStatus" class="api-property api-property--method  "><span class="api-property__name">Game.map.getRoomStatus</span><span class="api-property__args">(roomName)</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 
 ```javascript

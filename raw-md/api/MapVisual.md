@@ -8,7 +8,7 @@
 
 
 <h2 id="line" class="api-property api-property--method  "><span class="api-property__name">line</span><span class="api-property__args">(pos1, pos2, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -56,7 +56,7 @@ Game.map.visual.line(creep.pos, target.pos,
 
 
 <h2 id="circle" class="api-property api-property--method  "><span class="api-property__name">circle</span><span class="api-property__args">(pos, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -115,7 +115,7 @@ Game.map.visual.circle(nuker.pos, {fill: 'transparent', radius: NUKE_RANGE*50, s
 
 
 <h2 id="rect" class="api-property api-property--method  "><span class="api-property__name">rect</span><span class="api-property__args">(topLeftPos, width, height, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -172,7 +172,7 @@ Game.map.visual.rect(new RoomPosition(tower.pos.x - 5, tower.pos.y - 5, tower.po
 
 
 <h2 id="poly" class="api-property api-property--method  "><span class="api-property__name">poly</span><span class="api-property__args">(points, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -233,7 +233,7 @@ Game.map.visual.poly(path, {stroke: '#ffffff', strokeWidth: .8, opacity: .2, lin
 
 
 <h2 id="text" class="api-property api-property--method  "><span class="api-property__name">text</span><span class="api-property__args">(text, pos, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -316,7 +316,7 @@ Game.map.visual.text("Target💥", new RoomPosition(11,14,'E2S7'), {color: '#FF0
 
 
 <h2 id="clear" class="api-property api-property--method  "><span class="api-property__name">clear</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -333,7 +333,7 @@ Game.map.visual.clear();
 
 
 <h2 id="getSize" class="api-property api-property--method  "><span class="api-property__name">getSize</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -351,7 +351,7 @@ if(Game.map.visual.getSize() >= 1024000) {
 可視化效果的大小（單位：字節）。
 
 <h2 id="export" class="api-property api-property--method  "><span class="api-property__name">export</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -367,7 +367,7 @@ Memory.MapVisualData = Game.map.visual.export();
 代表了可視化數據的字符串。除了將其存儲以備後續使用外，您不應該對其進行其他操作。
 
 <h2 id="import" class="api-property api-property--method  "><span class="api-property__name">import</span><span class="api-property__args">(val)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript

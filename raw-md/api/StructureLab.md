@@ -81,8 +81,8 @@
 <p>一個唯一的對象標識。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法獲取對象實例。</p>
 <h2 id="structureType" class="api-property api-property--property api-property--inherited "><div class="api-property__inherited">Inherited from <a href="#Structure">Structure</a></div><span class="api-property__name">structureType</span><span class="api-property__type">string</span></h2>
 <p><code>STRUCTURE_*</code>常量之一。</p>
-<h2 id="destroy" class="api-property api-property--method api-property--inherited "><div class="api-property__inherited">继承自 <a href="#Structure">Structure</a></div><span class="api-property__name">destroy</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+<h2 id="destroy" class="api-property api-property--method api-property--inherited "><div class="api-property__inherited">繼承自 <a href="#Structure">Structure</a></div><span class="api-property__name">destroy</span><span class="api-property__args">()</span>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 <p>立即摧毀這個建築。</p>
 <h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>如下錯誤碼之一：
@@ -95,13 +95,13 @@
 </td></tr>
 </tbody></table>
 </p>
-<h2 id="isActive" class="api-property api-property--method api-property--inherited "><div class="api-property__inherited">继承自 <a href="#Structure">Structure</a></div><span class="api-property__name">isActive</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+<h2 id="isActive" class="api-property api-property--method api-property--inherited "><div class="api-property__inherited">繼承自 <a href="#Structure">Structure</a></div><span class="api-property__name">isActive</span><span class="api-property__args">()</span>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 <p>檢查這個建築是否可用。如果房間控制等級不足，這個方法會返回false，並且這個建築會在游戲中紅色高亮。</p>
 <h3 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h3><p>布爾值。</p>
-<h2 id="notifyWhenAttacked" class="api-property api-property--method api-property--inherited "><div class="api-property__inherited">继承自 <a href="#Structure">Structure</a></div><span class="api-property__name">notifyWhenAttacked</span><span class="api-property__args">(enabled)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+<h2 id="notifyWhenAttacked" class="api-property api-property--method api-property--inherited "><div class="api-property__inherited">繼承自 <a href="#Structure">Structure</a></div><span class="api-property__name">notifyWhenAttacked</span><span class="api-property__args">(enabled)</span>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 <p>切換這個建築受到攻擊時的自動通知。通知會發送到你的賬戶郵箱。默認開啟。</p>
 <table><thead><tr><th>parameter</th><th>type</th><th>description</th></tr></thead><tbody>
@@ -139,21 +139,21 @@
 
 
 
-<h2 id="energy" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">energy</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="energy" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">energy</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
                                                                 
 [`.store[RESOURCE_ENERGY]`](#StructureExtension.store) 的別名。
 
 
 
-<h2 id="energyCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">energyCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="energyCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">energyCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
                                                                                                                 
 [`.store.getCapacity(RESOURCE_ENERGY)`](#Store.getCapacity) 的別名。
 
 
 
-<h2 id="mineralAmount" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">mineralAmount</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="mineralAmount" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">mineralAmount</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
                                                                        
 [`lab.store[lab.mineralType]`](#StructureExtension.store) 的別名。
@@ -168,7 +168,7 @@
 
 
 
-<h2 id="mineralCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">mineralCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="mineralCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">mineralCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
                                                                                                                  
 [`lab.store.getCapacity(lab.mineralType || yourMineral)`](#Store.getCapacity) 的別名。
@@ -187,7 +187,7 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 
 
 <h2 id="boostCreep" class="api-property api-property--method  "><span class="api-property__name">boostCreep</span><span class="api-property__args">(creep, [bodyPartsCount])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 
@@ -226,7 +226,7 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 
 
 <h2 id="reverseReaction" class="api-property api-property--method  "><span class="api-property__name">reverseReaction</span><span class="api-property__args">(lab1, lab2)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 
@@ -269,7 +269,7 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 
 
 <h2 id="runReaction" class="api-property api-property--method  "><span class="api-property__name">runReaction</span><span class="api-property__args">(lab1, lab2)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 
@@ -312,7 +312,7 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 
 
 <h2 id="unboostCreep" class="api-property api-property--method  "><span class="api-property__name">unboostCreep</span><span class="api-property__args">(creep)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 

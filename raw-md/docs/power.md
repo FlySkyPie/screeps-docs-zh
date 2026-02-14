@@ -79,97 +79,97 @@ title: 超能
         <img src="https://screeps.com/a/app2/assets/powers/operator/generate-ops.svg">
         </td>
         <th>GENERATE_OPS</th>
-        <td>生成 1/2/4/6/8 点 ops 资源。冷却 50 tick。creep 等级要求: 0/2/7/14/22.</td>
+        <td>生成 1/2/4/6/8 點 ops 資源。冷卻 50 tick。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-spawn.svg">
         </td>
         <th>OPERATE_SPAWN</th>
-        <td>减少 10/30/50/65/80%</b> 的孵化时间。效果持续 1000 tick。冷却 300 tick。范围 3 格以内。消耗 100 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>減少 10/30/50/65/80%</b> 的孵化時間。效果持續 1000 tick。冷卻 300 tick。范圍 3 格以內。消耗 100 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-tower.svg">
         </td>
         <th>OPERATE_TOWER</th>
-        <td>提升 10/20/30/40/50%</b> 的攻击、修理或治疗效果。效果持续 100 tick。冷却 10 tick。范围 3 格以内。消耗 10 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>提升 10/20/30/40/50%</b> 的攻擊、修理或治療效果。效果持續 100 tick。冷卻 10 tick。范圍 3 格以內。消耗 10 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-storage.svg">
         </td>
         <th>OPERATE_STORAGE</th>
-        <td>提升 500K/1M/2M/4M/7M 单位的存储容量。效果持续 1000 tick。冷却 800 tick。范围 3 格以内。消耗 100 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>提升 500K/1M/2M/4M/7M 單位的存儲容量。效果持續 1000 tick。冷卻 800 tick。范圍 3 格以內。消耗 100 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-lab.svg">
         </td>
         <th>OPERATE_LAB</th>
-        <td>增加 2/4/6/8/10 单位的反应效率。效果持续 1000 tick。冷却 50 tick。范围 3 格以内。消耗 10 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>增加 2/4/6/8/10 單位的反應效率。效果持續 1000 tick。冷卻 50 tick。范圍 3 格以內。消耗 10 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-extension.svg">
         </td>
         <th>OPERATE_EXTENSION</th>
-        <td>使用目标建筑（container、storage 或者 terminal）中的能量，立刻填充房间中 20/40/60/80/100% 的 extension。冷却 50 tick。范围 3 格以内。消耗 2 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>使用目標建築（container、storage 或者 terminal）中的能量，立刻填充房間中 20/40/60/80/100% 的 extension。冷卻 50 tick。范圍 3 格以內。消耗 2 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-observer.svg">
         </td>
         <th>OPERATE_OBSERVER</th>
-        <td>给予无限视野范围。效果持续 200/400/600/800/1000 tick。冷却 400 tick。范围 3 格以内。消耗 10 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>給予無限視野范圍。效果持續 200/400/600/800/1000 tick。冷卻 400 tick。范圍 3 格以內。消耗 10 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-terminal.svg">
         </td>
         <th>OPERATE_TERMINAL</th>
-        <td>将资源转移的能量消耗和冷却时间降低 10/20/30/40/50%</b>。效果持续 1000 tick。冷却 500 tick。范围 3 格以内。消耗 100 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>將資源轉移的能量消耗和冷卻時間降低 10/20/30/40/50%</b>。效果持續 1000 tick。冷卻 500 tick。范圍 3 格以內。消耗 100 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/disrupt-spawn.svg">
         </td>
         <th>DISRUPT_SPAWN</th>
-        <td>暂停孵化进程。效果持续 1/2/3/4/5 tick。冷却 5 tick。范围 20 格以内。消耗 10 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>暫停孵化進程。效果持續 1/2/3/4/5 tick。冷卻 5 tick。范圍 20 格以內。消耗 10 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/disrupt-tower.svg">
         </td>
         <th>DISRUPT_TOWER</th>
-        <td>削弱 10/20/30/40/50%</b> 的效果。效果持续 5 tick。无冷却。范围 50 格以内。消耗 10 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>削弱 10/20/30/40/50%</b> 的效果。效果持續 5 tick。無冷卻。范圍 50 格以內。消耗 10 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/disrupt-source.svg">
         </td>
         <th>DISRUPT_SOURCE</th>
-        <td>暂停 Source 的能量再生。效果持续 100/200/300/400/500 tick。冷却 100 tick。范围 3 格以内。消耗 100 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>暫停 Source 的能量再生。效果持續 100/200/300/400/500 tick。冷卻 100 tick。范圍 3 格以內。消耗 100 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/shield.svg">
         </td>
         <th>SHIELD</th>
-        <td>在其所在地块上创建一个拥有 5K/10K/15K/20K/25K 点生命值、无法修复的临时 rampart。如果该地块已有 rampart 则无法使用。消耗 100 点能量。效果持续 50 tick。冷却 20 tick。creep 等级要求: 0/2/7/14/22.</td>
+        <td>在其所在地塊上創建一個擁有 5K/10K/15K/20K/25K 點生命值、無法修復的臨時 rampart。如果該地塊已有 rampart 則無法使用。消耗 100 點能量。效果持續 50 tick。冷卻 20 tick。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/regen-source.svg">
         </td>
         <th>REGEN_SOURCE</th>
-        <td>使 Source 每 15 tick 重新生成 50/100/150/200/250 点能量。效果持续 300 tick。冷却 100 tick。范围 3 格以内。creep 等级要求: 10/11/12/14/22.</td>
+        <td>使 Source 每 15 tick 重新生成 50/100/150/200/250 點能量。效果持續 300 tick。冷卻 100 tick。范圍 3 格以內。creep 等級要求: 10/11/12/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/regen-mineral.svg">
         </td>
         <th>REGEN_MINERAL</th>
-        <td>使矿藏每 10 tick 增加 2/4/6/8/10 点矿物。效果持续 100 tick。冷却 100 tick。范围 3 格以内。creep 等级要求: 10/11/12/14/22.</td>
+        <td>使礦藏每 10 tick 增加 2/4/6/8/10 點礦物。效果持續 100 tick。冷卻 100 tick。范圍 3 格以內。creep 等級要求: 10/11/12/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/disrupt-terminal.svg">
         </td>
         <th>DISRUPT_TERMINAL</th>
-        <td>阻止从 terminal 中取出（withdraw）或使用资源。效果持续 10 tick。冷却 8 tick。范围 50 格以内。消耗 50/40/30/20/10 点 ops 资源。creep 等级要求: 20/21/22/23/24.</td>
+        <td>阻止從 terminal 中取出（withdraw）或使用資源。效果持續 10 tick。冷卻 8 tick。范圍 50 格以內。消耗 50/40/30/20/10 點 ops 資源。creep 等級要求: 20/21/22/23/24.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-power.svg">
         </td>
         <th>OPERATE_POWER</th>
-        <td>将 Power Spawn 的 power 处理速度提升  1/2/3/4/5 单位每秒。效果持续 1000 tick。冷却 800 tick。范围 3 格以内。消耗 200 点 ops 资源。creep 等级要求: 10/11/12/14/22.</td>
+        <td>將 Power Spawn 的 power 處理速度提升  1/2/3/4/5 單位每秒。效果持續 1000 tick。冷卻 800 tick。范圍 3 格以內。消耗 200 點 ops 資源。creep 等級要求: 10/11/12/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/fortify.svg">
         </td>
         <th>FORTIFY</th>
-        <td>使得一个 wall 或者 rampart 免疫所有来自 creep 的伤害和 power 的效果。效果持续 1/2/3/4/5 tick。冷却 5 tick。范围 3 格以内。消耗 5 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>使得一個 wall 或者 rampart 免疫所有來自 creep 的傷害和 power 的效果。效果持續 1/2/3/4/5 tick。冷卻 5 tick。范圍 3 格以內。消耗 5 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-controller.svg">
         </td>
         <th>OPERATE_CONTROLLER</th>
-        <td>将一个 8 级 Controller 的每 tick 升级能量上限提高 10/20/30/40/50 单位。效果持续 1000 tick。冷却 800 tick。范围 3 格以内。消耗 200 点 ops 资源。creep 等级要求: 20/21/22/23/24.</td>
+        <td>將一個 8 級 Controller 的每 tick 升級能量上限提高 10/20/30/40/50 單位。效果持續 1000 tick。冷卻 800 tick。范圍 3 格以內。消耗 200 點 ops 資源。creep 等級要求: 20/21/22/23/24.</td>
         </tr><tr><td style="background: #141414; width: 50px; padding: 0; border-top: 1px solid #444">
         <img src="https://screeps.com/a/app2/assets/powers/operator/operate-factory.svg">
         </td>
         <th>OPERATE_FACTORY</th>
-        <td>将 factory 的等级设置为该 power 的等级。该操作无法撤销，并且一旦设置无法修改为其他等级。持续时间结束后再次使用相同的 power 即可恢复效果。效果持续 1000 tick。冷却 800 tick。范围 3 格以内。消耗 100 点 ops 资源。creep 等级要求: 0/2/7/14/22.</td>
+        <td>將 factory 的等級設置為該 power 的等級。該操作無法撤銷，並且一旦設置無法修改為其他等級。持續時間結束後再次使用相同的 power 即可恢復效果。效果持續 1000 tick。冷卻 800 tick。范圍 3 格以內。消耗 100 點 ops 資源。creep 等級要求: 0/2/7/14/22.</td>
         </tr></table>
 
 ### Commander

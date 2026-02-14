@@ -11,7 +11,7 @@
 
 
 <h2 id="constructor" class="api-property   "><span class="api-property__name">constructor</span><span class="api-property__args">([roomName])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -46,7 +46,7 @@ new RoomVisual().text('Some text', 1, 1, {align: 'left'});
 
 
 <h2 id="line" class="api-property api-property--method  "><span class="api-property__name">line</span><span class="api-property__args">(x1, y1, x2, y2, [style])<br>(pos1, pos2, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -107,7 +107,7 @@ creep.room.visual.line(creep.pos, target.pos,
 對象本身，您可以使用鏈式調用。
 
 <h2 id="circle" class="api-property api-property--method  "><span class="api-property__name">circle</span><span class="api-property__args">(x, y, [style])<br>(pos, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -172,7 +172,7 @@ creep.room.visual.circle(creep.pos,
 對象本身，您可以使用鏈式調用。
 
 <h2 id="rect" class="api-property api-property--method  "><span class="api-property__name">rect</span><span class="api-property__args">(x, y, width, height, [style])<br>(topLeftPos, width, height, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -239,7 +239,7 @@ creep.room.visual.rect(creep.pos.x - 0.6, creep.pos.y - 0.6,
 對象本身，您可以使用鏈式調用。
 
 <h2 id="poly" class="api-property api-property--method  "><span class="api-property__name">poly</span><span class="api-property__args">(points, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -302,7 +302,7 @@ new RoomVisual('W1N1').poly(path, {stroke: '#fff', strokeWidth: .15,
 對象本身，您可以使用鏈式調用。
 
 <h2 id="text" class="api-property api-property--method  "><span class="api-property__name">text</span><span class="api-property__args">(text, x, y, [style])<br>(text, pos, [style])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -382,7 +382,7 @@ new RoomVisual('W1N1').text("Target💥", 10, 15, {color: 'green', font: 0.8});
 對象本身，您可以使用鏈式調用。
 
 <h2 id="clear" class="api-property api-property--method  "><span class="api-property__name">clear</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -400,7 +400,7 @@ new RoomVisual('W1N1').clear();
 對象本身，您可以使用鏈式調用。
 
 <h2 id="getSize" class="api-property api-property--method  "><span class="api-property__name">getSize</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -419,7 +419,7 @@ if(creep.room.visual.getSize() >= 512000) {
 
 
 <h2 id="export" class="api-property api-property--method  "><span class="api-property__name">export</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -435,7 +435,7 @@ Memory.RoomVisualData['E2S7'] = Game.rooms.E2S7.visual.export();
 代表了可視化數據的字符串。除了將其存儲以備後續使用外，您不應該對其進行其他操作。
 
 <h2 id="import" class="api-property api-property--method  "><span class="api-property__name">import</span><span class="api-property__args">(val)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript

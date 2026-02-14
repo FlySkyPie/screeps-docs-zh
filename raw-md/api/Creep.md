@@ -105,13 +105,13 @@ creep 是你的單位, creep 可以移動、采集能量、建造建築、攻擊
 
 
 
-<h2 id="carry" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carry</span><span class="api-property__type">object</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="carry" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carry</span><span class="api-property__type">object</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
 
 [`Creep.store`](#Creep.store) 的別名。
 
 
-<h2 id="carryCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carryCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="carryCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carryCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
 
 [`Creep.store.getCapacity()`](#Store.getCapacity) 的別名。
@@ -221,7 +221,7 @@ if(creep.store[RESOURCE_ENERGY] < creep.store.getCapacity()) {
 
 
 <h2 id="attack" class="api-property api-property--method  "><span class="api-property__name">attack</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -265,7 +265,7 @@ if(target) {
 
 
 <h2 id="attackController" class="api-property api-property--method  "><span class="api-property__name">attackController</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -310,7 +310,7 @@ if(creep.room.controller && !creep.room.controller.my) {
 
 
 <h2 id="build" class="api-property api-property--method  "><span class="api-property__name">build</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -356,7 +356,7 @@ if(target) {
 
 
 <h2 id="cancelOrder" class="api-property api-property--method  "><span class="api-property__name">cancelOrder</span><span class="api-property__args">(methodName)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -388,7 +388,7 @@ creep.cancelOrder('move');
 
 
 <h2 id="claimController" class="api-property api-property--method  "><span class="api-property__name">claimController</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -435,7 +435,7 @@ if(creep.room.controller) {
 
 
 <h2 id="dismantle" class="api-property api-property--method  "><span class="api-property__name">dismantle</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -482,7 +482,7 @@ if(target) {
 
 
 <h2 id="drop" class="api-property api-property--method  "><span class="api-property__name">drop</span><span class="api-property__args">(resourceType, [amount])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -527,7 +527,7 @@ for(const resourceType in creep.carry) {
 
 
 <h2 id="generateSafeMode" class="api-property api-property--method  "><span class="api-property__name">generateSafeMode</span><span class="api-property__args">(controller)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -568,7 +568,7 @@ if(creep.generateSafeMode(creep.room.controller) == ERR_NOT_IN_RANGE) {
 
 
 <h2 id="getActiveBodyparts" class="api-property api-property--method  "><span class="api-property__name">getActiveBodyparts</span><span class="api-property__args">(type)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -605,7 +605,7 @@ if(target) {
 身體部件的數量。
 
 <h2 id="harvest" class="api-property api-property--method  "><span class="api-property__name">harvest</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -655,7 +655,7 @@ if(target) {
 
 
 <h2 id="heal" class="api-property api-property--method  "><span class="api-property__name">heal</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -703,7 +703,7 @@ if(target) {
 
 
 <h2 id="move" class="api-property api-property--method  "><span class="api-property__name">move</span><span class="api-property__args">(direction)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -766,7 +766,7 @@ creep2.move(creep1);
 
 
 <h2 id="moveByPath" class="api-property api-property--method  "><span class="api-property__name">moveByPath</span><span class="api-property__args">(path)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -814,7 +814,7 @@ creep.moveByPath(creep.memory.path);
 
 
 <h2 id="moveTo" class="api-property api-property--method  "><span class="api-property__name">moveTo</span><span class="api-property__args">(x, y, [opts])<br>(target, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -919,7 +919,7 @@ if(Game.cpu.tickLimit - Game.cpu.getUsed() > 20) {
 
 
 <h2 id="notifyWhenAttacked" class="api-property api-property--method  "><span class="api-property__name">notifyWhenAttacked</span><span class="api-property__args">(enabled)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -958,7 +958,7 @@ else {
 
 
 <h2 id="pickup" class="api-property api-property--method  "><span class="api-property__name">pickup</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1002,7 +1002,7 @@ if(target) {
 
 
 <h2 id="pull" class="api-property api-property--method  "><span class="api-property__name">pull</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -1062,7 +1062,7 @@ if(target) {
 
 
 <h2 id="rangedAttack" class="api-property api-property--method  "><span class="api-property__name">rangedAttack</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1104,7 +1104,7 @@ if(targets.length > 0) {
 
 
 <h2 id="rangedHeal" class="api-property api-property--method  "><span class="api-property__name">rangedHeal</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1155,7 +1155,7 @@ if(target) {
 
 
 <h2 id="rangedMassAttack" class="api-property api-property--method  "><span class="api-property__name">rangedMassAttack</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1187,7 +1187,7 @@ if(targets.length > 0) {
 
 
 <h2 id="repair" class="api-property api-property--method  "><span class="api-property__name">repair</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1237,7 +1237,7 @@ if(targets.length > 0) {
 
 
 <h2 id="reserveController" class="api-property api-property--method  "><span class="api-property__name">reserveController</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1280,7 +1280,7 @@ if(creep.room.controller) {
 
 
 <h2 id="say" class="api-property api-property--method  "><span class="api-property__name">say</span><span class="api-property__args">(message, [public])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -1321,7 +1321,7 @@ else {
 
 
 <h2 id="signController" class="api-property api-property--method  "><span class="api-property__name">signController</span><span class="api-property__args">(target, text)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1362,7 +1362,7 @@ if(creep.room.controller) {
 
 
 <h2 id="suicide" class="api-property api-property--method  "><span class="api-property__name">suicide</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 
@@ -1387,7 +1387,7 @@ if(creep.room.controller) {
 
 
 <h2 id="transfer" class="api-property api-property--method  "><span class="api-property__name">transfer</span><span class="api-property__args">(target, resourceType, [amount])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1442,7 +1442,7 @@ for(const resourceType in creep.carry) {
 
 
 <h2 id="upgradeController" class="api-property api-property--method  "><span class="api-property__name">upgradeController</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -1491,7 +1491,7 @@ if(creep.room.controller) {
 
 
 <h2 id="withdraw" class="api-property api-property--method  "><span class="api-property__name">withdraw</span><span class="api-property__args">(target, resourceType, [amount])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript

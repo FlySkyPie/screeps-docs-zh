@@ -44,7 +44,7 @@ console.log(RawMemory.foreignSegment);
 
 
 
-<h2 id="RawMemory.interShardSegment" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">RawMemory.interShardSegment</span><span class="api-property__type">string</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。 請使用 <a href="#InterShardMemory"><code>InterShardMemory</code></a> 代替。</p>
+<h2 id="RawMemory.interShardSegment" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">RawMemory.interShardSegment</span><span class="api-property__type">string</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。 請使用 <a href="#InterShardMemory"><code>InterShardMemory</code></a> 代替。</p>
 </div>
 
 ```javascript
@@ -71,7 +71,7 @@ RawMemory.interShardSegment = JSON.stringify(interShardData);
 
  
 <h2 id="RawMemory.get" class="api-property api-property--method  "><span class="api-property__name">RawMemory.get</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -87,7 +87,7 @@ const myMemory = JSON.parse(RawMemory.get());
 返回一個字符串值。
 
 <h2 id="RawMemory.set" class="api-property api-property--method  "><span class="api-property__name">RawMemory.set</span><span class="api-property__args">(value)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -106,7 +106,7 @@ RawMemory.set(JSON.stringify(myMemory));
 
 
 <h2 id="RawMemory.setActiveSegments" class="api-property api-property--method  "><span class="api-property__name">RawMemory.setActiveSegments</span><span class="api-property__args">(ids)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -124,7 +124,7 @@ RawMemory.setActiveSegments([0,3]);
 
 
 <h2 id="RawMemory.setActiveForeignSegment" class="api-property api-property--method  "><span class="api-property__name">RawMemory.setActiveForeignSegment</span><span class="api-property__args">(username, [id])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -152,7 +152,7 @@ RawMemory.setActiveForeignSegment(null);
 
 
 <h2 id="RawMemory.setDefaultPublicSegment" class="api-property api-property--method  "><span class="api-property__name">RawMemory.setDefaultPublicSegment</span><span class="api-property__args">(id)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -174,7 +174,7 @@ RawMemory.setDefaultPublicSegment(null);
 
 
 <h2 id="RawMemory.setPublicSegments" class="api-property api-property--method  "><span class="api-property__name">RawMemory.setPublicSegments</span><span class="api-property__args">(ids)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript

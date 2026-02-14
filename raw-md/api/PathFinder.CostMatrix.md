@@ -19,7 +19,7 @@ let costs = new PathFinder.CostMatrix;
 
 
 <h2 id="set" class="api-property api-property--method  "><span class="api-property__name">set</span><span class="api-property__args">(x, y, cost)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -44,7 +44,7 @@ costs.set(pos.x, pos.y, 255); // 不能從該建築上移動
 
 
 <h2 id="get" class="api-property api-property--method  "><span class="api-property__name">get</span><span class="api-property__args">(x, y)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 
@@ -63,7 +63,7 @@ costs.set(pos.x, pos.y, 255); // 不能從該建築上移動
 
 
 <h2 id="clone" class="api-property api-property--method  "><span class="api-property__name">clone</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 
@@ -77,7 +77,7 @@ costs.set(pos.x, pos.y, 255); // 不能從該建築上移動
 一個新的 CostMatrix 實例。
 
 <h2 id="serialize" class="api-property api-property--method  "><span class="api-property__name">serialize</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -94,7 +94,7 @@ Memory.savedMatrix = costs.serialize();
 一個 number 數組。它除了可以被保存起來以備後續使用之外沒有什麼作用。
 
 <h2 id="PathFinder.CostMatrix.deserialize" class="api-property api-property--method  "><span class="api-property__name">PathFinder.CostMatrix.deserialize</span><span class="api-property__args">(val)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript

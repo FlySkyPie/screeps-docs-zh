@@ -19,7 +19,7 @@ console.log(creep.store[RESOURCE_ENERGY]);
 
 
 <h2 id="getCapacity" class="api-property api-property--method  "><span class="api-property__name">getCapacity</span><span class="api-property__args">([resource])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -42,7 +42,7 @@ if(creep.store[RESOURCE_ENERGY] < creep.store.getCapacity()) {
 返回存儲的數量, 當 `resource` 參數不是一個有效的存儲類型時返回 `null`。
 
 <h2 id="getFreeCapacity" class="api-property api-property--method  "><span class="api-property__name">getFreeCapacity</span><span class="api-property__args">([resource])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -66,7 +66,7 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 
 
 <h2 id="getUsedCapacity" class="api-property api-property--method  "><span class="api-property__name">getUsedCapacity</span><span class="api-property__args">([resource])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript

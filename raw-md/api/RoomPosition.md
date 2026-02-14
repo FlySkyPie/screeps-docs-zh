@@ -3,7 +3,7 @@
 表示房間中指定位置的對象。房間中的每個 `RoomObject` 都通過其 `pos` 屬性鏈接到對應的 `RoomPosition` 上。可以使用 [`Room.getPositionAt`](#Room.getPositionAt) 或者構造函數創建自定義地點的位置對象。
 
 <h2 id="constructor" class="api-property   "><span class="api-property__name">constructor</span><span class="api-property__args">(x, y, roomName)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -49,7 +49,7 @@ const pos = new RoomPosition(10, 25, 'sim');
 
 
 <h2 id="createConstructionSite" class="api-property api-property--method  "><span class="api-property__name">createConstructionSite</span><span class="api-property__args">(structureType, [name])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -90,7 +90,7 @@ Game.flags['Flag1'].pos.createConstructionSite(STRUCTURE_SPAWN, 'MySpawn2');
 
 
 <h2 id="createFlag" class="api-property api-property--method  "><span class="api-property__name">createFlag</span><span class="api-property__args">([name], [color], [secondaryColor])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -126,7 +126,7 @@ creep.pos.createFlag('Flag1');
 
 
 <h2 id="findClosestByPath" class="api-property api-property--method  "><span class="api-property__name">findClosestByPath</span><span class="api-property__args">(type, [opts])<br>(objects, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -197,7 +197,7 @@ const closest = creep.pos.findClosestByPath(targets);
 返回找到的最近對象，沒找到則返回 null。
 
 <h2 id="findClosestByRange" class="api-property api-property--method  "><span class="api-property__name">findClosestByRange</span><span class="api-property__args">(type, [opts])<br>(objects, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 
 ```javascript
@@ -253,7 +253,7 @@ const closest = creep.pos.findClosestByRange(targets);
 返回找到的最近對象，沒找到則返回 null。
 
 <h2 id="findInRange" class="api-property api-property--method  "><span class="api-property__name">findInRange</span><span class="api-property__args">(type, range, [opts])<br>(objects, range, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 
 ```javascript
@@ -292,7 +292,7 @@ const inRangeTargets = creep.pos.findInRange(targets, 3);
 找到的對象數組。
 
 <h2 id="findPathTo" class="api-property api-property--method  "><span class="api-property__name">findPathTo</span><span class="api-property__args">(x, y, [opts])<br>(target, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 
@@ -341,7 +341,7 @@ if( path.length ) {
 
 
 <h2 id="getDirectionTo" class="api-property api-property--method  "><span class="api-property__name">getDirectionTo</span><span class="api-property__args">(x,y)<br>(target)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -367,7 +367,7 @@ creep.move(direction);
 某一個方向常量的數字值。
 
 <h2 id="getRangeTo" class="api-property api-property--method  "><span class="api-property__name">getRangeTo</span><span class="api-property__args">(x,y)<br>(target)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -395,7 +395,7 @@ if(range <= 3) {
 到指定位置的地塊數。
 
 <h2 id="inRangeTo" class="api-property api-property--method  "><span class="api-property__name">inRangeTo</span><span class="api-property__args">(x, y, range)<br>(target, range)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -424,7 +424,7 @@ if(creep.pos.inRangeTo(target, 3)) {
 一個布爾值。
 
 <h2 id="isEqualTo" class="api-property api-property--method  "><span class="api-property__name">isEqualTo</span><span class="api-property__args">(x,y)<br>(target)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -457,7 +457,7 @@ if(creep.pos.isEqualTo(Game.flags.Flag1)) {
 一個布爾值。
 
 <h2 id="isNearTo" class="api-property api-property--method  "><span class="api-property__name">isNearTo</span><span class="api-property__args">(x,y)<br>(target)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -484,7 +484,7 @@ if(creep.pos.isNearTo(target)) {
 一個布爾值。
 
 <h2 id="look" class="api-property api-property--method  "><span class="api-property__name">look</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--2" title="该方法的CPU开销中等。"></div>
+        <div class="api-property__cpu api-property__cpu--2" title="該方法的CPU開銷中等。"></div>
         </h2>
 
 ```javascript
@@ -516,7 +516,7 @@ look.forEach(function(lookObject) {
 
 
 <h2 id="lookFor" class="api-property api-property--method  "><span class="api-property__name">lookFor</span><span class="api-property__args">(type)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript

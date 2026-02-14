@@ -158,7 +158,7 @@ console.log(Game.time);
 
 
 <h2 id="Game.cpu.getHeapStatistics" class="api-property api-property--method  "><span class="api-property__name">Game.cpu.getHeapStatistics</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -193,7 +193,7 @@ console.log(`Used ${heap.total_heap_size} / ${heap.heap_size_limit}`);
 
 
 <h2 id="Game.cpu.getUsed" class="api-property api-property--method  "><span class="api-property__name">Game.cpu.getUsed</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -223,7 +223,7 @@ for(const name in Game.creeps) {
 
 
 <h2 id="Game.cpu.halt" class="api-property api-property--method  "><span class="api-property__name">Game.cpu.halt</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -235,7 +235,7 @@ Game.cpu.halt();
 重置你的運行環境並擦除堆內存中的所有數據。
 
 <h2 id="Game.cpu.setShardLimits" class="api-property api-property--method  "><span class="api-property__name">Game.cpu.setShardLimits</span><span class="api-property__args">(limits)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -266,7 +266,7 @@ Game.cpu.setShardLimits({shard0: 20, shard1: 10});
 
 
 <h2 id="Game.cpu.unlock" class="api-property api-property--method  "><span class="api-property__name">Game.cpu.unlock</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -292,7 +292,7 @@ if(Game.cpu.unlockedTime && ((Game.cpu.unlockedTime - Date.now()) < 1000*60*60*2
 
 
 <h2 id="Game.cpu.generatePixel" class="api-property api-property--method  "><span class="api-property__name">Game.cpu.generatePixel</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -314,7 +314,7 @@ if(Game.cpu.bucket == 10000) {
 
 
 <h2 id="Game.getObjectById" class="api-property api-property--method  "><span class="api-property__name">Game.getObjectById</span><span class="api-property__args">(id)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -336,7 +336,7 @@ const source = Game.getObjectById(creep.memory.sourceId);
 返回一個對象實例，若找不到則返回 null。
 
 <h2 id="Game.notify" class="api-property api-property--method  "><span class="api-property__name">Game.notify</span><span class="api-property__args">(message, [groupInterval])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript

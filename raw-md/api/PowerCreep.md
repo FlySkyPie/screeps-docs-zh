@@ -23,7 +23,7 @@ Power Creep 是和您賬戶綁定的不朽「英雄」單位。其死後可以�
 [可用 power 的完整列表](/power.html#Powers)
 
 <h2 id="PowerCreep.create" class="api-property api-property--method  "><span class="api-property__name">PowerCreep.create</span><span class="api-property__args">(name, className)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
@@ -76,13 +76,13 @@ PowerCreep.create('PowerCreep1', POWER_CLASS.OPERATOR);
 
 
 
-<h2 id="carry" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carry</span><span class="api-property__type">object</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="carry" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carry</span><span class="api-property__type">object</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
 
 [`Creep.store`](#Creep.store) 的別名。
 
 
-<h2 id="carryCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carryCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此属性已被弃用，将很快删除。</p>
+<h2 id="carryCapacity" class="api-property api-property--property  api-property--deprecated"><span class="api-property__name">carryCapacity</span><span class="api-property__type">number</span></h2><div class="api-deprecated"><p>此屬性已被棄用，將很快刪除。</p>
 </div>
 
 [`Creep.store.getCapacity()`](#Store.getCapacity) 的別名。
@@ -177,7 +177,7 @@ if(!(Game.powerCreeps['PowerCreep1'].spawnCooldownTime > Date.now())) {
 
 
 <h2 id="cancelOrder" class="api-property api-property--method  "><span class="api-property__name">cancelOrder</span><span class="api-property__args">(methodName)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -212,7 +212,7 @@ creep.cancelOrder('move');
 
 
 <h2 id="delete" class="api-property api-property--method  "><span class="api-property__name">delete</span><span class="api-property__args">([cancel])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -242,7 +242,7 @@ Game.powerCreeps['PowerCreep1'].delete();
 
 
 <h2 id="drop" class="api-property api-property--method  "><span class="api-property__name">drop</span><span class="api-property__args">(resourceType, [amount])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -292,7 +292,7 @@ Game.powerCreeps['PowerCreep1'].usePower(PWR_GENERATE_OPS);
 
 
 <h2 id="enableRoom" class="api-property api-property--method  "><span class="api-property__name">enableRoom</span><span class="api-property__args">(controller)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -325,7 +325,7 @@ powerCreep.enableRoom(powerCreep.room.controller);
 
 
 <h2 id="move" class="api-property api-property--method  "><span class="api-property__name">move</span><span class="api-property__args">(direction)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -386,7 +386,7 @@ creep2.move(creep1);
 
 
 <h2 id="moveByPath" class="api-property api-property--method  "><span class="api-property__name">moveByPath</span><span class="api-property__args">(path)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -432,7 +432,7 @@ creep.moveByPath(creep.memory.path);
 
 
 <h2 id="moveTo" class="api-property api-property--method  "><span class="api-property__name">moveTo</span><span class="api-property__args">(x, y, [opts])<br>(target, [opts])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 ```javascript
@@ -535,7 +535,7 @@ if(Game.cpu.tickLimit - Game.cpu.getUsed() > 20) {
 
 
 <h2 id="notifyWhenAttacked" class="api-property api-property--method  "><span class="api-property__name">notifyWhenAttacked</span><span class="api-property__args">(enabled)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -568,7 +568,7 @@ Game.powerCreeps['PC1'].notifyWhenAttacked(true);
 
 
 <h2 id="pickup" class="api-property api-property--method  "><span class="api-property__name">pickup</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -613,7 +613,7 @@ if(target) {
 
 
 <h2 id="rename" class="api-property api-property--method  "><span class="api-property__name">rename</span><span class="api-property__args">(name)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -647,7 +647,7 @@ Game.powerCreeps['PC1'].rename('PC1X');
 
 
 <h2 id="renew" class="api-property api-property--method  "><span class="api-property__name">renew</span><span class="api-property__args">(target)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -685,7 +685,7 @@ Game.powerCreeps['PowerCreep1'].renew(powerBank);
 
 
 <h2 id="say" class="api-property api-property--method  "><span class="api-property__name">say</span><span class="api-property__args">(message, [public])</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -726,7 +726,7 @@ else {
 
 
 <h2 id="spawn" class="api-property api-property--method  "><span class="api-property__name">spawn</span><span class="api-property__args">(powerSpawn)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -764,7 +764,7 @@ Game.powerCreeps['PowerCreep1'].spawn(Game.getObjectById('XXX'));
 
 
 <h2 id="suicide" class="api-property api-property--method  "><span class="api-property__name">suicide</span><span class="api-property__args">()</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 
@@ -790,7 +790,7 @@ Game.powerCreeps['PowerCreep1'].spawn(Game.getObjectById('XXX'));
 
 
 <h2 id="transfer" class="api-property api-property--method  "><span class="api-property__name">transfer</span><span class="api-property__args">(target, resourceType, [amount])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -845,7 +845,7 @@ for(const resourceType in creep.carry) {
 
 
 <h2 id="upgrade" class="api-property api-property--method  "><span class="api-property__name">upgrade</span><span class="api-property__args">(power)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -879,7 +879,7 @@ Game.powerCreeps['PowerCreep1'].upgrade(PWR_GENERATE_OPS);
 
 
 <h2 id="usePower" class="api-property api-property--method  "><span class="api-property__name">usePower</span><span class="api-property__args">(power, [target])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -934,7 +934,7 @@ Game.powerCreeps['PowerCreep1'].usePower(PWR_OPERATE_SPAWN, Game.spawns['Spawn1'
 
 
 <h2 id="withdraw" class="api-property api-property--method  "><span class="api-property__name">withdraw</span><span class="api-property__args">(target, resourceType, [amount])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript

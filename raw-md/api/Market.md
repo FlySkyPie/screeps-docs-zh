@@ -111,7 +111,7 @@
 
 
 <h2 id="Game.market.calcTransactionCost" class="api-property api-property--method  "><span class="api-property__name">Game.market.calcTransactionCost</span><span class="api-property__args">(amount, roomName1, roomName2)</span>
-        <div class="api-property__cpu api-property__cpu--0" title="该方法的CPU开销很小。"></div>
+        <div class="api-property__cpu api-property__cpu--0" title="該方法的CPU開銷很小。"></div>
         </h2>
 
 ```javascript
@@ -142,7 +142,7 @@ Math.ceil( amount * ( 1 - Math.exp(-distanceBetweenRooms/30) ) )
 進行交易所需的能量。
 
 <h2 id="Game.market.cancelOrder" class="api-property api-property--method  "><span class="api-property__name">Game.market.cancelOrder</span><span class="api-property__args">(orderId)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -174,7 +174,7 @@ for(const id in Game.market.orders) {
 
 
 <h2 id="Game.market.changeOrderPrice" class="api-property api-property--method  "><span class="api-property__name">Game.market.changeOrderPrice</span><span class="api-property__args">(orderId, newPrice)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -209,7 +209,7 @@ Game.market.changeOrderPrice('57bec1bf77f4d17c4c011960', 9.95);
 
 
 <h2 id="Game.market.createOrder" class="api-property api-property--method  "><span class="api-property__name">Game.market.createOrder</span><span class="api-property__args">(params)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -276,7 +276,7 @@ Game.market.createOrder({
 
 
 <h2 id="Game.market.deal" class="api-property api-property--method  "><span class="api-property__name">Game.market.deal</span><span class="api-property__args">(orderId, amount, [yourRoomName])</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -333,7 +333,7 @@ for(let i=0; i<orders.length; i++) {
 
 
 <h2 id="Game.market.extendOrder" class="api-property api-property--method  "><span class="api-property__name">Game.market.extendOrder</span><span class="api-property__args">(orderId, addAmount)</span>
-        <div class="api-property__cpu api-property__cpu--A" title="这个方法是一个改变游戏状态的动作。在返回OK代码的情况下，它的自然成本增加了0.2个CPU成本。"></div>
+        <div class="api-property__cpu api-property__cpu--A" title="這個方法是一個改變游戲狀態的動作。在返回OK代碼的情況下，它的自然成本增加了0.2個CPU成本。"></div>
         </h2>
 
 ```javascript
@@ -367,7 +367,7 @@ Game.market.extendOrder('57bec1bf77f4d17c4c011960', 10000);
 
 
 <h2 id="Game.market.getAllOrders" class="api-property api-property--method  "><span class="api-property__name">Game.market.getAllOrders</span><span class="api-property__args">([filter])</span>
-        <div class="api-property__cpu api-property__cpu--3" title="这种方法的CPU成本很高。"></div>
+        <div class="api-property__cpu api-property__cpu--3" title="這種方法的CPU成本很高。"></div>
         </h2>
 
 
@@ -446,7 +446,7 @@ Game.market.getAllOrders(order => order.resourceType == RESOURCE_GHODIUM &&
 
 
 <h2 id="Game.market.getHistory" class="api-property api-property--method  "><span class="api-property__name">Game.market.getHistory</span><span class="api-property__args">([resourceType])</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 獲取最近 14 天以來市場中指定資源的每日價格記錄。
@@ -474,7 +474,7 @@ Game.market.getAllOrders(order => order.resourceType == RESOURCE_GHODIUM &&
 
 
 <h2 id="Game.market.getOrderById" class="api-property api-property--method  "><span class="api-property__name">Game.market.getOrderById</span><span class="api-property__args">(id)</span>
-        <div class="api-property__cpu api-property__cpu--1" title="该方法具有较低的CPU开销。"></div>
+        <div class="api-property__cpu api-property__cpu--1" title="該方法具有較低的CPU開銷。"></div>
         </h2>
 
 ```javascript
