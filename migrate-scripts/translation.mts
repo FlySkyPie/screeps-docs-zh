@@ -51,8 +51,8 @@ const getFiles = async (): Promise<string[]> => {
      * @todo Return relative path.
      */
     
-    // Return absolute paths
-    return filteredFiles.map(file => resolve(file));
+    // Return relative paths (as obtained from glob)
+    return filteredFiles;
 }
 
 console.log(await getFiles());
