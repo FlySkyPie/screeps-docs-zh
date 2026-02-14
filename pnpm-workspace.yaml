@@ -1,0 +1,14 @@
+ignoredBuiltDependencies:
+  - esbuild
+  - gifsicle
+  - hexo-util
+  - highlight.js
+  - jpegtran-bin
+  - node-sass
+  - optipng-bin
+  - pngquant-bin
+  - sharp
+  - spawn-sync
+
+onlyBuiltDependencies:
+  - opencc

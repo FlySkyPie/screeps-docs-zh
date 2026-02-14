@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'fs/promises';
 import { glob } from 'glob';
-import { OpenCC } from 'opencc';
+import { tify } from 'chinese-conv'
 
 /**
  * Get all markdown files (`.md`) under current workspace.
@@ -50,16 +50,13 @@ const getFiles = async (): Promise<string[]> => {
 }
 
 const fileList = await getFiles();
-const converter: OpenCC = new OpenCC('s2t.json');
+
 for (let index = 0; index < fileList.length; index++) {
     const file = fileList[index];
-    
-    // @todo Read content from `file`
+
     const content = await readFile(file, 'utf8');
-    
-    // @todo Using `converter.convertPromise` translate content
-    const translatedContent = await converter.convertPromise(content);
-    
-    // @todo Write translated content base.
+
+    const translatedContent = tify(content);
+
     await writeFile(file, translatedContent, 'utf8');
 }
