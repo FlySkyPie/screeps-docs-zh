@@ -26,10 +26,12 @@
     "prismjs": "^1.6.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^25.2.3",
     "browser-sync": "^2.18.8",
     "chinese-conv": "^4.0.0",
     "cssnano": "^3.5.2",
+    "fs-extra": "^11.3.3",
     "glob": "^13.0.3",
     "gulp": "^3.9.1",
     "gulp-if": "^2.0.0",

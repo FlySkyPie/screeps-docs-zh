@@ -1,10 +1,10 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { ensureFile, readFile, writeFile } from 'fs-extra';
 import Hexo from 'hexo';
 
 import { getFiles } from "./translation.mts";
 import path from 'node:path';
 
-const renderFiles = async (fileList: string[], subPath: string = ".") => {
+const renderFiles = async (fileList: string[], outputSubPath: string, subPath: string = ".") => {
     const hexo = new Hexo(path.resolve(process.cwd(), subPath), {});
     await hexo.init();
 
@@ -32,17 +32,18 @@ const renderFiles = async (fileList: string[], subPath: string = ".") => {
 
         console.log(renderedContent)
 
-        // await writeFile(filePath, renderedContent, 'utf8');
+        const outputPath = path.resolve(process.cwd(), 'output', outputSubPath, filePath);
+        await ensureFile(outputPath);
+        await writeFile(outputPath, renderedContent, 'utf8');
     }
 };
 
+/**
+ * Split fileList into two arrays:
+ * - One containing files under `api/`
+ * - One containing all other files
+ */
 const groupFiles = async (fileList: string[]) => {
-    /**
-     * Split fileList into two arrays:
-     * - One containing files under `api/`
-     * - One containing all other files
-     */
-
     const apiFiles: string[] = [];
     const docsFiles: string[] = [];
 
@@ -63,5 +64,5 @@ const groupFiles = async (fileList: string[]) => {
 const fileList = await getFiles();
 const { api, docs } = await groupFiles(fileList);
 
-await renderFiles(docs);
-await renderFiles(api, "./api");
+await renderFiles(docs, 'docs');
+await renderFiles(api, 'api', "./api");
