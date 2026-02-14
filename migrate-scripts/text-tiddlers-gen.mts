@@ -1,7 +1,7 @@
 import path from 'node:path';
 
 import { getFiles } from './image-compress.mts';
-import { copy, writeFile } from 'fs-extra';
+import { copy, readFile, writeFile } from 'fs-extra';
 
 const migrate = async (sourceRootPath: string, targetRootPath, files: string[]) => {
     for (let index = 0; index < files.length; index++) {
@@ -10,26 +10,55 @@ const migrate = async (sourceRootPath: string, targetRootPath, files: string[]) 
         const targetPath = path.resolve(targetRootPath, file);
         const metaPath = targetPath + ".meta";
 
-        /**
-         * @todo Remove YAML head for target file. 
-         */
-        await copy(sourcePath, targetPath);
-
-        /**
-         * @todo Read title from YAML head of source file.
-         */
-        const title = "";
-
-        /**
-         * @todo Using current datetime, format: YYYYMMDDHHMMSSmmm
-         */
+        // Read source file content
+        const sourceContent = await readFile(sourcePath, 'utf8');
+        
+        // Extract title from YAML front matter
+        const yamlMatch = sourceContent.match(/^---\s*\n(.*?)\n---\s*\n(.*)$/s);
+        let title = "";
+        let contentWithoutYaml = sourceContent;
+        
+        if (yamlMatch) {
+            const yamlFrontMatter = yamlMatch[1];
+            const content = yamlMatch[2];
+            
+            // Extract title from YAML front matter
+            const titleMatch = yamlFrontMatter.match(/title:\s*(.+)/);
+            if (titleMatch) {
+                title = titleMatch[1].trim();
+            }
+            
+            // Use content without YAML front matter
+            contentWithoutYaml = content;
+        } else {
+            // If no YAML front matter, try to extract title from first heading
+            const headingMatch = sourceContent.match(/^#\s+(.+)/);
+            if (headingMatch) {
+                title = headingMatch[1].trim();
+            }
+        }
+        
+        // Write content without YAML front matter to target file
+        await writeFile(targetPath, contentWithoutYaml, 'utf8');
+        
+        // Generate current timestamp in format: YYYYMMDDHHMMSSmmm
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+        const timestamp = `${year}${month}${day}${hours}${minutes}${seconds}${milliseconds}`;
+        
         const metaContent =
-            "created: 20231217062502892\n" +
-            "modified: 20231217075647600\n" +
+            `created: ${timestamp}\n` +
+            `modified: ${timestamp}\n` +
             "tags: knowledge\n" +
             `title: ${title}\n` +
             "type: text/markdown";
-
+        
         await writeFile(metaPath, metaContent, 'utf8');
     }
 
