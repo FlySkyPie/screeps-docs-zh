@@ -1,8 +1,6 @@
 ignoredBuiltDependencies:
   - esbuild
   - gifsicle
-  - hexo-util
-  - highlight.js
   - jpegtran-bin
   - node-sass
   - optipng-bin
@@ -12,3 +10,5 @@ ignoredBuiltDependencies:
 
 onlyBuiltDependencies:
   - opencc
+  - hexo-util
+  - highlight.js
