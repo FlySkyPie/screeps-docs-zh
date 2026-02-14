@@ -38,13 +38,25 @@ const renderFiles = async (fileList: string[], subPath: string = ".") => {
 
 const groupFiles = async (fileList: string[]) => {
     /**
-     * @todo Split fileList into two array.
-     * @todo One only containing files under `api/`, another one containing rest.
+     * Split fileList into two arrays:
+     * - One containing files under `api/`
+     * - One containing all other files
      */
 
+    const apiFiles: string[] = [];
+    const docsFiles: string[] = [];
+
+    for (const file of fileList) {
+        if (file.includes('api/')) {
+            apiFiles.push(file);
+        } else {
+            docsFiles.push(file);
+        }
+    }
+
     return {
-        api: [],
-        docs: [],
+        api: apiFiles,
+        docs: docsFiles,
     };
 };
 
