@@ -46,6 +46,10 @@ const getFiles = async (): Promise<string[]> => {
             return new RegExp(`^${regexPattern}$`).test(file);
         });
     });
+
+    /**
+     * @todo Return relative path.
+     */
     
     // Return absolute paths
     return filteredFiles.map(file => resolve(file));
