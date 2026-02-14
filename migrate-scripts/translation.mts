@@ -1,17 +1,15 @@
-
-
 import { readFile } from 'fs/promises';
-import { join, resolve } from 'path';
-import { promisify } from 'util';
 import { glob } from 'glob';
+import { OpenCC } from 'opencc';
 
+/**
+ * Get all markdown files (`.md`) under current workspace.
+ * Recursively search folders.
+ * The process would ignore stuff in `.gitignore`.
+ */
 const getFiles = async (): Promise<string[]> => {
-    /**
-     * Get all markdown files (`.md`) under current workspace.
-     * Recursively search folders.
-     * The process should ignore stuff in .gitignore
-     */
-    
+
+
     // Read .gitignore file
     let gitignorePatterns: string[] = [];
     try {
@@ -24,10 +22,10 @@ const getFiles = async (): Promise<string[]> => {
         // If .gitignore doesn't exist, use empty array
         gitignorePatterns = [];
     }
-    
+
     // Get all .md files recursively
     const mdFiles = await glob('**/*.md', { cwd: '.', nodir: true });
-    
+
     // Filter out files that match .gitignore patterns
     const filteredFiles = mdFiles.filter(file => {
         // Check if file matches any gitignore pattern
@@ -36,23 +34,30 @@ const getFiles = async (): Promise<string[]> => {
             if (pattern.endsWith('/')) {
                 return file.startsWith(pattern);
             }
-            
+
             // Handle patterns with wildcards
             const regexPattern = pattern
                 .replace(/[.*+?^${}()|\[\]\/\\]/g, '\\$&')
                 .replace(/\*/g, '.*')
                 .replace(/\?/g, '.');
-            
+
             return new RegExp(`^${regexPattern}$`).test(file);
         });
     });
 
-    /**
-     * @todo Return relative path.
-     */
-    
     // Return relative paths (as obtained from glob)
     return filteredFiles;
 }
 
-console.log(await getFiles());
+const fileList = await getFiles();
+const converter: OpenCC = new OpenCC('s2t.json');
+for (let index = 0; index < fileList.length; index++) {
+    const file = fileList[index];
+    const result: string = await converter.convertPromise('汉字');
+
+    /**
+     * @todo Read content from `file`
+     * @todo Using `converter.convertPromise` translate content
+     * @todo Write translated content base.
+     */
+}
