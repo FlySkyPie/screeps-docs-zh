@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 import { glob } from 'glob';
 import { OpenCC } from 'opencc';
 
@@ -53,11 +53,13 @@ const fileList = await getFiles();
 const converter: OpenCC = new OpenCC('s2t.json');
 for (let index = 0; index < fileList.length; index++) {
     const file = fileList[index];
-    const result: string = await converter.convertPromise('汉字');
-
-    /**
-     * @todo Read content from `file`
-     * @todo Using `converter.convertPromise` translate content
-     * @todo Write translated content base.
-     */
+    
+    // @todo Read content from `file`
+    const content = await readFile(file, 'utf8');
+    
+    // @todo Using `converter.convertPromise` translate content
+    const translatedContent = await converter.convertPromise(content);
+    
+    // @todo Write translated content base.
+    await writeFile(file, translatedContent, 'utf8');
 }
