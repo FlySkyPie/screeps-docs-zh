@@ -1,11 +1,11 @@
 # Screeps Chinese Document
 
-This is the Chinese version (zh-CN) of the [official Screeps documentation](https://docs.screeps.com), created and maintained spontaneously by Screeps Chinese players. Welcome to our QQ group [Screeps 编程游戏小组](https://shang.qq.com/wpa/qunwpa?idkey=8d9a9245519f3ecc94b23fbdada6d6479d8a3330071e0d44f372bb63a372a083).
+This is the Chinese version (zh-CN) of the [official Screeps documentation](https://docs.screeps.com), created and maintained spontaneously by Screeps Chinese players. Welcome to our QQ group [Screeps 編程游戲小組](https://shang.qq.com/wpa/qunwpa?idkey=8d9a9245519f3ecc94b23fbdada6d6479d8a3330071e0d44f372bb63a372a083).
 
 ![](https://travis-ci.org/screeps-cn/docs.svg?branch=master)
 
 
-点击 [此处](./README.en-US.md) 来访问中文 readme。
+點擊 [此處](./README.en-US.md) 來訪問中文 readme。
 
 ## Project dependence
 
@@ -51,7 +51,7 @@ This section contains some unofficial Chinese tutorials. If you have a tutorial 
 
 |tutorial name|Publishing platform|Author|
 |:-:|:-:|:-:|
-[screeps 入门教程](https://twodam.net/tags/screeps)|personal blog|[LuckyKoala](https://github.com/LuckyKoala)
+[screeps 入門教程](https://twodam.net/tags/screeps)|personal blog|[LuckyKoala](https://github.com/LuckyKoala)
 [Screeps 中文教程](https://www.jianshu.com/p/5431cb7f42d3)|Jian shu|[HoPGoldy](https://github.com/HoPGoldy)
 [Screeps 游玩指北](https://www.jianshu.com/nb/40235961)|Jian shu|[趣味的吃](https://www.jianshu.com/u/14a95c23386e)
 [Screeps 教程及攻略](https://zhuanlan.zhihu.com/c_1097137377700667392)|Zhi hu|[九日木彡](https://www.zhihu.com/people/noname-mr/activities)

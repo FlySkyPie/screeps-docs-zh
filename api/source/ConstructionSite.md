@@ -1,10 +1,10 @@
 # ConstructionSite
 
-一个正在建设中的工地。可以使用游戏界面右侧的'Construct'按钮创建工地或[`Room.createConstructionSite`](#Room.createConstructionSite)方法。
+一個正在建設中的工地。可以使用游戲界面右側的'Construct'按鈕創建工地或[`Room.createConstructionSite`](#Room.createConstructionSite)方法。
 
-要在工地建造一个建筑，需要给工人creep一些能量并执行[`Creep.build`](#Creep.build)动作。
+要在工地建造一個建築，需要給工人creep一些能量並執行[`Creep.build`](#Creep.build)動作。
 
-如果想移除敌人的工地，只需让一个creep踩在上面即可。
+如果想移除敵人的工地，只需讓一個creep踩在上面即可。
 
 {% page inherited/RoomObject.md %} 
 
@@ -12,7 +12,7 @@
  
 
 
-全局唯一的对象标识。你可以通过调用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法取得对象实例。
+全局唯一的對象標識。你可以通過調用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法取得對象實例。
 
 
 
@@ -20,7 +20,7 @@
 
 
 
-你是否拥有这个工地。
+你是否擁有這個工地。
 
 
 
@@ -28,11 +28,11 @@
 
 
 
-建筑拥有者信息，一个包含如下属性的对象：
+建築擁有者信息，一個包含如下屬性的對象：
 
 {% api_method_params %}
 username : string
-拥有者姓名。
+擁有者姓名。
 {% endapi_method_params %}
 
 
@@ -40,7 +40,7 @@ username : string
 
 
 
-当前建造进度。
+當前建造進度。
 
 
 
@@ -48,7 +48,7 @@ username : string
 
 
 
-完成建造所需的建造总进度。
+完成建造所需的建造總進度。
 
 
 
@@ -64,16 +64,16 @@ username : string
 
 
 
-删除这个工地。
+刪除這個工地。
 
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个工地的拥有者，或者这不是你的房间。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個工地的擁有者，或者這不是你的房間。
 {% endapi_return_codes %}
 
 

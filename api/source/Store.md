@@ -1,16 +1,16 @@
 # Store
 
-一个代表了其存储中资源的对象。
+一個代表了其存儲中資源的對象。
 
-游戏中有两种类型的 store：通用型 store 和限定型 store。
+游戲中有兩種類型的 store：通用型 store 和限定型 store。
 
-* 通用型 store 可以储存任意类型的资源 (例如: creep, 容器(containers), 存储(storages), 终端(terminals))。
+* 通用型 store 可以儲存任意類型的資源 (例如: creep, 容器(containers), 存儲(storages), 終端(terminals))。
 
-* 限定型 store 只能储存该对象所需的几种特定资源 (例如: spawn, 拓展(extension), 实验室(lab), 核弹(nuker))。
+* 限定型 store 只能儲存該對象所需的幾種特定資源 (例如: spawn, 拓展(extension), 實驗室(lab), 核彈(nuker))。
 
-两种 `Store` 的原型都是相同的，但是其返回值取决于调用方法时传入的 `resource` 参数。
+兩種 `Store` 的原型都是相同的，但是其返回值取決於調用方法時傳入的 `resource` 參數。
 
-你可以把资源的类型当做对象属性来获取对应的资源:
+你可以把資源的類型當做對象屬性來獲取對應的資源:
 
 ```javascript-content
 console.log(creep.store[RESOURCE_ENERGY]);
@@ -26,17 +26,17 @@ if(creep.store[RESOURCE_ENERGY] < creep.store.getCapacity()) {
 }
 ```
 
-返回指定资源的存储容量, 对于通用型 store，当 `reource` 参数为 undefined 则返回总容量。
+返回指定資源的存儲容量, 對於通用型 store，當 `reource` 參數為 undefined 則返回總容量。
 
 {% api_method_params %}
-resource (可选) : string
-资源的类型
+resource (可選) : string
+資源的類型
 {% endapi_method_params %}
 
 
 ### 返回值
 
-返回存储的数量, 当 `resource` 参数不是一个有效的存储类型时返回 `null`。
+返回存儲的數量, 當 `resource` 參數不是一個有效的存儲類型時返回 `null`。
 
 {% api_method getFreeCapacity '[resource]' 0 %}
 
@@ -45,17 +45,17 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
     creep.transfer(structure, RESOURCE_ENERGY);
 }
 ```
-返回该存储的剩余可用容量，对于限定型 store 来说，将在 `resource` 对该存储有效时返回该资源的剩余可用容量。
+返回該存儲的剩余可用容量，對於限定型 store 來說，將在 `resource` 對該存儲有效時返回該資源的剩余可用容量。
 
 {% api_method_params %}
-resource (可选) : string
-资源类型。
+resource (可選) : string
+資源類型。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-返回可用的剩余容量，如果 `resource` 对该 store 无效则返回 `null`。
+返回可用的剩余容量，如果 `resource` 對該 store 無效則返回 `null`。
 
 
 
@@ -66,14 +66,14 @@ if(Game.rooms['W1N1'].terminal.store.getUsedCapacity() == 0) {
     // terminal is empty
 }
 ```
-返回指定资源已使用的容量, 若为通用型存储时, `reource` 参数不存在则返回总使用容量。
+返回指定資源已使用的容量, 若為通用型存儲時, `reource` 參數不存在則返回總使用容量。
 
 {% api_method_params %}
-resource (可选) : string
-资源的类型
+resource (可選) : string
+資源的類型
 {% endapi_method_params %}
 
 
 ### 返回值
 
-返回已使用的容量, 当 `resource` 参数不是一个有效的存储类型时返回 `null`。
+返回已使用的容量, 當 `resource` 參數不是一個有效的存儲類型時返回 `null`。

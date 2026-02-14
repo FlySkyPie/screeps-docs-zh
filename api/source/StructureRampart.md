@@ -2,12 +2,12 @@
 
 <img src="img/rampart.png" alt="" align="right" />
 
-阻挡敌方 creep 的移动。并防御本格空间上的我方建筑和 creep。可以当做可控门来进行使用。
+阻擋敵方 creep 的移動。並防御本格空間上的我方建築和 creep。可以當做可控門來進行使用。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <td colspan=2><strong>控制器等级</strong></td>
+        <td colspan=2><strong>控制器等級</strong></td>
     </tr>
     <tr>
         <td>1</td>
@@ -42,11 +42,11 @@
         <td>最大生命值: 300,000,000 hits</td>
     </tr>
     <tr>
-        <td><strong>花费</strong></td>
+        <td><strong>花費</strong></td>
         <td>1</td>
     </tr>
     <tr>
-        <td><strong>建造完成时的生命值</strong></td>
+        <td><strong>建造完成時的生命值</strong></td>
         <td>1</td>
     </tr>
     <tr>
@@ -62,14 +62,14 @@
 {% api_property isPublic 'boolean' %}
 
 
-当值为 false (默认) 时。只有你的 creep 能通过。当值为 true 时，任何玩家的 creep 都可以通过。
+當值為 false (默認) 時。只有你的 creep 能通過。當值為 true 時，任何玩家的 creep 都可以通過。
 
 
 
 {% api_property ticksToDecay 'number' %}
 
 
-还有多少 tick 就要因老化而失去生命值。
+還有多少 tick 就要因老化而失去生命值。
 
 
 
@@ -77,20 +77,20 @@
 
 
 
-将该 rampart 的状态设置为开放，从而允许其他玩家的 creep 通过。
+將該 rampart 的狀態設置為開放，從而允許其他玩家的 creep 通過。
 
 {% api_method_params %}
 isPublic : boolean
-该 rampart 是否开放
+該 rampart 是否開放
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个建筑的拥有者。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個建築的擁有者。
 {% endapi_return_codes %}
 
 

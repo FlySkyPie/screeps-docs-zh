@@ -1,9 +1,9 @@
-title: 全局对象
+title: 全局對象
 ---
 
-## `Game` 对象
+## `Game` 對象
 
-你可以通过全局对象 [`Game`](/api/#Game) 来操作游戏，它的详细介绍可以在 [API 参考](/api/) 中找到。该对象可以使您访问到您 creep 的完整列表、“查阅”房间、传递命令等。
+你可以通過全局對象 [`Game`](/api/#Game) 來操作游戲，它的詳細介紹可以在 [API 參考](/api/) 中找到。該對象可以使您訪問到您 creep 的完整列表、「查閱」房間、傳遞命令等。
 
 ```javascript
 var target = Game.spawns.Spawn1;
@@ -12,42 +12,42 @@ for(var i in Game.creeps) {
 }  
 ```
 
-tick 的流动不会改变 `Game` 的状态。即使您手动修改了该对象的某个属性，它也不会在游戏中生效。想要修改属性和传递命令只能使用特殊的游戏对象方法。
+tick 的流動不會改變 `Game` 的狀態。即使您手動修改了該對象的某個屬性，它也不會在游戲中生效。想要修改屬性和傳遞命令只能使用特殊的游戲對象方法。
 
-`Game` 对象在游戏开始时就已经被创建，并且每个 tick 时都会被刷新数据。如果想在 tick 之间存储信息，可以使用 Memory 对象。阅读下一篇文章来了解更多信息。
+`Game` 對象在游戲開始時就已經被創建，並且每個 tick 時都會被刷新數據。如果想在 tick 之間存儲信息，可以使用 Memory 對象。閱讀下一篇文章來了解更多信息。
 
-## `Memory` 对象
+## `Memory` 對象
 
-每个玩家都可以访问全局对象 `Memory`，并且他/她可以在其中保存任何 JSON 格式的数据。所有写入其中的数据都将自动的使用`JSON.stringify`进行保存并在每个 tick 之间传递。因此，您可以借此来保存设置、决策信息和临时数据。
+每個玩家都可以訪問全局對象 `Memory`，並且他/她可以在其中保存任何 JSON 格式的數據。所有寫入其中的數據都將自動的使用`JSON.stringify`進行保存並在每個 tick 之間傳遞。因此，您可以借此來保存設置、決策信息和臨時數據。
 
     Memory.someData = {...};
 
-每个玩家可用的内存容量上限为 **2 MB**。
+每個玩家可用的內存容量上限為 **2 MB**。
 
-为了方便您的使用，一些游戏对象已经被链接到了全局的 `Memory` 对象并在其中保存了自己的键。例如，你可以通过 creep 的 `memory` 属性来访问到它的内存：
+為了方便您的使用，一些游戲對象已經被鏈接到了全局的 `Memory` 對象並在其中保存了自己的鍵。例如，你可以通過 creep 的 `memory` 屬性來訪問到它的內存：
 
     Game.creeps.John.memory = {...};
 
-实际上，这个属性是全局对象 `Memory` 上对应键的别名：
+實際上，這個屬性是全局對象 `Memory` 上對應鍵的別名：
 
     Game.creeps.John.memory.role = 'harvester';
     console.log(Memory.creeps.John.role); // -> 'harvester'
 
-信息被保存记录在 `Memory` 对象中，但是可以通过其他游戏对象上一些对应的键来进行快捷访问。你可以由此来选择更合适的地址寻找方法。
+信息被保存記錄在 `Memory` 對象中，但是可以通過其他游戲對象上一些對應的鍵來進行快捷訪問。你可以由此來選擇更合適的地址尋找方法。
 
-### 在 memory 中保存游戏对象
+### 在 memory 中保存游戲對象
 
-您不应该在 memory 保存方法或者游戏对象，就像保存在”内存(`Memory`)“中那样。`Memory` 对象被设计用来保存 JSON 数据，并且无法保存活动的对象引用。被保存的对象数据会(因为引用的失效而变得)不再相关。并且，这么做还会浪费您有限的内存。
+您不應該在 memory 保存方法或者游戲對象，就像保存在」內存(`Memory`)「中那樣。`Memory` 對象被設計用來保存 JSON 數據，並且無法保存活動的對象引用。被保存的對象數據會(因為引用的失效而變得)不再相關。並且，這麼做還會浪費您有限的內存。
 
-    // 这是个错误示例！
+    // 這是個錯誤示例！
     var source = creep.pos.findClosestByRange(FIND_SOURCES);
     creep.memory.source = source;
     // ... 
-    creep.moveTo(creep.memory.source); // 返回 ERR_INVALID_TARGET (无效目标)
+    creep.moveTo(creep.memory.source); // 返回 ERR_INVALID_TARGET (無效目標)
 
-相对于储存活动的对象来说，更好的方法是保存任何游戏对象都拥有的 `id` 属性，然后在需要时使用 [`Game.getObjectById`](/api/#Game.getObjectById) 来重新获取对应的游戏对象：
+相對於儲存活動的對象來說，更好的方法是保存任何游戲對象都擁有的 `id` 屬性，然後在需要時使用 [`Game.getObjectById`](/api/#Game.getObjectById) 來重新獲取對應的游戲對象：
 
-    // 这是个正确示例
+    // 這是個正確示例
     var source = creep.pos.findClosestByRange(FIND_SOURCES);
     creep.memory.sourceId = source.id;
     // ...
@@ -56,10 +56,10 @@ tick 的流动不会改变 `Game` 的状态。即使您手动修改了该对象�
 
 ### 序列化
 
-Memory 对象以字符串形式保存，并在每个 tick 您脚本第一次对其进行访问时借助 `JSON.parse` 方法进行解析。解析所消耗的 CPU 会被当做您的脚本消耗。如果您愿意的话，可以使用全局变量 [`RawMemory`](/api/#RawMemory) 来编写您的序列化/反序列化器。它将把原始内存处理成字符串。实际上，默认的内存工作方式基本等同于下述代码：
+Memory 對象以字符串形式保存，並在每個 tick 您腳本第一次對其進行訪問時借助 `JSON.parse` 方法進行解析。解析所消耗的 CPU 會被當做您的腳本消耗。如果您願意的話，可以使用全局變量 [`RawMemory`](/api/#RawMemory) 來編寫您的序列化/反序列化器。它將把原始內存處理成字符串。實際上，默認的內存工作方式基本等同於下述代碼：
 
-    Memory = JSON.parse(RawMemory.get()); //第一次访问 Memory 对象时执行
-    // ...您的代码
+    Memory = JSON.parse(RawMemory.get()); //第一次訪問 Memory 對象時執行
+    // ...您的代碼
     RawMemory.set(JSON.stringify(Memory));
 
-您可以使用 [`RawMemory`](/api/#RawMemory) getter/setter 来实现自己的算法。
+您可以使用 [`RawMemory`](/api/#RawMemory) getter/setter 來實現自己的算法。

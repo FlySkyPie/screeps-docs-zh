@@ -1,7 +1,7 @@
-title: 隐私政策
+title: 隱私政策
 ---
 
-**注**：为了保证信息的准确性和可靠性，该章节内容不予翻译。
+**注**：為了保證信息的准確性和可靠性，該章節內容不予翻譯。
 
 Screeps, LLC (hereinafter referred to as "We") through its online game Screeps collects personal and non-personal information about you that you provide in your account in order to provide and improve its services, but never hands this information to any third parties. We maintain all reasonable safeguards to protect the security, integrity and privacy of the personal information we collect.
 

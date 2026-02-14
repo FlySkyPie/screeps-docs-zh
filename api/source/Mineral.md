@@ -1,7 +1,7 @@
 # Mineral
 
-矿床。在建有 extractor 建筑时可以通过带有 `WORK` 身体部件的 creep 采集。
-点击 [本文](/resources.html) 来了解更多关于 mineral 的信息。
+礦床。在建有 extractor 建築時可以通過帶有 `WORK` 身體部件的 creep 采集。
+點擊 [本文](/resources.html) 來了解更多關於 mineral 的信息。
 
 <table class="table gameplay-info">
     <tbody>
@@ -10,12 +10,12 @@
         <td><code>DENSITY_LOW</code>: 15,000 <br /> <code>DENSITY_MODERATE</code>: 35,000<br /> <code>DENSITY_HIGH</code>: 70,000 <br /> <code>DENSITY_ULTRA</code>: 100,000</td>
     </tr>
     <tr>
-        <td><strong>再生时间</strong></td>
+        <td><strong>再生時間</strong></td>
         <td>50,000 ticks</td>
     </tr>
     <tr>
-        <td><strong>丰度(Density)改变机率</strong></td>
-        <td><code>DENSITY_LOW</code>: 100% 机率改变<br /> <code>DENSITY_MODERATE</code>: 5% 机率改变<br /> <code>DENSITY_HIGH</code>: 5% 机率改变<br /> <code>DENSITY_ULTRA</code>: 100% 机率改变</td>
+        <td><strong>豐度(Density)改變機率</strong></td>
+        <td><code>DENSITY_LOW</code>: 100% 機率改變<br /> <code>DENSITY_MODERATE</code>: 5% 機率改變<br /> <code>DENSITY_HIGH</code>: 5% 機率改變<br /> <code>DENSITY_ULTRA</code>: 100% 機率改變</td>
     </tr>
     </tbody>
 </table>
@@ -26,7 +26,7 @@
 
 
 
-矿床丰度。丰度越高其容量越大。一旦再生时间 (<code>ticksToRegeneration</code>) 降为 0，该矿床的丰度将被重置为 <code>DENSITY_*</code> 常量之一。
+礦床豐度。豐度越高其容量越大。一旦再生時間 (<code>ticksToRegeneration</code>) 降為 0，該礦床的豐度將被重置為 <code>DENSITY_*</code> 常量之一。
 
 
 
@@ -34,7 +34,7 @@
 
 
 
-资源的剩余容量。
+資源的剩余容量。
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-资源类型， <code>RESOURCE_*</code> 常量之一。
+資源類型， <code>RESOURCE_*</code> 常量之一。
 
 
 
@@ -50,7 +50,7 @@
 
 
 
-一个唯一的对象标识。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法获取对象实例。
+一個唯一的對象標識。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法獲取對象實例。
 
 
 
@@ -58,6 +58,6 @@
 
 
 
-矿床容量将要恢复满额的剩余时间。
+礦床容量將要恢復滿額的剩余時間。
 
 

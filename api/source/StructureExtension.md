@@ -2,12 +2,12 @@
 
 <img src="img/spawn.png" alt="" align="right" />
 
-填充能量从而允许建造更大型的 creep。Extension 可以被放置在房间的任何地方，无论距离有多远，任何 spawn 都可以使用其中的能量进行孵化。
+填充能量從而允許建造更大型的 creep。Extension 可以被放置在房間的任何地方，無論距離有多遠，任何 spawn 都可以使用其中的能量進行孵化。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <td colspan="2"><strong>控制器等级</strong></td>
+        <td colspan="2"><strong>控制器等級</strong></td>
     </tr>
     <tr>
         <td>1</td>
@@ -42,7 +42,7 @@
         <td>60 extensions (200 容量)</td>
     </tr>
     <tr>
-        <td><strong>建造花费</strong></td>
+        <td><strong>建造花費</strong></td>
         <td>3,000</td>
     </tr>
     <tr>
@@ -56,16 +56,16 @@
 
 {% api_property energy 'number' '{"deprecated": true}' %}
                                 
-[`.store[RESOURCE_ENERGY]`](#StructureExtension.store) 的别名。
+[`.store[RESOURCE_ENERGY]`](#StructureExtension.store) 的別名。
 
 
 {% api_property energyCapacity 'number' '{"deprecated": true}' %}
                                                                         
-[`.store.getCapacity(RESOURCE_ENERGY)`](#Store.getCapacity) 的别名。
+[`.store.getCapacity(RESOURCE_ENERGY)`](#Store.getCapacity) 的別名。
 
 
 
-该 extension 所能容纳的能量上限。
+該 extension 所能容納的能量上限。
 
 {% api_property store '<a href="#Store">Store</a>' %}
 
@@ -76,5 +76,5 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 ```
 
 
-一个包含了该建筑中所存储的货物的 [`Store`](#Store) 对象。
+一個包含了該建築中所存儲的貨物的 [`Store`](#Store) 對象。
 

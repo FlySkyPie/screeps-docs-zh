@@ -1,6 +1,6 @@
 # Game.map
 
-世界地图对象，用于在房间之间导航。
+世界地圖對象，用於在房間之間導航。
 
 
 {% api_method Game.map.describeExits 'roomName' 1 %}
@@ -9,17 +9,17 @@
 const exits = Game.map.describeExits('W8N3');
 ```
 
-根据给定的房间名列出所有可用的出口。
+根據給定的房間名列出所有可用的出口。
 
 {% api_method_params %}
 roomName : string
-房间名。
+房間名。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-出口信息按照以下格式给出，在房间不存在时返回null。
+出口信息按照以下格式給出，在房間不存在時返回null。
 
 ```javascript-content
 {
@@ -40,7 +40,7 @@ if(creep.room != anotherRoomName) {
     creep.moveTo(exit);
 }
 else {
-    // 到另一个房间的某处去
+    // 到另一個房間的某處去
 }
 ```
 
@@ -48,33 +48,33 @@ else {
 creep.moveTo(new RoomPosition(25, 25, anotherRoomName));
 ```
 
-查找从给定房间到另一个房间的出口方向。
+查找從給定房間到另一個房間的出口方向。
 
 {% api_method_params %}
 fromRoom : string, <a href="#Room">Room</a>
-起点房间名或房间对象。
+起點房間名或房間對象。
 ===
 toRoom : string, <a href="#Room">Room</a>
-终点房间名或房间对象。
+終點房間名或房間對象。
 ===
-opts (可选) : object
-包含寻路选项的对象。参见<code><a href="#findRoute">findRoute</a></code>。
+opts (可選) : object
+包含尋路選項的對象。參見<code><a href="#findRoute">findRoute</a></code>。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-房间方向常量，下列之一：
+房間方向常量，下列之一：
 
 * `FIND_EXIT_TOP`
 * `FIND_EXIT_RIGHT`
 * `FIND_EXIT_BOTTOM`
 * `FIND_EXIT_LEFT`
 			
-或下列错误码：
+或下列錯誤碼：
 {% api_return_codes %}
-ERR_NO_PATH | 找不到路径。
-ERR_INVALID_ARGS | 位置不正确。
+ERR_NO_PATH | 找不到路徑。
+ERR_INVALID_ARGS | 位置不正確。
 {% endapi_return_codes %}
 
 
@@ -93,7 +93,7 @@ if(route.length > 0) {
 ```javascript
 const route = Game.map.findRoute(creep.room, anotherRoomName, {
 	routeCallback(roomName, fromRoomName) {
-		if(roomName == 'W10S10') {	// 回避这个房间
+		if(roomName == 'W10S10') {	// 回避這個房間
 			return Infinity;
 		}
 		return 1;
@@ -104,7 +104,7 @@ const route = Game.map.findRoute(creep.room, anotherRoomName, {
 let from = new RoomPosition(25, 25, 'E1N1');
 let to = new RoomPosition(25, 25, 'E4N1');
 
-// 使用`findRoute`计算路径的高阶计划，优先选择大路和自有房间
+// 使用`findRoute`計算路徑的高階計劃，優先選擇大路和自有房間
 let allowedRooms = { [ from.roomName ]: true };
 Game.map.findRoute(from.roomName, to.roomName, {
 	routeCallback(roomName) {
@@ -124,7 +124,7 @@ Game.map.findRoute(from.roomName, to.roomName, {
 	allowedRooms[info.room] = true;
 });
 
-// 调用PathFinder, 只允许访问`findRoute`中的房间
+// 調用PathFinder, 只允許訪問`findRoute`中的房間
 let ret = PathFinder.search(from, to, {
 	roomCallback(roomName) {
 		if (allowedRooms[roomName] === undefined) {
@@ -136,22 +136,22 @@ let ret = PathFinder.search(from, to, {
 console.log(ret.path);
 ```
 
-查找从给定房间到另一个房间的路径。
+查找從給定房間到另一個房間的路徑。
 
 {% api_method_params %} 
 fromRoom : string, <a href="#Room">Room</a>
-起点房间名或房间对象。
+起點房間名或房間對象。
 ===
 toRoom : string, <a href="#Room">Room</a>
-终点房间名或房间对象。
+終點房間名或房間對象。
 ===
-opts (可选) : object
-包含下列选项的对象：
+opts (可選) : object
+包含下列選項的對象：
 					<ul>
 						<li>
 							<div class="api-arg-title">routeCallback</div>
 							<div class="api-arg-type">function</div>
-							<div class="api-arg-desc">这个回调函数接受两个参数： <code>function(roomName, fromRoomName)</code>。 它可以用来计算进入一个房间的开销。你可以用它实现优先进入自己的房间或者回避某些房间等功能。你应该返回一个浮点数开销，或者返回<code>Infinity</code>代表不可进入。</div>
+							<div class="api-arg-desc">這個回調函數接受兩個參數： <code>function(roomName, fromRoomName)</code>。 它可以用來計算進入一個房間的開銷。你可以用它實現優先進入自己的房間或者回避某些房間等功能。你應該返回一個浮點數開銷，或者返回<code>Infinity</code>代表不可進入。</div>
 						</li>
 					</ul>
 				
@@ -160,7 +160,7 @@ opts (可选) : object
 
 ### 返回值
 
-如下格式的路径数组：
+如下格式的路徑數組：
 
 ```javascript-content
 [
@@ -170,9 +170,9 @@ opts (可选) : object
 ]
 ```
 
-或如下错误码之一：
+或如下錯誤碼之一：
 {% api_return_codes %}
-ERR_NO_PATH | 找不到路径。
+ERR_NO_PATH | 找不到路徑。
 {% endapi_return_codes %}
 
 
@@ -185,23 +185,23 @@ Game.map.getRoomLinearDistance('E65S55','W65S55', false) // 131
 Game.map.getRoomLinearDistance('E65S55','W65S55', true) // 11
 ```
 
-获取两个房间之间直线距离（房间数）。你可以使用这个函数估算使用终端发送资源的能源开销，或用于使用观察者和核武器。
+獲取兩個房間之間直線距離（房間數）。你可以使用這個函數估算使用終端發送資源的能源開銷，或用於使用觀察者和核武器。
 
 {% api_method_params %}
 roomName1 : string
-第一个房间名。
+第一個房間名。
 ===
 roomName2 : string
-第二个房间名。
+第二個房間名。
 ===
-continuous (可选) : boolean
-是否视世界地图为在边界连续。 如果要计算交易或终端发送开销，请设置为true。 默认值为false。
+continuous (可選) : boolean
+是否視世界地圖為在邊界連續。 如果要計算交易或終端發送開銷，請設置為true。 默認值為false。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-给定两个房间之间的房间数。
+給定兩個房間之間的房間數。
 
 
 {% api_method Game.map.getRoomTerrain 'roomName' 0 %}
@@ -218,20 +218,20 @@ switch(terrain.get(10,15)) {
 }
 ```
 
-获取<a href="#Room-Terrain">`Room.Terrain` </a>对象，快捷访问静态地形数据。此方法适用于所有房间，哪怕是无法访问的房间。
+獲取<a href="#Room-Terrain">`Room.Terrain` </a>對象，快捷訪問靜態地形數據。此方法適用於所有房間，哪怕是無法訪問的房間。
 
 {% api_method_params %}
 roomName : string
-房间名。
+房間名。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-一个新<a href="#Room-Terrain">`Room.Terrain`</a>对象。
+一個新<a href="#Room-Terrain">`Room.Terrain`</a>對象。
 
 
-{% api_method Game.map.getTerrainAt 'x, y, roomName|pos' 1 '{"deprecated": "请使用更高效的方法[`Game.map.getRoomTerrain`](#Game.map.getRoomTerrain)替代."}'%}
+{% api_method Game.map.getTerrainAt 'x, y, roomName|pos' 1 '{"deprecated": "請使用更高效的方法[`Game.map.getRoomTerrain`](#Game.map.getRoomTerrain)替代."}'%}
 
 ```javascript
 console.log(Game.map.getTerrainAt(25,20,'W10N10'));
@@ -241,20 +241,20 @@ console.log(Game.map.getTerrainAt(25,20,'W10N10'));
 console.log(Game.map.getTerrainAt(new RoomPosition(25,20,'W10N10'));
 ```
 
-获取指定房间坐标的地形类型。此方法适用于所有房间，哪怕是无法访问的房间。
+獲取指定房間坐標的地形類型。此方法適用於所有房間，哪怕是無法訪問的房間。
 
 {% api_method_params %}
 x : number
-房间内X坐标。
+房間內X坐標。
 ===
 y : number
-房间内Y坐标。
+房間內Y坐標。
 ===
 roomName : string
-房间名。
+房間名。
 ===
 pos : <a href="#RoomPosition">RoomPosition</a>
-坐标对象。
+坐標對象。
 {% endapi_method_params %}
 
 
@@ -270,7 +270,7 @@ pos : <a href="#RoomPosition">RoomPosition</a>
 
 {% api_method Game.map.getWorldSize 0 %}
 
-返回世界尺寸，即世界对角之间的房间数。例如对于一个从 W50N50 至 E50S50 的世界这个方法返回102。
+返回世界尺寸，即世界對角之間的房間數。例如對於一個從 W50N50 至 E50S50 的世界這個方法返回102。
 
 {% api_method Game.map.isRoomAvailable 'roomName' 2 '{"deprecated": "Please use [`Game.map.getRoomStatus`](#Game.map.getRoomStatus) instead."}'%}
 
@@ -280,7 +280,7 @@ if(Game.map.isRoomAvailable(room.name)) {
 }
 ```
 
-检查一个房间是否可以进入。
+檢查一個房間是否可以進入。
 
 {% api_method_params %}
 roomName : string
@@ -290,7 +290,7 @@ The room name.
 
 ### 返回值
 
-布尔值
+布爾值
 
 {% api_method Game.map.getRoomStatus 'roomName' 2 %}
 
@@ -300,20 +300,20 @@ if(Game.map.getRoomStatus(room.name).status == 'normal') {
 }
 ```
 
-获取指定房间的开放状态。点击 [本文](/start-areas.html) 了解更多起始区域的相关信息。
+獲取指定房間的開放狀態。點擊 [本文](/start-areas.html) 了解更多起始區域的相關信息。
 
 {% api_method_params %}
 roomName : string
-房间名
+房間名
 {% endapi_method_params %}
 
 
 ### 返回值
 
-包含如下属性的对象：
+包含如下屬性的對象：
 
-属性 | 类型 | 介绍
+屬性 | 類型 | 介紹
 ---|---
-`status` | string | 下列字符串之一：<ul><li><code>normal</code> &ndash; 该房间没有限制 </li><li><code>closed</code> &ndash; 该房间未启用（not available）</li><li><code>novice</code> &ndash; 该房间是新手区的一部分 </li><li><code>respawn</code> &ndash; 该房间是重生区的一部分</li></ul>
-`timestamp` | number | 状态终止时间 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">UNIX 毫秒时间戳</a>。如果房间状态没有终止时间，则该属性为 null。
+`status` | string | 下列字符串之一：<ul><li><code>normal</code> &ndash; 該房間沒有限制 </li><li><code>closed</code> &ndash; 該房間未啟用（not available）</li><li><code>novice</code> &ndash; 該房間是新手區的一部分 </li><li><code>respawn</code> &ndash; 該房間是重生區的一部分</li></ul>
+`timestamp` | number | 狀態終止時間 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">UNIX 毫秒時間戳</a>。如果房間狀態沒有終止時間，則該屬性為 null。
 

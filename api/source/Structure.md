@@ -1,6 +1,6 @@
 # Structure
 
-所有建筑的基础原型对象。
+所有建築的基礎原型對象。
 
 {% page inherited/RoomObject.md %}
 
@@ -8,7 +8,7 @@
 
 
 
-当前这个建筑的当前生命值。
+當前這個建築的當前生命值。
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-这个建筑的最大生命值。
+這個建築的最大生命值。
 
 
 
@@ -24,7 +24,7 @@
 
 
 
-一个唯一的对象标识。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法获取对象实例。
+一個唯一的對象標識。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法獲取對象實例。
 
 
 
@@ -40,17 +40,17 @@
 
 
 
-立即摧毁这个建筑。
+立即摧毀這個建築。
 
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个建筑的拥有者，或者不在你的房间中。
-ERR_BUSY | 敌对creep在这个房间中。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個建築的擁有者，或者不在你的房間中。
+ERR_BUSY | 敵對creep在這個房間中。
 {% endapi_return_codes %}
 
 
@@ -59,33 +59,33 @@ ERR_BUSY | 敌对creep在这个房间中。
 
 
 
-检查这个建筑是否可用。如果房间控制等级不足，这个方法会返回false，并且这个建筑会在游戏中红色高亮。
+檢查這個建築是否可用。如果房間控制等級不足，這個方法會返回false，並且這個建築會在游戲中紅色高亮。
 
 
 
 ### 返回值
 
-布尔值。
+布爾值。
 
 {% api_method notifyWhenAttacked 'enabled' A %}
 
 
 
-切换这个建筑受到攻击时的自动通知。通知会发送到你的账户邮箱。默认开启。
+切換這個建築受到攻擊時的自動通知。通知會發送到你的賬戶郵箱。默認開啟。
 
 {% api_method_params %}
 enabled : boolean
-是否启用通知。
+是否啟用通知。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个建筑的拥有者。
-ERR_INVALID_ARGS | <code>enable</code>参数不是一个布尔值。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個建築的擁有者。
+ERR_INVALID_ARGS | <code>enable</code>參數不是一個布爾值。
 {% endapi_return_codes %}
 
 

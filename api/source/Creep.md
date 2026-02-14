@@ -1,71 +1,71 @@
 # Creep  
 
 
-creep 是你的单位, creep 可以移动、采集能量、建造建筑、攻击其他 creep 以及执行其他动作。每个 creep 都由最多 50 个身体部件构成，身体部件的类型如下：
+creep 是你的單位, creep 可以移動、采集能量、建造建築、攻擊其他 creep 以及執行其他動作。每個 creep 都由最多 50 個身體部件構成，身體部件的類型如下：
 
 ![](img/bodyparts.png)   
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <th style="width: 20%;">身体部件</th>
+        <th style="width: 20%;">身體部件</th>
         <th style="width: 10%;">孵化成本</th>
-        <th>每个部件效果</th>
+        <th>每個部件效果</th>
     </tr>
     <tr>
         <td><code style="background: #333; color: #a9b7c6;">MOVE</code></td>
         <td>50</td>
-        <td>每 tick 减少 2 点疲惫值</td>
+        <td>每 tick 減少 2 點疲憊值</td>
     </tr>
     <tr>
         <td><code style="background: #333; color: #ffe56d;">WORK</code></td>
         <td>100</td>
         <td>
-            <p>每 tick 从能量源采集 2 单位能量。</p>
-            <p>每 tick 从矿区采集 1 单位矿物。</p>
-            <p>每 tick 增加工地建设进度 5 点，花费 5 单位能量。</p>
-            <p>每 tick 增加建筑 100 耐久度，花费 1 单位能量。</p>
-            <p>每 tick 拆减建筑 50 点耐久，并返还 0.25 单位能量。</p>
-            <p>每 tick 提高控制器升级进度 1 点，花费 1 单位能量。</p>
+            <p>每 tick 從能量源采集 2 單位能量。</p>
+            <p>每 tick 從礦區采集 1 單位礦物。</p>
+            <p>每 tick 增加工地建設進度 5 點，花費 5 單位能量。</p>
+            <p>每 tick 增加建築 100 耐久度，花費 1 單位能量。</p>
+            <p>每 tick 拆減建築 50 點耐久，並返還 0.25 單位能量。</p>
+            <p>每 tick 提高控制器升級進度 1 點，花費 1 單位能量。</p>
         </td>
     </tr>
     <tr>
         <td><code style="background: #333; color: #777;">CARRY</code></td>
         <td>50</td>
-        <td>携带最多 50 单位资源。</td>
+        <td>攜帶最多 50 單位資源。</td>
     </tr>
     <tr>
         <td><code style="background: #333; color: #f93842;">ATTACK</code></td>
         <td>80</td>
-        <td>对相邻的 creep 或建筑造成 30 点伤害。</td>
+        <td>對相鄰的 creep 或建築造成 30 點傷害。</td>
     </tr>
     <tr>
         <td><code style="background: #333; color: #5d80b2;">RANGED_ATTACK</code></td>
         <td>150</td>
         <td>
-            <p>单个目标时，每 tick 对 creep 或建筑造成 10 点伤害，范围为 3 格。</p>
-            <p>多个目标时，每 tick 对范围内所有 creep 与建筑造成 1-4-10 点伤害，具体伤害取决于距离，范围为 3 格。</p>
+            <p>單個目標時，每 tick 對 creep 或建築造成 10 點傷害，范圍為 3 格。</p>
+            <p>多個目標時，每 tick 對范圍內所有 creep 與建築造成 1-4-10 點傷害，具體傷害取決於距離，范圍為 3 格。</p>
         </td>
     </tr>
     <tr>
         <td><code style="background: #333; color: #65fd62;">HEAL</code></td>
         <td>250</td>
-        <td>治疗对象可为自己或其它 creep。自愈或治疗相邻 creep 时每 tick 恢复 12 点耐久，一定距离内远程治疗每 tick 恢复 4 点耐久。</td>
+        <td>治療對象可為自己或其它 creep。自愈或治療相鄰 creep 時每 tick 恢復 12 點耐久，一定距離內遠程治療每 tick 恢復 4 點耐久。</td>
     </tr>
     <tr>
         <td><code style="background: #333; color: #b99cfb;">CLAIM</code></td>
         <td>600</td>
         <td>
-            <p>占领一个中立房间的控制器。</p>
-            <p>每部件每 tick 使己方对中立房间控制器的预定时间增加 1 tick，或使其他玩家的预定时间减少 1 tick。</p>
-            <p>每部件每 tick 使其他玩家控制器降级计数器加速 300 tick。</p>
-            <p>注：拥有该部件的 creep 寿命只有 600 tick，且无法被 renew。</p>
+            <p>佔領一個中立房間的控制器。</p>
+            <p>每部件每 tick 使己方對中立房間控制器的預定時間增加 1 tick，或使其他玩家的預定時間減少 1 tick。</p>
+            <p>每部件每 tick 使其他玩家控制器降級計數器加速 300 tick。</p>
+            <p>注：擁有該部件的 creep 壽命只有 600 tick，且無法被 renew。</p>
         </td>
     </tr>
     <tr>
         <td><code style="background: #333; color: #fff;">TOUGH</code></td>
         <td>10</td>
-        <td>无附加效果，唯一作用是增加 creep 的最大耐久值。可被强化以承受更多伤害。</td>
+        <td>無附加效果，唯一作用是增加 creep 的最大耐久值。可被強化以承受更多傷害。</td>
     </tr>
     </tbody>
 </table>
@@ -77,35 +77,35 @@ creep 是你的单位, creep 可以移动、采集能量、建造建筑、攻击
 
 
 
-一个描述了该 creep 身体部件的数组，每一个数组元素都拥有如下的属性:
+一個描述了該 creep 身體部件的數組，每一個數組元素都擁有如下的屬性:
 
 {% api_method_params %}
 boost : string | undefined
-如果该身体部件被强化(boost)了，则该属性指定了强化所用的化合物类型。化合物为 <code>RESOURCE_*</code> 常量之一。 <a href="/resources.html">了解更多</a>
+如果該身體部件被強化(boost)了，則該屬性指定了強化所用的化合物類型。化合物為 <code>RESOURCE_*</code> 常量之一。 <a href="/resources.html">了解更多</a>
 ===
 type : string
-身体部件常量之一。
+身體部件常量之一。
 ===
 hits : number
-该身体部件剩余的生命值。
+該身體部件剩余的生命值。
 {% endapi_method_params %}
 
 
 {% api_property carry object '{"deprecated": true}' %}
 
-[`Creep.store`](#Creep.store) 的别名。
+[`Creep.store`](#Creep.store) 的別名。
 
 
 {% api_property carryCapacity number '{"deprecated": true}' %}
 
-[`Creep.store.getCapacity()`](#Store.getCapacity) 的别名。
+[`Creep.store.getCapacity()`](#Store.getCapacity) 的別名。
 
 
 {% api_property fatigue number %}
 
 
 
-每次移动的疲劳值指示器，当该值大于零时 creep 无法移动。
+每次移動的疲勞值指示器，當該值大於零時 creep 無法移動。
 
 
 
@@ -113,7 +113,7 @@ hits : number
 
 
 
-当前的 creep 生命值。
+當前的 creep 生命值。
 
 
 
@@ -121,7 +121,7 @@ hits : number
 
 
 
-该 creep 的最大生命值。
+該 creep 的最大生命值。
 
 
 
@@ -129,7 +129,7 @@ hits : number
 
 
 
-一个唯一的对象标识。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法获取对象实例。
+一個唯一的對象標識。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法獲取對象實例。
 
 
 
@@ -139,7 +139,7 @@ hits : number
 creep.memory.task = 'building';
 ```
 
-指向 <code>Memory.creeps[creep.name]</code> 的链接。你可以用它来快速访问该 creep 的特定内存对象。 <a href="/global-objects.html#Memory-object">点此了解更多关于 memory 的信息</a>
+指向 <code>Memory.creeps[creep.name]</code> 的鏈接。你可以用它來快速訪問該 creep 的特定內存對象。 <a href="/global-objects.html#Memory-object">點此了解更多關於 memory 的信息</a>
 
 
 
@@ -147,7 +147,7 @@ creep.memory.task = 'building';
 
 
 
-该 creep 属于您还是其他人。
+該 creep 屬於您還是其他人。
 
 
 
@@ -155,7 +155,7 @@ creep.memory.task = 'building';
 
 
 
-creep 的名字。您可以在创建一个新的 creep 时给它取名，名称一旦指定无法更改。此名称是 <a href="#Game.creeps">Game.creeps</a> 对象中指向该 creep 对象的哈希键。你可以使用它来快速访问到该 creep。
+creep 的名字。您可以在創建一個新的 creep 時給它取名，名稱一旦指定無法更改。此名稱是 <a href="#Game.creeps">Game.creeps</a> 對象中指向該 creep 對象的哈希鍵。你可以使用它來快速訪問到該 creep。
 
 
 
@@ -163,7 +163,7 @@ creep 的名字。您可以在创建一个新的 creep 时给它取名，名称�
 
 
 
-该 creep 的所有者信息，包含以下属性：
+該 creep 的所有者信息，包含以下屬性：
 
 {% api_method_params %}
 username : string
@@ -174,7 +174,7 @@ username : string
 {% api_property saying string %}
 
 
-creep 所说的最后一句话。
+creep 所說的最後一句話。
 
 
 
@@ -182,7 +182,7 @@ creep 所说的最后一句话。
 
 
 
-该 creep 是否仍在孵化中。
+該 creep 是否仍在孵化中。
 
 {% api_property store '<a href="#Store">Store</a>' %}
 
@@ -192,14 +192,14 @@ if(creep.store[RESOURCE_ENERGY] < creep.store.getCapacity()) {
 }
 ```
 
-一个包含了该建筑中所存储的货物的 [`Store`](#Store) 对象。
+一個包含了該建築中所存儲的貨物的 [`Store`](#Store) 對象。
 
 
 {% api_property ticksToLive number %}
 
 
 
-该 creep 还有多少 tick 死亡。
+該 creep 還有多少 tick 死亡。
 
 
 
@@ -215,24 +215,24 @@ if(target) {
 
 ```
 
-使用近战攻击其他 creep、超能(power) creep 或建筑。需要 <code>ATTACK</code> 身体部件。如果目标在 rampart 中，则优先攻击 rampart。目标必须与 creep 相邻，如果目标是一个带有 <code>ATTACK</code> 身体的 creep 并且没有自己没有在 rampart 中，则该目标会自动进行反击。
+使用近戰攻擊其他 creep、超能(power) creep 或建築。需要 <code>ATTACK</code> 身體部件。如果目標在 rampart 中，則優先攻擊 rampart。目標必須與 creep 相鄰，如果目標是一個帶有 <code>ATTACK</code> 身體的 creep 並且沒有自己沒有在 rampart 中，則該目標會自動進行反擊。
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>, <a href="#Structure">Structure</a>
-要攻击的目标
+要攻擊的目標
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 这个目标不是一个有效的攻击目标。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>ATTACK</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 這個目標不是一個有效的攻擊目標。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>ATTACK</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -248,25 +248,25 @@ if(creep.room.controller && !creep.room.controller.my) {
 
 ```
 
-攻击时，每个 <code>CLAIM</code> 身体部件都能使得房间控制器的降级计时器降低 300 tick，或者将预定计时器降低 1 tick。如果受到攻击的控制器已经有所属者，则接下来的 1000 tick 将无法升级(upgrade)或再次进行攻击。目标必须与 creep 相邻。
+攻擊時，每個 <code>CLAIM</code> 身體部件都能使得房間控制器的降級計時器降低 300 tick，或者將預定計時器降低 1 tick。如果受到攻擊的控制器已經有所屬者，則接下來的 1000 tick 將無法升級(upgrade)或再次進行攻擊。目標必須與 creep 相鄰。
 
 {% api_method_params %}
 target : <a href="#Structure">Structure</a>
-目标房间控制器对象。
+目標房間控制器對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 该目标不存在有效的所属者或者预订者对象。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>CLAIM</code> 部件。
-ERR_TIRED | 您必须等待控制器可以被再次攻击。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 該目標不存在有效的所屬者或者預訂者對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>CLAIM</code> 部件。
+ERR_TIRED | 您必須等待控制器可以被再次攻擊。
 {% endapi_return_codes %}
 
 
@@ -283,25 +283,25 @@ if(target) {
 
 ```
 
-使用自己携带的能量来在目标工地上建造一个建筑。需要 <code>WORK</code> 和 <code>CARRY</code> 身体部件。目标必须位于以 creep 为中心的 7*7 正方形区域内。
+使用自己攜帶的能量來在目標工地上建造一個建築。需要 <code>WORK</code> 和 <code>CARRY</code> 身體部件。目標必須位於以 creep 為中心的 7*7 正方形區域內。
 
 {% api_method_params %}
 target : <a href="#ConstructionSite">ConstructionSite</a>
-待建造的目标工地。
+待建造的目標工地。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_ENOUGH_RESOURCES | 这个creep没有携带任何能量。
-ERR_INVALID_TARGET | 该目标不是一个有效的建筑工地(construction site)或者此处无法建造建筑(有可能是 creep 站在该地块上导致的)。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>WORK</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NOT_ENOUGH_RESOURCES | 這個creep沒有攜帶任何能量。
+ERR_INVALID_TARGET | 該目標不是一個有效的建築工地(construction site)或者此處無法建造建築(有可能是 creep 站在該地塊上導致的)。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>WORK</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -311,10 +311,10 @@ ERR_NO_BODYPART | 这个 creep 身上没有 <code>WORK</code> 部件。
 ```javascript
 creep.move(LEFT);
 creep.cancelOrder('move');
-// creep 本 tick 将不会移动
+// creep 本 tick 將不會移動
 ```
 
-取消当前 tick 中给出的某个指令。
+取消當前 tick 中給出的某個指令。
 
 {% api_method_params %}
 methodName : string
@@ -324,10 +324,10 @@ methodName : string
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作被成功取消了。
-ERR_NOT_FOUND | 找不到给出的指令名。
+OK | 這個操作被成功取消了。
+ERR_NOT_FOUND | 找不到給出的指令名。
 {% endapi_return_codes %}
 
 
@@ -343,26 +343,26 @@ if(creep.room.controller) {
 
 ```
 
-占领一个中立的房间。需要 <code>CLAIM</code> 身体部件。目标必须与 creep 相邻。你需要有对应的全局控制等级(Global Control Level)才能占领新的房间。如果你没有足够的 GCL。请考虑 <a href="#reserveController">预定(reserving)</a> 该房间。<a href="/control.html#Global-Control-Level">点击了解更多</a>
+佔領一個中立的房間。需要 <code>CLAIM</code> 身體部件。目標必須與 creep 相鄰。你需要有對應的全局控制等級(Global Control Level)才能佔領新的房間。如果你沒有足夠的 GCL。請考慮 <a href="#reserveController">預定(reserving)</a> 該房間。<a href="/control.html#Global-Control-Level">點擊了解更多</a>
 
 {% api_method_params %}
 target : <a href="#StructureController">StructureController</a>
-目标控制中心对象。
+目標控制中心對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 目标不是一个有效的中立控制中心对象。
-ERR_FULL | 你不能在新手区占领超过3个房间。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>CLAIM</code> 部件。
-ERR_GCL_NOT_ENOUGH | 你的全局控制等级不足。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 目標不是一個有效的中立控制中心對象。
+ERR_FULL | 你不能在新手區佔領超過3個房間。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>CLAIM</code> 部件。
+ERR_GCL_NOT_ENOUGH | 你的全局控制等級不足。
 {% endapi_return_codes %}
 
 
@@ -380,26 +380,26 @@ if(target) {
 
 ```
 
-拆解任意可以建造的建筑（即使是敌人的）并且返回 50% 其修理所花的能量。需要 <code>WORK</code> 身体部件。如果 creep 有空余的 <code>CARRY</code> 身体部件，则会直接将能量转移进去；否则能量将掉落在地上。目标必须与 creep 相邻。
+拆解任意可以建造的建築（即使是敵人的）並且返回 50% 其修理所花的能量。需要 <code>WORK</code> 身體部件。如果 creep 有空余的 <code>CARRY</code> 身體部件，則會直接將能量轉移進去；否則能量將掉落在地上。目標必須與 creep 相鄰。
 
-**译者注**：拆解效率和 `WORK` 部件的数量正相关。
+**譯者注**：拆解效率和 `WORK` 部件的數量正相關。
 
 {% api_method_params %}
 target : <a href="#Structure">Structure</a>
-目标建筑。
+目標建築。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 目标不是一个有效的建筑对象。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>WORK</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 目標不是一個有效的建築對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>WORK</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -411,32 +411,32 @@ creep.drop(RESOURCE_ENERGY);
 ```
 
 ```javascript
-// 丢弃身上所有资源
+// 丟棄身上所有資源
 for(const resourceType in creep.carry) {
 	creep.drop(resourceType);
 }
 ```
 
-将资源丢弃到地上。
+將資源丟棄到地上。
 
 {% api_method_params %}
 resourceType : string
 <code>RESOURCE_*</code> 常量之一。
 ===
-amount (可选) : number
-丢弃资源的数量。如果没有这个参数，丢弃全部资源。
+amount (可選) : number
+丟棄資源的數量。如果沒有這個參數，丟棄全部資源。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_ARGS | resourceType不是一个有效的<code>RESOURCE_*</code>常量。
-ERR_NOT_ENOUGH_RESOURCES | 这个creep没有足够的资源。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_ARGS | resourceType不是一個有效的<code>RESOURCE_*</code>常量。
+ERR_NOT_ENOUGH_RESOURCES | 這個creep沒有足夠的資源。
 {% endapi_return_codes %}
 
 
@@ -450,24 +450,24 @@ if(creep.generateSafeMode(creep.room.controller) == ERR_NOT_IN_RANGE) {
 
 ```
 
-向房间控制器添加一个新的安全模式激活次数。creep 必须与房间控制器相邻并且带有 1000 ghodium 资源。
+向房間控制器添加一個新的安全模式激活次數。creep 必須與房間控制器相鄰並且帶有 1000 ghodium 資源。
 
 {% api_method_params %}
 target : <a href="#StructureController">StructureController</a>
-目标控制中心。
+目標控制中心。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_ENOUGH_RESOURCES | 这个 creep 没有足够的 ghodium。
-ERR_INVALID_TARGET | 目标不是一个有效的控制中心对象。
-ERR_NOT_IN_RANGE | 目标太远了。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NOT_ENOUGH_RESOURCES | 這個 creep 沒有足夠的 ghodium。
+ERR_INVALID_TARGET | 目標不是一個有效的控制中心對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
 {% endapi_return_codes %}
 
 
@@ -485,11 +485,11 @@ if(target) {
 }
 ```
 
-获取指定类型可用的身体部件数量。完全毁坏的部件不会被计算。
+獲取指定類型可用的身體部件數量。完全毀壞的部件不會被計算。
 
 {% api_method_params %}
 type : string
-一个身体部件类型，下列身体部件类型常量之一：
+一個身體部件類型，下列身體部件類型常量之一：
 					<ul>
 						<li><code>MOVE</code></li>
 						<li><code>WORK</code></li>
@@ -505,7 +505,7 @@ type : string
 
 ### 返回值
 
-身体部件的数量。
+身體部件的數量。
 
 {% api_method harvest 'target' A %}
 
@@ -519,27 +519,27 @@ if(target) {
 
 ```
 
-从 source 中采集能量或者从 mineral 或 deposit 中采集资源。需要 <code>WORK</code> 身体部件。如果 creep 有空余的 <code>CARRY</code> 身体，则会自动将采集到的资源转移进去；否则将会掉落在地上。目标必须与 creep 相邻。
+從 source 中采集能量或者從 mineral 或 deposit 中采集資源。需要 <code>WORK</code> 身體部件。如果 creep 有空余的 <code>CARRY</code> 身體，則會自動將采集到的資源轉移進去；否則將會掉落在地上。目標必須與 creep 相鄰。
 
 {% api_method_params %}
 target : <a href="#Source">Source</a>, <a href="#Mineral">Mineral</a>, <a href="#Deposit">Deposit</a>
-要采集的对象。
+要采集的對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是该 creep 的所有者，或者其他玩家已经占领或者预定了该房间的控制器。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_FOUND | 未找到 extractor。你必须建造一个 extractor 来开采矿物。<a href="/resources.html">了解更多</a>
-ERR_NOT_ENOUGH_RESOURCES | 目标中已经没有可采集的能量或者矿物。
-ERR_INVALID_TARGET | 目标不是有效的 source 或者 mineral 对象。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_TIRED | extractor 仍在冷却中。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>WORK</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是該 creep 的所有者，或者其他玩家已經佔領或者預定了該房間的控制器。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NOT_FOUND | 未找到 extractor。你必須建造一個 extractor 來開采礦物。<a href="/resources.html">了解更多</a>
+ERR_NOT_ENOUGH_RESOURCES | 目標中已經沒有可采集的能量或者礦物。
+ERR_INVALID_TARGET | 目標不是有效的 source 或者 mineral 對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_TIRED | extractor 仍在冷卻中。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>WORK</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -560,24 +560,24 @@ if(target) {
 
 ```
 
-治疗自己或者其他 creep。这将恢复目标 creep 受损身体部件的功能，并恢复已损失的生命值(hits)。需要 <code>HEAL</code> 身体部件。目标必须与 creep 相邻。
+治療自己或者其他 creep。這將恢復目標 creep 受損身體部件的功能，並恢復已損失的生命值(hits)。需要 <code>HEAL</code> 身體部件。目標必須與 creep 相鄰。
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>
-目标 creep 对象。
+目標 creep 對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 目标不是有效的 creep 对象。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>HEAL</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 目標不是有效的 creep 對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>HEAL</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -601,11 +601,11 @@ creep1.pull(creep2);
 creep2.move(creep1);
 ```
 
-使 creep 朝指定方向移动一个地块。需要 <code>MOVE</code> 身体部件，或者其他 creep 在其附近并<a href="#Creep.pull">拉动</a>该 creep。如果你对着一个相邻 creep 调用了 <code>move</code> 方法，将会使本 creep 跳过 <code>ERR_TIRED</code> 和 <code>ERR_NO_BODYPART</code> 检查; 否则将跳过 <code>ERR_NOT_IN_RANGE</code> 检查。
+使 creep 朝指定方向移動一個地塊。需要 <code>MOVE</code> 身體部件，或者其他 creep 在其附近並<a href="#Creep.pull">拉動</a>該 creep。如果你對著一個相鄰 creep 調用了 <code>move</code> 方法，將會使本 creep 跳過 <code>ERR_TIRED</code> 和 <code>ERR_NO_BODYPART</code> 檢查; 否則將跳過 <code>ERR_NOT_IN_RANGE</code> 檢查。
 
 {% api_method_params %}
 direction : <a href="#Creep">Creep</a>|number
-一个相邻的 creep 或者下列常量之一：
+一個相鄰的 creep 或者下列常量之一：
 					<ul>
 						<li><code>TOP</code></li>
 						<li><code>TOP_RIGHT</code></li>
@@ -622,15 +622,15 @@ direction : <a href="#Creep">Creep</a>|number
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_TIRED | 该 creep 的疲劳（fatigue）计数器不为零。
-ERR_NO_BODYPART | 该 creep 没有 <code>MOVE</code> 身体部件。
-ERR_INVALID_ARGS | 提供的方向不正确。
-ERR_NOT_IN_RANGE | 目标 creep 距离过远。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_TIRED | 該 creep 的疲勞（fatigue）計數器不為零。
+ERR_NO_BODYPART | 該 creep 沒有 <code>MOVE</code> 身體部件。
+ERR_INVALID_ARGS | 提供的方向不正確。
+ERR_NOT_IN_RANGE | 目標 creep 距離過遠。
 {% endapi_return_codes %}
 
 
@@ -649,25 +649,25 @@ if(!creep.memory.path) {
 creep.moveByPath(creep.memory.path);
 ```
 
-使用预先定义的路径进行移动。需要 <code>MOVE</code> 身体部件。
+使用預先定義的路徑進行移動。需要 <code>MOVE</code> 身體部件。
 
 {% api_method_params %}
 path : array|string
-从 <a href="#Room.findPath"><code>Room.findPath</code></a>, <a href="#RoomPosition.findPathTo"><code>RoomPosition.findPathTo</code></a> 或 <a href="#PathFinder.search"><code>PathFinder.search</code></a> 方法返回的路径值，数组或序列字符串形式都可接受。
+從 <a href="#Room.findPath"><code>Room.findPath</code></a>, <a href="#RoomPosition.findPathTo"><code>RoomPosition.findPathTo</code></a> 或 <a href="#PathFinder.search"><code>PathFinder.search</code></a> 方法返回的路徑值，數組或序列字符串形式都可接受。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_FOUND | 指定的路径与该 creep 的位置不匹配。
-ERR_INVALID_ARGS | <code>path</code> 不是一个有效的路径数组。
-ERR_TIRED | 该 creep 的疲劳（fatigue）计数器不为零。
-ERR_NO_BODYPART | 该 creep 没有 <code>MOVE</code> 身体部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NOT_FOUND | 指定的路徑與該 creep 的位置不匹配。
+ERR_INVALID_ARGS | <code>path</code> 不是一個有效的路徑數組。
+ERR_TIRED | 該 creep 的疲勞（fatigue）計數器不為零。
+ERR_NO_BODYPART | 該 creep 沒有 <code>MOVE</code> 身體部件。
 {% endapi_return_codes %}
 
 
@@ -691,12 +691,12 @@ creep.moveTo(pos, {reusePath: 50});
 ```
 
 ```javascript
-// 优先使用缓存路径进行移动
+// 優先使用緩存路徑進行移動
 for(const name in Game.creeps) {
     Game.creeps[name].moveTo(target, {noPathFinding: true});
 }
 
-// 仅当有足够 CPU 时才执行寻路
+// 僅當有足夠 CPU 時才執行尋路
 if(Game.cpu.tickLimit - Game.cpu.getUsed() > 20) {
     for(const name in Game.creeps) {
         Game.creeps[name].moveTo(target);
@@ -704,40 +704,40 @@ if(Game.cpu.tickLimit - Game.cpu.getUsed() > 20) {
 }
 ```
 
-在本房间内查询到目标的最佳路径并向目标移动。该方法是 <a href="#RoomPosition.findPathTo">pos.findPathTo( )</a> <a href="#Creep.move">move( )</a> 的调用简写。如果目标在其他房间，则相应的出口将被当做目标(在本房间中)。需要 <code>MOVE</code> 身体部件。
+在本房間內查詢到目標的最佳路徑並向目標移動。該方法是 <a href="#RoomPosition.findPathTo">pos.findPathTo( )</a> <a href="#Creep.move">move( )</a> 的調用簡寫。如果目標在其他房間，則相應的出口將被當做目標(在本房間中)。需要 <code>MOVE</code> 身體部件。
 
 {% api_method_params %}
 x : number
-目标在 creep 所在房间中的 x 坐标。
+目標在 creep 所在房間中的 x 坐標。
 ===
 y : number
-目标在 creep 所在房间中的 y 坐标。
+目標在 creep 所在房間中的 y 坐標。
 ===
 target : object
-可以是 <a href="#RoomPosition">RoomPosition</a> 对象或者任何包含 <a href="#RoomPosition">RoomPosition</a> 属性的对象。该位置不必和 creep 在同一房间。
+可以是 <a href="#RoomPosition">RoomPosition</a> 對象或者任何包含 <a href="#RoomPosition">RoomPosition</a> 屬性的對象。該位置不必和 creep 在同一房間。
 ===
-opts (可选) : object
-包含可选项的对象：
+opts (可選) : object
+包含可選項的對象：
 					<ul>
 						<li>
 							<div class="api-arg-title">reusePath</div>
 							<div class="api-arg-type">number</div>
-							<div class="api-arg-desc">此选项将缓存前方多个 tick 将要移动的路径。该操作可以节省 cpu 时间，但是会导致 creep 的反应变慢。路径被缓存到 creep 内存中的 <code>_move</code> 属性里。<code>reusePath</code> 的值定义了要缓存前方多少 tick 的移动路径。默认值为 5。增加该值来节省更多的 CPU。减少该值来使移动更加连贯。设置为 0 来禁用路径重用。</div>
+							<div class="api-arg-desc">此選項將緩存前方多個 tick 將要移動的路徑。該操作可以節省 cpu 時間，但是會導致 creep 的反應變慢。路徑被緩存到 creep 內存中的 <code>_move</code> 屬性裡。<code>reusePath</code> 的值定義了要緩存前方多少 tick 的移動路徑。默認值為 5。增加該值來節省更多的 CPU。減少該值來使移動更加連貫。設置為 0 來禁用路徑重用。</div>
 						</li>
 						<li>
 							<div class="api-arg-title">serializeMemory</div>
 							<div class="api-arg-type">boolean</div>
-							<div class="api-arg-desc">如果 <code>reusePath</code> 启用并且该值设为 true，重用的路径将会使用 <a href="#Room.Room-serializePath"><code>Room.serializePath</code></a> 进行序列化并储存在内存中。默认值为 true。</div>
+							<div class="api-arg-desc">如果 <code>reusePath</code> 啟用並且該值設為 true，重用的路徑將會使用 <a href="#Room.Room-serializePath"><code>Room.serializePath</code></a> 進行序列化並儲存在內存中。默認值為 true。</div>
 						</li>
 						<li>
 							<div class="api-arg-title">noPathFinding</div>
 							<div class="api-arg-type">boolean</div>
-							<div class="api-arg-desc">如果该选择设为 true 并且内存中没有重用路径时，<code>moveTo</code> 将会返回 <code>ERR_NOT_FOUND</code>。在某些情况下，这会节省大量的 CPU 时间。默认值为 false。</div>
+							<div class="api-arg-desc">如果該選擇設為 true 並且內存中沒有重用路徑時，<code>moveTo</code> 將會返回 <code>ERR_NOT_FOUND</code>。在某些情況下，這會節省大量的 CPU 時間。默認值為 false。</div>
 						</li>
 						<li>
 							<div class="api-arg-title">visualizePathStyle</div>
 							<div class="api-arg-type">object</div>
-							<div class="api-arg-desc">使用 <a href="#RoomVisual.poly"><code>RoomVisual.poly</code></a> 来在 creep 的移动路线上画一条线。你可以提供一个空对象或者自定义样式参数。默认的样式如下：
+							<div class="api-arg-desc">使用 <a href="#RoomVisual.poly"><code>RoomVisual.poly</code></a> 來在 creep 的移動路線上畫一條線。你可以提供一個空對象或者自定義樣式參數。默認的樣式如下：
 								<pre class="language-javascript"><code>{
     fill: 'transparent',
     stroke: '#fff',
@@ -747,7 +747,7 @@ opts (可选) : object
 }</code></pre>
 							</div>
 						</li>
-						<li>任何 <a href="#Room.findPath"><code>Room.findPath</code></a> 方法支持的可选项。</li>
+						<li>任何 <a href="#Room.findPath"><code>Room.findPath</code></a> 方法支持的可選項。</li>
 					</ul>
 
 {% endapi_method_params %}
@@ -755,16 +755,16 @@ opts (可选) : object
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_TIRED | 该 creep 的疲劳（fatigue）计数器不为零。
-ERR_NO_BODYPART | 该 creep 没有 <code>MOVE</code> 身体部件。
-ERR_INVALID_TARGET | 提供了无效目标。
-ERR_NO_PATH | 没有找到可以抵达目标的路径。
-ERR_NOT_FOUND | 该 creep 没有找到可重用的路径。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_TIRED | 該 creep 的疲勞（fatigue）計數器不為零。
+ERR_NO_BODYPART | 該 creep 沒有 <code>MOVE</code> 身體部件。
+ERR_INVALID_TARGET | 提供了無效目標。
+ERR_NO_PATH | 沒有找到可以抵達目標的路徑。
+ERR_NOT_FOUND | 該 creep 沒有找到可重用的路徑。
 {% endapi_return_codes %}
 
 
@@ -780,22 +780,22 @@ else {
 }
 ```
 
-当 creep 受到攻击时切换自动通知。通知将发送到您的帐户邮箱。默认情况下启用。
+當 creep 受到攻擊時切換自動通知。通知將發送到您的帳戶郵箱。默認情況下啟用。
 
 {% api_method_params %}
 enabled : boolean
-是否启用通知。
+是否啟用通知。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_ARGS | <code>enable</code> 参数不是 boolean 值。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_ARGS | <code>enable</code> 參數不是 boolean 值。
 {% endapi_return_codes %}
 
 
@@ -812,24 +812,24 @@ if(target) {
 
 ```
 
-捡起一个物品 (如捡起一些能量)。需要 <code>CARRY</code> 身体部件。目标必须与 creep 相邻或者和 creep 在相同位置。
+撿起一個物品 (如撿起一些能量)。需要 <code>CARRY</code> 身體部件。目標必須與 creep 相鄰或者和 creep 在相同位置。
 
 {% api_method_params %}
 target : <a href="#Resource">Resource</a>
-要捡起的目标对象。
+要撿起的目標對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 目标不是一个有效的可拾取对象。
-ERR_FULL | 该 creep 已无法存储更多资源。
-ERR_NOT_IN_RANGE | 目标太远了。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 目標不是一個有效的可拾取對象。
+ERR_FULL | 該 creep 已無法存儲更多資源。
+ERR_NOT_IN_RANGE | 目標太遠了。
 {% endapi_return_codes %}
 
 
@@ -864,23 +864,23 @@ if(target) {
 }
 ```
 
-帮助其他 creep 跟随该 creep。目标 creep 移动产生的疲劳值将由该 creep 承担。需要 <code>MOVE</code> 身体部件。目标必须与 creep 相邻。该 creep 必须<a href="#Creep.move">移动</a>到其他地方，目标 creep 也必须朝该 creep 移动。
+幫助其他 creep 跟隨該 creep。目標 creep 移動產生的疲勞值將由該 creep 承擔。需要 <code>MOVE</code> 身體部件。目標必須與 creep 相鄰。該 creep 必須<a href="#Creep.move">移動</a>到其他地方，目標 creep 也必須朝該 creep 移動。
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>
-目标 creep。
+目標 creep。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 提供了无效目标。
-ERR_NOT_IN_RANGE | 目标太远了。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 提供了無效目標。
+ERR_NOT_IN_RANGE | 目標太遠了。
 {% endapi_return_codes %}
 
 
@@ -895,24 +895,24 @@ if(targets.length > 0) {
 
 ```
 
-远程攻击其他 creep 或者建筑。需要 <code>RANGED_ATTACK</code> 身体部件。如果目标在 rampart 中，则 rampart 将被优先攻击。目标必须位于以 creep 为中心的 7*7 正方形区域内。
+遠程攻擊其他 creep 或者建築。需要 <code>RANGED_ATTACK</code> 身體部件。如果目標在 rampart 中，則 rampart 將被優先攻擊。目標必須位於以 creep 為中心的 7*7 正方形區域內。
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>, <a href="#Structure">Structure</a>
-要攻击的目标。
+要攻擊的目標。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 这个目标不是一个有效的攻击目标。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 该 creep 没有 <code>RANGED_ATTACK</code> 身体部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 這個目標不是一個有效的攻擊目標。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 該 creep 沒有 <code>RANGED_ATTACK</code> 身體部件。
 {% endapi_return_codes %}
 
 
@@ -936,24 +936,24 @@ if(target) {
 }
 ```
 
-远程治疗其他 creep。这将恢复目标 creep 受损身体部件的功能，并恢复已损失的生命值(hits)。需要 <code>HEAL</code> 身体部件。目标必须位于以 creep 为中心的 7*7 正方形区域内。
+遠程治療其他 creep。這將恢復目標 creep 受損身體部件的功能，並恢復已損失的生命值(hits)。需要 <code>HEAL</code> 身體部件。目標必須位於以 creep 為中心的 7*7 正方形區域內。
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>
-目标 creep 对象。
+目標 creep 對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 目标不是一个有效的creep对象。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>HEAL</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 目標不是一個有效的creep對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>HEAL</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -967,18 +967,18 @@ if(targets.length > 0) {
 }
 ```
 
-对以该 creep 为中心，3 格范围内的所有敌方 creep 和建筑进行攻击。需要 <code>RANGED_ATTACK</code> 身体部件。对目标造成的伤害随距离的增加而衰减。友方单位不会受到影响。
+對以該 creep 為中心，3 格范圍內的所有敵方 creep 和建築進行攻擊。需要 <code>RANGED_ATTACK</code> 身體部件。對目標造成的傷害隨距離的增加而衰減。友方單位不會受到影響。
 
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>RANGED_ATTACK</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>RANGED_ATTACK</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -999,25 +999,25 @@ if(targets.length > 0) {
 }
 ```
 
-使用携带的能量修复受损建筑。需要 <code>WORK</code> 和 <code>CARRY</code> 身体部件。目标必须位于以 creep 为中心的 7*7 正方形区域内。
+使用攜帶的能量修復受損建築。需要 <code>WORK</code> 和 <code>CARRY</code> 身體部件。目標必須位於以 creep 為中心的 7*7 正方形區域內。
 
 {% api_method_params %}
 target : <a href="#Structure">Structure</a>
-要修复的目标建筑。
+要修復的目標建築。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 该 creep 依然在孵化中。
-ERR_NOT_ENOUGH_RESOURCES | 该 creep 没有携带任何能量。
-ERR_INVALID_TARGET | 目标不是一个有效的 structure 对象。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 该 creep 身上没有 <code>WORK</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 該 creep 依然在孵化中。
+ERR_NOT_ENOUGH_RESOURCES | 該 creep 沒有攜帶任何能量。
+ERR_INVALID_TARGET | 目標不是一個有效的 structure 對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 該 creep 身上沒有 <code>WORK</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -1033,24 +1033,24 @@ if(creep.room.controller) {
 
 ```
 
-暂时阻止其他玩家占领该房间控制器并且将 source 的能量上限恢复至正常容量。每 tick 执行该命令都可以让控制器的不可占领时间增加，增加的 tick 等同于 <code>CLAIM</code> 身体部件的数量。最大的预定时间为 5,000 tick。目标必须与 creep 相邻。
+暫時阻止其他玩家佔領該房間控制器並且將 source 的能量上限恢復至正常容量。每 tick 執行該命令都可以讓控制器的不可佔領時間增加，增加的 tick 等同於 <code>CLAIM</code> 身體部件的數量。最大的預定時間為 5,000 tick。目標必須與 creep 相鄰。
 
 {% api_method_params %}
 target : <a href="#StructureController">StructureController</a>
-要预定的目标控制器对象。
+要預定的目標控制器對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 目标不是一个有效的中立房间控制器对象。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>CLAIM</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 目標不是一個有效的中立房間控制器對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>CLAIM</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -1068,24 +1068,24 @@ else {
 }
 ```
 
-在该 creep 上显示带有指定内容的可视对话气泡。此信息只会显示 1 tick。你可以通过 <code>saying</code> 属性获取说过的最后一条信息。允许使用任何有效的 Unicode 字符。包括 <a href="http://unicode.org/emoji/charts/emoji-style.txt" target="_blank">emoji</a>。
+在該 creep 上顯示帶有指定內容的可視對話氣泡。此信息只會顯示 1 tick。你可以通過 <code>saying</code> 屬性獲取說過的最後一條信息。允許使用任何有效的 Unicode 字符。包括 <a href="http://unicode.org/emoji/charts/emoji-style.txt" target="_blank">emoji</a>。
 
 {% api_method_params %}
 message : string
-要显示的信息，最长 10 字符。
+要顯示的信息，最長 10 字符。
 ===
-public (可选) : boolean
-设置为 true 来让其他玩家也能看到该信息。默认为 false。
+public (可選) : boolean
+設置為 true 來讓其他玩家也能看到該信息。默認為 false。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
 {% endapi_return_codes %}
 
 
@@ -1101,25 +1101,25 @@ if(creep.room.controller) {
 
 ```
 
-用对所有玩家可见的任意文本对控制器进行签名。该文本将显示在世界地图的房间 UI 中。并可通过 api 进行访问。你可以签名无主甚至敌对玩家的控制器。目标必须与 creep 相邻。传递一个空字符串来移除签名。
+用對所有玩家可見的任意文本對控制器進行簽名。該文本將顯示在世界地圖的房間 UI 中。並可通過 api 進行訪問。你可以簽名無主甚至敵對玩家的控制器。目標必須與 creep 相鄰。傳遞一個空字符串來移除簽名。
 
 {% api_method_params %}
 target : <a href="#StructureController">StructureController</a>
-要签名的目标控制器对象。
+要簽名的目標控制器對象。
 ===
 text : string
-签名文本，最多 100 字符，之后的内容将被截断。
+簽名文本，最多 100 字符，之後的內容將被截斷。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_INVALID_TARGET | 目标不是一个有效的控制器对象。
-ERR_NOT_IN_RANGE | 目标太远了。
+OK | 這個操作已經成功納入計劃。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_INVALID_TARGET | 目標不是一個有效的控制器對象。
+ERR_NOT_IN_RANGE | 目標太遠了。
 {% endapi_return_codes %}
 
 
@@ -1128,17 +1128,17 @@ ERR_NOT_IN_RANGE | 目标太远了。
 
 
 
-立刻杀死该 creep。
+立刻殺死該 creep。
 
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
 {% endapi_return_codes %}
 
 
@@ -1152,38 +1152,38 @@ if(creep.transfer(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 ```
 
 ```javascript
-// 转移所有资源
+// 轉移所有資源
 for(const resourceType in creep.carry) {
 	creep.transfer(storage, resourceType);
 }
 ```
 
-将资源从该 creep 转移至其他对象。目标必须与 creep 相邻。
+將資源從該 creep 轉移至其他對象。目標必須與 creep 相鄰。
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>, <a href="#Structure">Structure</a>
-目标对象。
+目標對象。
 ===
 resourceType : string
 <code>RESOURCE_*</code> 常量之一。
 ===
-amount (可选) : number
-要转移的资源数量。如果省略，将转移携带的全部指定资源。
+amount (可選) : number
+要轉移的資源數量。如果省略，將轉移攜帶的全部指定資源。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个 creep 的拥有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_ENOUGH_RESOURCES | 该 creep 没有携带足够的资源。
-ERR_INVALID_TARGET | 目标不是一个能存放指定资源的有效对象。
-ERR_FULL | 目标无法携带更多的资源。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_INVALID_ARGS | resourceType 不是 <code>RESOURCE_*</code> 常量之一，或者 amount 数量错误。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個 creep 的擁有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NOT_ENOUGH_RESOURCES | 該 creep 沒有攜帶足夠的資源。
+ERR_INVALID_TARGET | 目標不是一個能存放指定資源的有效對象。
+ERR_FULL | 目標無法攜帶更多的資源。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_INVALID_ARGS | resourceType 不是 <code>RESOURCE_*</code> 常量之一，或者 amount 數量錯誤。
 {% endapi_return_codes %}
 
 
@@ -1199,29 +1199,29 @@ if(creep.room.controller) {
 
 ```
 
-使用携带的能量将您的控制器升级到新的等级。升级控制器将同时提高你的全局控制等级(Global Control Level)。需要 <code>WORK</code> 和 <code>CARRY</code> 身体部件。目标必须位于以 creep 为中心的 7*7 正方形区域内。
+使用攜帶的能量將您的控制器升級到新的等級。升級控制器將同時提高你的全局控制等級(Global Control Level)。需要 <code>WORK</code> 和 <code>CARRY</code> 身體部件。目標必須位於以 creep 為中心的 7*7 正方形區域內。
 
-一个完全升级的 8 级控制器每 tick 最多接受 15 能量的升级，无论 creep 的能力有没有超过。该值限制了当前 tick 所有 creep 执行 <code>upgradeController</code> 积累的总能量值。可以使用 <a href="/resources.html">ghodium 化合物强化</a> 来提高此上限。
+一個完全升級的 8 級控制器每 tick 最多接受 15 能量的升級，無論 creep 的能力有沒有超過。該值限制了當前 tick 所有 creep 執行 <code>upgradeController</code> 積累的總能量值。可以使用 <a href="/resources.html">ghodium 化合物強化</a> 來提高此上限。
 
-升级控制器会把它的 `ticksToDowngrade` 计时器提高 100 tick。该计时器必须填满才能提升控制器等级。
+升級控制器會把它的 `ticksToDowngrade` 計時器提高 100 tick。該計時器必須填滿才能提升控制器等級。
 
 {% api_method_params %}
 target : <a href="#StructureController">StructureController</a>
-要进行升级的目标控制器。
+要進行升級的目標控制器。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是该 creep 或目标控制器的所有者。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_ENOUGH_RESOURCES | 这个creep没有携带任何能量。
-ERR_INVALID_TARGET | 目标不是有效的控制器对象，或控制器的升级被阻滞了。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_NO_BODYPART | 这个 creep 身上没有 <code>WORK</code> 部件。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是該 creep 或目標控制器的所有者。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NOT_ENOUGH_RESOURCES | 這個creep沒有攜帶任何能量。
+ERR_INVALID_TARGET | 目標不是有效的控制器對象，或控制器的升級被阻滯了。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_NO_BODYPART | 這個 creep 身上沒有 <code>WORK</code> 部件。
 {% endapi_return_codes %}
 
 
@@ -1234,32 +1234,32 @@ if(creep.withdraw(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 }
 ```
 
-从建筑(structure)或是墓碑(tombstone)中拿取资源。目标必须与 creep 相邻。多个 creep 可以在同一 tick 里从相同对象中拿取资源。你的 creep 同样也可以从敌对建筑/墓碑中拿取资源，如果它上面没有敌对的 rampart 的话。
+從建築(structure)或是墓碑(tombstone)中拿取資源。目標必須與 creep 相鄰。多個 creep 可以在同一 tick 裡從相同對象中拿取資源。你的 creep 同樣也可以從敵對建築/墓碑中拿取資源，如果它上面沒有敵對的 rampart 的話。
 
-此方法不应该被用来在 creep 之间转移资源。想要在 creep 之间转移，请对携带资源的 creep 执行 [`transfer`](#Creep.transfer) 方法。
+此方法不應該被用來在 creep 之間轉移資源。想要在 creep 之間轉移，請對攜帶資源的 creep 執行 [`transfer`](#Creep.transfer) 方法。
 
 {% api_method_params %}
 target : <a href="#Structure">Structure</a>, <a href="#Tombstone">Tombstone</a>, <a href="#Ruin">Ruin</a>
-目标对象。
+目標對象。
 ===
 resourceType : string
 <code>RESOURCE_*</code> 常量之一。
 ===
-amount (可选) : number
-被传递资源的数量。如果没有这个参数，传递全部可用数量的资源。
+amount (可選) : number
+被傳遞資源的數量。如果沒有這個參數，傳遞全部可用數量的資源。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是此 creep 的所有者，或者目标位于敌方 rampart 之下。
-ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_ENOUGH_RESOURCES | 目标中没有足够数量的资源。
-ERR_INVALID_TARGET | 目标不是一个能存储指定资源的对象。
-ERR_FULL | 此 creep 的存储已经满了。
-ERR_NOT_IN_RANGE | 目标太远了。
-ERR_INVALID_ARGS | resourceType 不是 <code>RESOURCE_*</code> 常量之一, 或者 amount 数量错误。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是此 creep 的所有者，或者目標位於敵方 rampart 之下。
+ERR_BUSY | 這個 creep 依然在孵化中。
+ERR_NOT_ENOUGH_RESOURCES | 目標中沒有足夠數量的資源。
+ERR_INVALID_TARGET | 目標不是一個能存儲指定資源的對象。
+ERR_FULL | 此 creep 的存儲已經滿了。
+ERR_NOT_IN_RANGE | 目標太遠了。
+ERR_INVALID_ARGS | resourceType 不是 <code>RESOURCE_*</code> 常量之一, 或者 amount 數量錯誤。
 {% endapi_return_codes %}

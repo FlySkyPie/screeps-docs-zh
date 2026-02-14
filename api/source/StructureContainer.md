@@ -2,16 +2,16 @@
 
 <img src="img/container.png" alt="" align="right" />
 
-一个可以用来存储资源的小型容器。这是一个允许走上去的建筑。所有丢弃在同一方格上的资源都会被自动存储到 container 中。
+一個可以用來存儲資源的小型容器。這是一個允許走上去的建築。所有丟棄在同一方格上的資源都會被自動存儲到 container 中。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <td><strong>控制器等级</strong></td>
-        <td>任何等级 (包括无主房间)</td>
+        <td><strong>控制器等級</strong></td>
+        <td>任何等級 (包括無主房間)</td>
     </tr>
     <tr>
-        <td><strong>每个房间允许建造的数量</strong></td>
+        <td><strong>每個房間允許建造的數量</strong></td>
         <td>5</td>
     </tr>
     <tr>
@@ -19,7 +19,7 @@
         <td>2,000</td>
     </tr>
     <tr>
-        <td><strong>建筑花费</strong></td>
+        <td><strong>建築花費</strong></td>
         <td>5,000</td>
     </tr>
     <tr>
@@ -28,7 +28,7 @@
     </tr>
     <tr>
         <td><strong>老化</strong></td>
-        <td>在被自己控制的房间内每 500 tick 失去 5,000 生命值, 在没有控制的房间内该时间将降低至 100 tick。</td>
+        <td>在被自己控制的房間內每 500 tick 失去 5,000 生命值, 在沒有控制的房間內該時間將降低至 100 tick。</td>
     </tr>
     </tbody>
 </table>
@@ -48,17 +48,17 @@ const containersWithEnergy = room.find(FIND_STRUCTURES, {
 const total = _.sum(container.store);
 ``` 
 
-容器内容物对象。每一个键都是<code>RESOURCE_*</code>常量，值是资源数量。如果没有<code>RESOURCE_ENERGY</code>，它的值始终为0，而其他资源的值为undefined。你可以使用<a href="https://github.com/lodash/lodash/blob/3.10.1/doc/README.md#_sumcollection-iteratee-thisarg"><code>lodash.sum</code></a>来获得内容物总量。
+容器內容物對象。每一個鍵都是<code>RESOURCE_*</code>常量，值是資源數量。如果沒有<code>RESOURCE_ENERGY</code>，它的值始終為0，而其他資源的值為undefined。你可以使用<a href="https://github.com/lodash/lodash/blob/3.10.1/doc/README.md#_sumcollection-iteratee-thisarg"><code>lodash.sum</code></a>來獲得內容物總量。
 
 
 
 {% api_property storeCapacity 'number' %}
 
-一个包含了该建筑中所存储的货物的 [`Store`](#Store) 对象。
+一個包含了該建築中所存儲的貨物的 [`Store`](#Store) 對象。
 
 {% api_property storeCapacity 'number' '{"deprecated": true}' %}
                                        
-[`.store.getCapacity()`](#Store.getCapacity) 的别名。
+[`.store.getCapacity()`](#Store.getCapacity) 的別名。
 
 
 
@@ -66,6 +66,6 @@ const total = _.sum(container.store);
 
 
 
-还有多少 tick 就要因老化而失去生命值。
+還有多少 tick 就要因老化而失去生命值。
 
 

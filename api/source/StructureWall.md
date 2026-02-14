@@ -2,14 +2,14 @@
 
 <img src="img/wall.png" alt="" align="right" />
 
-阻挡所有creep的移动。
-玩家可以在已控制的房间中建造可破坏的构筑墙。
-有些房间还包含不可破坏的构筑墙，将新手区或重生区与世界其他地方隔开，又或将新手/重生区划分为较小的区域。不可破坏的构筑墙没有`hits`属性。
+阻擋所有creep的移動。
+玩家可以在已控制的房間中建造可破壞的構築牆。
+有些房間還包含不可破壞的構築牆，將新手區或重生區與世界其他地方隔開，又或將新手/重生區劃分為較小的區域。不可破壞的構築牆沒有`hits`屬性。
 	
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <td><strong>控制中心等级</strong></td>
+        <td><strong>控制中心等級</strong></td>
         <td>2</td>
     </tr>
     <tr>
@@ -17,7 +17,7 @@
         <td>1</td>
     </tr>
     <tr>
-        <td><strong>建造完成时的生命值</strong></td>
+        <td><strong>建造完成時的生命值</strong></td>
         <td>1</td>
     </tr>
     <tr>

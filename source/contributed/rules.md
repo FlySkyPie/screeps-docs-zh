@@ -1,57 +1,57 @@
-title: 向 Screeps 文档贡献文章并赚取报酬
+title: 向 Screeps 文檔貢獻文章並賺取報酬
 ---
 
-文档是任何编程平台的重要组成部分，我们付出了很多精力在文档中添加高质量内容。如果您想帮助我们创建和完善文档，此页面将说明您需要做些什么。一旦我们采纳了您的文章并发布在本章节中，我们将向您的 PayPal 帐户支付 50 美元的稿费，或者向您的游戏帐户充值 5 个订阅令牌（大约相当于90美元），具体取决于您的选择。
+文檔是任何編程平台的重要組成部分，我們付出了很多精力在文檔中添加高質量內容。如果您想幫助我們創建和完善文檔，此頁面將說明您需要做些什麼。一旦我們采納了您的文章並發布在本章節中，我們將向您的 PayPal 帳戶支付 50 美元的稿費，或者向您的游戲帳戶充值 5 個訂閱令牌（大約相當於90美元），具體取決於您的選擇。
 
-## 我们需要的文章
+## 我們需要的文章
 
-我们欢迎以下类型的文章：
+我們歡迎以下類型的文章：
 
-* 在官方文档中没有涉及到的，有关于复杂游戏机制和玩法的通俗介绍。
-* 如何完成一些基础或者简单目标的分步教学。
-* Screeps 中一些常见任务功能的解决思路和途径。
-* 如何设置外部环境、或者使用第三方工具、库或者编译器。
+* 在官方文檔中沒有涉及到的，有關於復雜游戲機制和玩法的通俗介紹。
+* 如何完成一些基礎或者簡單目標的分步教學。
+* Screeps 中一些常見任務功能的解決思路和途徑。
+* 如何設置外部環境、或者使用第三方工具、庫或者編譯器。
 
-## 要考虑的事项
+## 要考慮的事項
 
-* 选择官方文档和其他用户提供的文章中最少涉及的主题。
-* 如果您想修改现有文章，则应该提交有实质性的内容，并且新增的内容量不要低于要修改的原始内容。如果您提交的内容不足，或者与 Screeps 及其他来源的文章过于相似，则可能会被拒绝。
-* 请勿撰写包含大量现成代码的文章或者直接提供玩家可能更喜欢自己发现的复杂解决方案。相反，请描述他们可能面临的具体问题和挑战，并提供寻找解决方案的方向。
-* 在审核阶段邀请其他用户讨论您的 Pull Resquest，从而提高您文章的质量。
-* 从您自己的网站或社交媒体帖子链接到您发表的文章。实际上，由于 SEO（链接权重）带来的影响，您自己网站的页面排名可能会提高不少。
+* 選擇官方文檔和其他用戶提供的文章中最少涉及的主題。
+* 如果您想修改現有文章，則應該提交有實質性的內容，並且新增的內容量不要低於要修改的原始內容。如果您提交的內容不足，或者與 Screeps 及其他來源的文章過於相似，則可能會被拒絕。
+* 請勿撰寫包含大量現成代碼的文章或者直接提供玩家可能更喜歡自己發現的復雜解決方案。相反，請描述他們可能面臨的具體問題和挑戰，並提供尋找解決方案的方向。
+* 在審核階段邀請其他用戶討論您的 Pull Resquest，從而提高您文章的質量。
+* 從您自己的網站或社交媒體帖子鏈接到您發表的文章。實際上，由於 SEO（鏈接權重）帶來的影響，您自己網站的頁面排名可能會提高不少。
 
-## 内容准则
+## 內容准則
 
-文章应友好的提供信息。尽可能使用主动语态，如使用”您“或”我们“而不是”我“来进行叙述。请避免无用信息，并且尽量简要直接的进行说明。注意，提交的内容必须以英文撰写，并包含高质量的内容。我们希望可以在文章中发现下列要点：
+文章應友好的提供信息。盡可能使用主動語態，如使用」您「或」我們「而不是」我「來進行敘述。請避免無用信息，並且盡量簡要直接的進行說明。注意，提交的內容必須以英文撰寫，並包含高質量的內容。我們希望可以在文章中發現下列要點：
 
-* 准确性：介绍应简洁明了，技术上正确且经过全面测试。包括每个步骤的简要说明，以解释每个操作的目的。 文章可以使用与 Screeps，JavaScript 和相关主题有关联的技术术语，但是如果是只有很少人知道的高级概念术语 - 请使用尽量通俗的语句解释它：用一两句稍微描述一下，或者链接到文档页面。
-* 完整性：如果您编写的是指南或者操作教学，请向读者提供一个完整有效的配置，并且介绍在这之前应该做什么和之后应该做什么。
-* 原创性：内容应该是为 Screeps 编写的原创材料。我们不接受其他来源（包括个人博客）的重复内容。
+* 准確性：介紹應簡潔明了，技術上正確且經過全面測試。包括每個步驟的簡要說明，以解釋每個操作的目的。 文章可以使用與 Screeps，JavaScript 和相關主題有關聯的技術術語，但是如果是只有很少人知道的高級概念術語 - 請使用盡量通俗的語句解釋它：用一兩句稍微描述一下，或者鏈接到文檔頁面。
+* 完整性：如果您編寫的是指南或者操作教學，請向讀者提供一個完整有效的配置，並且介紹在這之前應該做什麼和之後應該做什麼。
+* 原創性：內容應該是為 Screeps 編寫的原創材料。我們不接受其他來源（包括個人博客）的重復內容。
 
-如果您想先看看您的内容是否符合我们的要求，然后再花时间写一篇文章的话，您可以先写一篇简单的样稿然后发送到 contact@screeps.com。
+如果您想先看看您的內容是否符合我們的要求，然後再花時間寫一篇文章的話，您可以先寫一篇簡單的樣稿然後發送到 contact@screeps.com。
 
 ## 提交流程
 
-在 GitHub 上以 pull request 的形式将您的文章提交到 [screeps/docs](https://github.com/screeps/docs/tree/master/source/contributed/)。
+在 GitHub 上以 pull request 的形式將您的文章提交到 [screeps/docs](https://github.com/screeps/docs/tree/master/source/contributed/)。
 
-所有的文章将在 GitHub 上保留两周的时间，以供社区评论或提交自己的 PR。在此过程中，您可能会收到我们的提问或评论，请据此对请求进行修改，或者对更改进行重新提交。
+所有的文章將在 GitHub 上保留兩周的時間，以供社區評論或提交自己的 PR。在此過程中，您可能會收到我們的提問或評論，請據此對請求進行修改，或者對更改進行重新提交。
 
-当接受该文章后，我们会将最终版本作为 pull request 提交到您的 GitHub 分支。您将有 36 个小时的时间来答复和审核我们发布的最终版本。如果您的回答是肯定的，我们将发表该文章，而您将收到付款。无回应将被视为可以发表。
+當接受該文章後，我們會將最終版本作為 pull request 提交到您的 GitHub 分支。您將有 36 個小時的時間來答復和審核我們發布的最終版本。如果您的回答是肯定的，我們將發表該文章，而您將收到付款。無回應將被視為可以發表。
 
-## 法务信息（中）
+## 法務信息（中）
 
-**译者注**：本小节的翻译仅限了解用途，具体信息请参阅下方的法务信息（英）。
+**譯者注**：本小節的翻譯僅限了解用途，具體信息請參閱下方的法務信息（英）。
 
-版权所有权。作者同意为向 Screeps 文档库贡献文章进行工作。并且作者在开发的各个阶段创建的每种形式的材料均应是且仍然是 Screeps 的专有财产。根据 Screeps 的绝对唯一决定权，Screeps 可以对作品进行任何更改。
+版權所有權。作者同意為向 Screeps 文檔庫貢獻文章進行工作。並且作者在開發的各個階段創建的每種形式的材料均應是且仍然是 Screeps 的專有財產。根據 Screeps 的絕對唯一決定權，Screeps 可以對作品進行任何更改。
 
-名誉。本协议中的任何内容不得视为要求 Screeps 通过结合 Screeps 文档或其他方式来使用本作品或本作品的一部分。作品的名誉信息应为“由作者贡献”。
+名譽。本協議中的任何內容不得視為要求 Screeps 通過結合 Screeps 文檔或其他方式來使用本作品或本作品的一部分。作品的名譽信息應為「由作者貢獻」。
 
-付款。在向 Screeps 文档库中提交稿件后，作者将获得 50 美元的在线付款或 Screeps 账户中的 5 个订阅令牌。
+付款。在向 Screeps 文檔庫中提交稿件後，作者將獲得 50 美元的在線付款或 Screeps 賬戶中的 5 個訂閱令牌。
 
-## 法务信息（英）
+## 法務信息（英）
 
-COPYRIGHT OWNERSHIP. Writer agrees that the Work is being created by the writer for the Screeps Documentation Contributed Articles repository and that each form of Work is being created by the writer, at all stages of development, shall be and remain the sole and exclusive property of Screeps. At Screeps’s sole, absolute and unfettered discretion, Screeps may make any alterations to the Work.
+COPYRIGHT OWNERSHIP. Writer agrees that the Work is being created by the writer for the Screeps Documentation Contributed Articles repository and that each form of Work is being created by the writer, at all stages of development, shall be and remain the sole and exclusive property of Screeps. At Screeps』s sole, absolute and unfettered discretion, Screeps may make any alterations to the Work.
 
-CREDIT. Nothing contained in this Agreement shall be deeded to require Screeps to use the Work, or any part thereof, in connection with Screeps Documentation or otherwise. Credit for the Work shall read, “Contributed by writer’s name.”
+CREDIT. Nothing contained in this Agreement shall be deeded to require Screeps to use the Work, or any part thereof, in connection with Screeps Documentation or otherwise. Credit for the Work shall read, 「Contributed by writer』s name.」
 
 PAYMENT. Upon publication of a submission to the Screeps Documentation Repository, the writer will be paid either the sum of USD $50.00 either as an electronic payment or a credit of 5 Subscription Tokens to their Screeps account.

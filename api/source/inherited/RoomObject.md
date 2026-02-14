@@ -1,15 +1,15 @@
 {% api_property effects array %}
-附加的效果，一个包含如下属性的对象数组：
+附加的效果，一個包含如下屬性的對象數組：
 
 {% api_method_params %}
 effect : number
-该附加效果的 ID。可以是自然效果 ID 或者 Power ID。
+該附加效果的 ID。可以是自然效果 ID 或者 Power ID。
 ===
-level (可选) : number 
-该附加效果的 Power 等级。如果效果不是 Power 效果则不存在该属性。
+level (可選) : number 
+該附加效果的 Power 等級。如果效果不是 Power 效果則不存在該屬性。
 ===
 ticksRemaining : number
-多长时间之后会失去这个效果。
+多長時間之後會失去這個效果。
 {% endapi_method_params %}
 
 
@@ -17,7 +17,7 @@ ticksRemaining : number
 
 
 
-表示该对象在房间中的坐标的对象。
+表示該對象在房間中的坐標的對象。
 
 
 
@@ -25,5 +25,5 @@ ticksRemaining : number
 
 
 
-Room对象的链接。如果对象是标志或工地并且放置在你不可见的房间中，则可能为undefined。
+Room對象的鏈接。如果對象是標志或工地並且放置在你不可見的房間中，則可能為undefined。
 

@@ -1,7 +1,7 @@
-title: 使用模块归纳代码
+title: 使用模塊歸納代碼
 ---
 
-我们引入了 Node.js 的 `require` 和 `module.exports` 以方便玩家归纳整理代码。举例来说，玩家可以创造一个“侦察兵”模块：
+我們引入了 Node.js 的 `require` 和 `module.exports` 以方便玩家歸納整理代碼。舉例來說，玩家可以創造一個「偵察兵」模塊：
 
     module.exports = {
         run(creep) {
@@ -9,7 +9,7 @@ title: 使用模块归纳代码
         }
     }
 
-然后将“侦察兵”模块导入主模块：
+然後將「偵察兵」模塊導入主模塊：
 
     var scout = require('scout');
 
@@ -17,31 +17,31 @@ title: 使用模块归纳代码
         scout.run(Game.creeps[i]);
     }
 
-除了亲自编写的模块，玩家还可以借用其他人的模块。目前我们内置了 [lodash](http://lodash.com) 库。
+除了親自編寫的模塊，玩家還可以借用其他人的模塊。目前我們內置了 [lodash](http://lodash.com) 庫。
 
-    var _ = require('lodash'); // 译注：由版本更新，此行现可省略
+    var _ = require('lodash'); // 譯注：由版本更新，此行現可省略
 
     var harvesters = _.filter(Game.creeps, {
         memory: {role: 'harvester'}
     });
 
-## 二进制模块
+## 二進制模塊
 
-除了上述的普通模块，玩家还可以二进制模块。其会在玩家调用 `require` 时以原始二进制形式加载，由此允许玩家运行用其他语言（比如 [WebAssembly](http://webassembly.org/) ）编写的代码。
+除了上述的普通模塊，玩家還可以二進制模塊。其會在玩家調用 `require` 時以原始二進制形式加載，由此允許玩家運行用其他語言（比如 [WebAssembly](http://webassembly.org/) ）編寫的代碼。
 
-WebAssembly 是个二进制编译的代码格式。其可以快速高效的运行 C/C++ 或 Rust 代码（及其他支持的语言）。参阅 [WebAssembly 文档](https://developer.mozilla.org/en-US/docs/WebAssembly)以获取更多信息。
+WebAssembly 是個二進制編譯的代碼格式。其可以快速高效的運行 C/C++ 或 Rust 代碼（及其他支持的語言）。參閱 [WebAssembly 文檔](https://developer.mozilla.org/en-US/docs/WebAssembly)以獲取更多信息。
 
-以下简述了如何用 [Emscripten](https://kripken.github.io/emscripten-site/index.html) 编译 C/C++ 代码及如何上传编译后的文件到游戏里。
+以下簡述了如何用 [Emscripten](https://kripken.github.io/emscripten-site/index.html) 編譯 C/C++ 代碼及如何上傳編譯後的文件到游戲裡。
 
-### 创建 `.wasm` 文件
+### 創建 `.wasm` 文件
 
 {% note info %}
-省略此步如果您想上传的文件已经是 `.wasm` 格式。
+省略此步如果您想上傳的文件已經是 `.wasm` 格式。
 {% endnote %}
 
-安装 [Emsripten SDK]((https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#sdk-installation-instructions)。
+安裝 [Emsripten SDK]((https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#sdk-installation-instructions)。
 
-编写你的 C 函数并保存为 `addTwo.c`
+編寫你的 C 函數並保存為 `addTwo.c`
 
 ```c++
 int addTwo(int a, int b) {
@@ -49,42 +49,42 @@ int addTwo(int a, int b) {
 }
 ```
 
-将其编译成 `addTwo.wasm`：
+將其編譯成 `addTwo.wasm`：
 ```
 emcc -s WASM=1 -s SIDE_MODULE=1 -O3 addTwo.c -o addTwo.wasm
 ```
 
-### 上传二进制模块
+### 上傳二進制模塊
 
-点击此按钮添加新的二进制模组 `addTwo`：
+點擊此按鈕添加新的二進制模組 `addTwo`：
 
 ![](img/binary1.png)
 
-以二进制模组的形式上传 `addTwo.wasm`：
+以二進制模組的形式上傳 `addTwo.wasm`：
 Upload your `addTwo.wasm` file as binary module contents, so that it looks as follows:
 
 ![](img/binary2.png)
 
-点击 ✔️ 提交代码。
+點擊 ✔️ 提交代碼。
 Click the ✔️ button to commit your modules.
 
-### 在 Screeps 使用二进制模块
+### 在 Screeps 使用二進制模塊
 
-如果您正确上传了你的二进制模块，您应该能在游戏内置 IDE 看见下图：
+如果您正確上傳了你的二進制模塊，您應該能在游戲內置 IDE 看見下圖：
 
 ![](img/binary3.png)
 
-现在可通过 WebAssembly API 将二进制代码导入您的 `main`
+現在可通過 WebAssembly API 將二進制代碼導入您的 `main`
 
 ```javascript
-// 这将返回带有 `addTwo.wasm` 二进制内容的 ArrayBuffer
+// 這將返回帶有 `addTwo.wasm` 二進制內容的 ArrayBuffer
 const bytecode = require('addTwo');
 
 const wasmModule = new WebAssembly.Module(bytecode);
 
 const imports = {};
 
-//有关 Emscripten 允许环境，请参见:
+//有關 Emscripten 允許環境，請參見:
 // https://github.com/WebAssembly/tool-conventions/blob/master/DynamicLinking.md
 imports.env = {
     memoryBase: 0,

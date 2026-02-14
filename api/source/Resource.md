@@ -1,7 +1,7 @@
 # Resource 
 
-掉落的资源。 如果没有拿起，它会在一段时间后消失。
-掉落的资源以每tick`ceil(amount/1000)`的速度消失。
+掉落的資源。 如果沒有拿起，它會在一段時間後消失。
+掉落的資源以每tick`ceil(amount/1000)`的速度消失。
 
 {% page inherited/RoomObject.md %}
 
@@ -9,7 +9,7 @@
 
 
 
-资源数量。
+資源數量。
 
 
 
@@ -17,7 +17,7 @@
 
 
 
-一个唯一的对象标识。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法获取对象实例。
+一個唯一的對象標識。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法獲取對象實例。
 
 
 

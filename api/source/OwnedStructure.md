@@ -1,7 +1,7 @@
 # OwnedStructure
 
-存在拥有者的建筑的基础原型。
-这类建筑可以被用`FIND_MY_STRUCTURES`或`FIND_HOSTILE_STRUCTURES`找到。
+存在擁有者的建築的基礎原型。
+這類建築可以被用`FIND_MY_STRUCTURES`或`FIND_HOSTILE_STRUCTURES`找到。
 
 {% page inherited/Structure.md %}  
 
@@ -9,7 +9,7 @@
 
 
 
-是否是你拥有的建筑。
+是否是你擁有的建築。
 
 
 
@@ -17,10 +17,10 @@
 
 
 
-建筑拥有者信息，一个包含如下属性的对象：
+建築擁有者信息，一個包含如下屬性的對象：
 
 {% api_method_params %}
 username : string
-拥有者姓名。
+擁有者姓名。
 {% endapi_method_params %}
 

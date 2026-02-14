@@ -2,7 +2,7 @@
 
 <img src="img/powerBank.png" alt="" align="right" />
 
-非玩家建筑。储存着超能资源，可以通过摧毁该建筑获得。攻击该建筑的 creep 每次攻击都会承受反弹回来的伤害。点击[本文](/power.html)了解更多关于超能的信息。
+非玩家建築。儲存著超能資源，可以通過摧毀該建築獲得。攻擊該建築的 creep 每次攻擊都會承受反彈回來的傷害。點擊[本文](/power.html)了解更多關於超能的信息。
 
 <table class="table gameplay-info">
     <tbody>
@@ -11,7 +11,7 @@
         <td>2,000,000</td>
     </tr>
     <tr>
-        <td><strong>反弹伤害</strong></td>
+        <td><strong>反彈傷害</strong></td>
         <td>50%</td>
     </tr>
     <tr>
@@ -32,7 +32,7 @@
 
 
 
-储存的 power 容量。
+儲存的 power 容量。
 
 
 
@@ -40,4 +40,4 @@
 
 
 
-该建筑还有多少 tick 就要因老化而消失。
+該建築還有多少 tick 就要因老化而消失。

@@ -2,12 +2,12 @@
 
 <img src="img/factory.png" alt="" align="right" />
 
-使用基础矿物和其他商品(commodities)来生产贸易商品。点击 [本文](/resources.html#Commodities) 来了解有关商品的更多信息。
+使用基礎礦物和其他商品(commodities)來生產貿易商品。點擊 [本文](/resources.html#Commodities) 來了解有關商品的更多信息。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <td colspan="2"><strong>控制器等级</strong></td>
+        <td colspan="2"><strong>控制器等級</strong></td>
     </tr>
     <tr>
         <td>1-6</td>
@@ -18,7 +18,7 @@
         <td>1 factory</td>
     </tr>
     <tr>
-        <td><strong>生产花费</strong></td>
+        <td><strong>生產花費</strong></td>
         <td>100,000</td>
     </tr>
     <tr>
@@ -30,8 +30,8 @@
         <td>50,000</td>
     </tr>
     <tr>
-        <td><strong>生产冷却</strong></td>
-        <td>取决于生产的资源</td>
+        <td><strong>生產冷卻</strong></td>
+        <td>取決於生產的資源</td>
     </tr>
     </tbody>
 </table>
@@ -42,7 +42,7 @@
 
 
 
-还有多少 tick 才能进行下一次生产。
+還有多少 tick 才能進行下一次生產。
 
 {% api_property level number %}
 
@@ -52,18 +52,18 @@ if(!factory.level) {
 }
 ```
 
-工厂的等级，可以通过 `PWR_OPERATE_FACTORY` 超能来给一个新建的工厂设置等级。
-一旦被设置，等级将无法再次更改。
+工廠的等級，可以通過 `PWR_OPERATE_FACTORY` 超能來給一個新建的工廠設置等級。
+一旦被設置，等級將無法再次更改。
 
 {% api_property store '<a href="#Store">Store</a>' %}
 
-一个包含了该建筑中所存储的货物的 [`Store`](#Store) 对象。
+一個包含了該建築中所存儲的貨物的 [`Store`](#Store) 對象。
 
 
 
 {% api_property storeCapacity 'number' '{"deprecated": true}' %}
                                                                                                                
-[`.store.getCapacity()`](#Store.getCapacity) 的别名。
+[`.store.getCapacity()`](#Store.getCapacity) 的別名。
 
 {% api_method produce 'resourceType' A %}
 
@@ -71,7 +71,7 @@ if(!factory.level) {
 factory.produce(RESOURCE_UTRIUM_BAR);
 ```
 
-生产指定商品。工厂存储中应该包含所有的生产用料。
+生產指定商品。工廠存儲中應該包含所有的生產用料。
 
 {% api_method_params %}
 resourceType : string
@@ -81,15 +81,15 @@ resourceType : string
 
 ### 返回值
 
-下列返回码之一：
+下列返回碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是该控制器的所有者。
-ERR_RCL_NOT_ENOUGH | 房间控制器等级不足以使用该建筑。
-ERR_NOT_ENOUGH_RESOURCES | 生产所需的资源数量不足。
-ERR_INVALID_ARGS | 提供的参数不正确。
-ERR_INVALID_TARGET | 此工厂无法生产该等级的商品。
-ERR_TIRED | 工厂仍在冷却。
-ERR_BUSY | 无法通过 `PWR_OPERATE_FACTORY` 超能来操作此工厂。
-ERR_FULL | 此工厂的存储已无法容纳要生产的商品。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是該控制器的所有者。
+ERR_RCL_NOT_ENOUGH | 房間控制器等級不足以使用該建築。
+ERR_NOT_ENOUGH_RESOURCES | 生產所需的資源數量不足。
+ERR_INVALID_ARGS | 提供的參數不正確。
+ERR_INVALID_TARGET | 此工廠無法生產該等級的商品。
+ERR_TIRED | 工廠仍在冷卻。
+ERR_BUSY | 無法通過 `PWR_OPERATE_FACTORY` 超能來操作此工廠。
+ERR_FULL | 此工廠的存儲已無法容納要生產的商品。
 {% endapi_return_codes %}

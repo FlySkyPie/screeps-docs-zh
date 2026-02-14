@@ -1,17 +1,17 @@
 ---
-title: 社区服务器
+title: 社區服務器
 ---
 
-Screeps 并不仅仅是指由官方维护的开放式 MMO 游戏世界。我们也发布了具有开放式许可的[游戏服务端软件](https://github.com/screeps/screeps)！所以每个人都可以创建自己的 Screeps 游戏世界，并通过灵活的 mod 系统对游戏核心进行修改和自定义。包括独特的游戏机制和规则，以及拥有自定义外观和行为的游戏对象。
+Screeps 並不僅僅是指由官方維護的開放式 MMO 游戲世界。我們也發布了具有開放式許可的[游戲服務端軟件](https://github.com/screeps/screeps)！所以每個人都可以創建自己的 Screeps 游戲世界，並通過靈活的 mod 系統對游戲核心進行修改和自定義。包括獨特的游戲機制和規則，以及擁有自定義外觀和行為的游戲對象。
 
-我们喜欢这种社区行为，所以我们在游戏的登录页面中的社区服务器列表（Community Servers）中展示了一部分较为可靠的公共服务器。
+我們喜歡這種社區行為，所以我們在游戲的登錄頁面中的社區服務器列表（Community Servers）中展示了一部分較為可靠的公共服務器。
 
 ![](img/community-servers.png)
 
-如果您想将自己的服务器添加到此列表中，请发送邮件至 [contact@screeps.com](mailto:contact@screeps.com)。您的服务器必须遵守以下规定：
+如果您想將自己的服務器添加到此列表中，請發送郵件至 [contact@screeps.com](mailto:contact@screeps.com)。您的服務器必須遵守以下規定：
 
-* 服务端版本为 4.0.0 或更高。
+* 服務端版本為 4.0.0 或更高。
 
-* 服务器最近 7 天必须保证稳定的连接访问。如果长时间无法访问该服务器，我们将把服务器从该列表中移除。
+* 服務器最近 7 天必須保證穩定的連接訪問。如果長時間無法訪問該服務器，我們將把服務器從該列表中移除。
 
-* 使用 [`config.backend.welcomeText`](https://github.com/screeps/launcher/blob/master/init_dist/example-mods/welcome-text.js) 告知玩家您的服务器包含哪些特定功能：您进行的自定义设置，安装了哪些 mod 等。
+* 使用 [`config.backend.welcomeText`](https://github.com/screeps/launcher/blob/master/init_dist/example-mods/welcome-text.js) 告知玩家您的服務器包含哪些特定功能：您進行的自定義設置，安裝了哪些 mod 等。

@@ -2,13 +2,13 @@
 
 <img src="img/invaderCore.png" alt="" align="right" />
 
-该 NPC 建筑是 NPC 要塞的控制中心，并且也统治着本区块中的所有入侵者。它会孵化要塞中的 NPC 守卫，重新装填 tower 以及修复建筑。
-当它存在的时候，本区块中的所有房间都将会生成入侵者。它其中也储藏着一些有价值的资源，当您摧毁该建筑时，就可以从它的废墟（ruin）中搜刮这些资源。
+該 NPC 建築是 NPC 要塞的控制中心，並且也統治著本區塊中的所有入侵者。它會孵化要塞中的 NPC 守衛，重新裝填 tower 以及修復建築。
+當它存在的時候，本區塊中的所有房間都將會生成入侵者。它其中也儲藏著一些有價值的資源，當您摧毀該建築時，就可以從它的廢墟（ruin）中搜刮這些資源。
 
-一个入侵者核心 (Invader Core) 包含两个生命周期阶段：部署阶段和活动阶段。当它刚刚出现在本区块的某个随机房间中时，会包含一个 `ticksToDeploy` 属性，
-周围在其周围的开放 rampart，并且也不会执行任何操作。在该阶段中，它将无法被攻击 (效果 `EFFECT_INVULNERABILITY` 生效)。当 `ticksToDeploy` 计时器结束的时候，它将解除无法被攻击的状态，并会在周围生成建筑和孵化 creep。与此同时，它将获得 `EFFECT_COLLAPSE_TIMER` 效果，在该计时器结束时，该要塞将会被移除。
+一個入侵者核心 (Invader Core) 包含兩個生命周期階段：部署階段和活動階段。當它剛剛出現在本區塊的某個隨機房間中時，會包含一個 `ticksToDeploy` 屬性，
+周圍在其周圍的開放 rampart，並且也不會執行任何操作。在該階段中，它將無法被攻擊 (效果 `EFFECT_INVULNERABILITY` 生效)。當 `ticksToDeploy` 計時器結束的時候，它將解除無法被攻擊的狀態，並會在周圍生成建築和孵化 creep。與此同時，它將獲得 `EFFECT_COLLAPSE_TIMER` 效果，在該計時器結束時，該要塞將會被移除。
 
-一个活动的入侵者核心会在其相邻的中立房间中生成等级为 0 的小型入侵者核心。这些较小的核心会出现在房间控制器的附近，并且只会攻击（attack）和预定（reserve）房间控制器。一个入侵者核心一生中最多只能产生 42 个小型核心。
+一個活動的入侵者核心會在其相鄰的中立房間中生成等級為 0 的小型入侵者核心。這些較小的核心會出現在房間控制器的附近，並且只會攻擊（attack）和預定（reserve）房間控制器。一個入侵者核心一生中最多只能產生 42 個小型核心。
 
 <table class="table gameplay-info">
     <tbody>
@@ -17,21 +17,21 @@
         <td>100,000</td>
     </tr>
     <tr>
-        <td><strong>部署时间</strong></td>
+        <td><strong>部署時間</strong></td>
         <td>5,000 ticks</td>
     </tr>
     <tr>
-        <td><strong>活跃时间</strong></td>
-        <td>75,000 tick 以及 10% 的随机浮动</td>
+        <td><strong>活躍時間</strong></td>
+        <td>75,000 tick 以及 10% 的隨機浮動</td>
     </tr>
     <tr>
-        <td><strong>小型核心生成间隔</strong></td>
+        <td><strong>小型核心生成間隔</strong></td>
         <td>
-            <b>要塞等级 1</b>: 4000 ticks<br>
-            <b>要塞等级 2</b>: 3500 ticks<br>
-            <b>要塞等级 3</b>: 3000 ticks<br>
-            <b>要塞等级 4</b>: 2500 ticks<br>
-            <b>要塞等级 5</b>: 2000 ticks<br>
+            <b>要塞等級 1</b>: 4000 ticks<br>
+            <b>要塞等級 2</b>: 3500 ticks<br>
+            <b>要塞等級 3</b>: 3000 ticks<br>
+            <b>要塞等級 4</b>: 2500 ticks<br>
+            <b>要塞等級 5</b>: 2000 ticks<br>
         </td>
     </tr>
     
@@ -44,12 +44,12 @@
 
 {% api_property level 'number' %}
                                                                 
-此要塞的等级。该等级也决定了战利品的数量和质量。
+此要塞的等級。該等級也決定了戰利品的數量和質量。
 
 {% api_property ticksToDeploy 'number' %}
                                                                                                                 
-部署阶段的计时器，在要塞尚未部署完成时显示，否则为 undefined。
+部署階段的計時器，在要塞尚未部署完成時顯示，否則為 undefined。
 
 {% api_property spawning '<a href="#StructureSpawn-Spawning">StructureSpawn.Spawning</a>' %}
 
-如果该核心正在孵化一个新的 creep，该属性将会包含一个 [`StructureSpawn.Spawning`](#StructureSpawn-Spawning) 对象，否则将为 null。
+如果該核心正在孵化一個新的 creep，該屬性將會包含一個 [`StructureSpawn.Spawning`](#StructureSpawn-Spawning) 對象，否則將為 null。

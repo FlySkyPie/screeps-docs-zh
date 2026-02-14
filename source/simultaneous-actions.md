@@ -1,27 +1,27 @@
-title: 同步动作及优先级
+title: 同步動作及優先級
 ---
 
 {% note info %}
-**译者注：**此章所提及所有的“冲突”及“优先级”都是对同一 [creep](/creeps.html) 而言。有关不同 creep 的冲突，参见[“结束阶段”](/game-loop.html)。
+**譯者注：**此章所提及所有的「沖突」及「優先級」都是對同一 [creep](/creeps.html) 而言。有關不同 creep 的沖突，參見[「結束階段」](/game-loop.html)。
 {% endnote %}
 
-## 不同动作的优先级
+## 不同動作的優先級
 
-对单一 creep 而言，其身体的构造决定了其所能执行的[动作](api/#Creep)（ action ，及蓝色方块标记的左侧栏条目）。虽说您可以创造一个万金油般的 creep ，但它仍不能在同一 [tick](/game-loop.html) 中执行所有的动作。下图便是各个动作之间的优先级关联：
+對單一 creep 而言，其身體的構造決定了其所能執行的[動作](api/#Creep)（ action ，及藍色方塊標記的左側欄條目）。雖說您可以創造一個萬金油般的 creep ，但它仍不能在同一 [tick](/game-loop.html) 中執行所有的動作。下圖便是各個動作之間的優先級關聯：
 
 ![](img/action-priorities.png)
 
-如过您尝试在同一 tick 内执行多个有优先级冲突的动作，**只有图中更靠右的的会被执行**。然而各动作的返回值并不会因优先级冲突而改变。如果动作本身是合乎情理的，那么它总会返回 `OK` 。举个例子：
+如過您嘗試在同一 tick 內執行多個有優先級沖突的動作，**只有圖中更靠右的的會被執行**。然而各動作的返回值並不會因優先級沖突而改變。如果動作本身是合乎情理的，那麼它總會返回 `OK` 。舉個例子：
 
         // 第一 tick
-        creep.build(constructionSite); // ERR_NOT_ENOUGH_ENERGY - 报错：能量不足
-        creep.harvest(source); // OK – 执行成功， creep 收获了能量
+        creep.build(constructionSite); // ERR_NOT_ENOUGH_ENERGY - 報錯：能量不足
+        creep.harvest(source); // OK – 執行成功， creep 收獲了能量
         // 第二 tick
-        creep.build(constructionSite); // OK – 执行成功
-        creep.harvest(source); // OK - 虽然返回值也为 OK ，但由于在同一 tick （上一行）里使用了优先级更高的 [`Creep.build()`](api/#Creep.build)
-        //所以 [`Creep.harvest()`](api/#Creep.harvest) 实际上被覆盖了，没有被执行。
+        creep.build(constructionSite); // OK – 執行成功
+        creep.harvest(source); // OK - 雖然返回值也為 OK ，但由於在同一 tick （上一行）裡使用了優先級更高的 [`Creep.build()`](api/#Creep.build)
+        //所以 [`Creep.harvest()`](api/#Creep.harvest) 實際上被覆蓋了，沒有被執行。
 
-虽说如此，但您却能在同一 tick 内执行多个没有优先级冲突的动作。比如说：
+雖說如此，但您卻能在同一 tick 內執行多個沒有優先級沖突的動作。比如說：
 
         creep.moveTo(target);
         creep.rangedMassAttack();
@@ -31,25 +31,25 @@ title: 同步动作及优先级
         creep.pickup(energy);
         creep.claimController(controller);
 
-上例的动作无一冲突，都能在同一 tick 中被成功执行。
+上例的動作無一沖突，都能在同一 tick 中被成功執行。
 
-取决于能量的多少，同时使用多个有关能量传输的动作会导致不同的结果
+取決於能量的多少，同時使用多個有關能量傳輸的動作會導致不同的結果
 
-*   如果能量足够有余，那么所有的所有动作都将会被执行
-*   否则，优先级规则会介入以解决冲突
+*   如果能量足夠有余，那麼所有的所有動作都將會被執行
+*   否則，優先級規則會介入以解決沖突
 
-## 同一动作的优先级
+## 同一動作的優先級
 
-值得注意的是，不同动作的执行结果仅和它们之间的优先级有关，与在代码中的的顺序无关。但是对与**相同**的动作，最后一个才会被成功执行。例如在同一 tick 中：
+值得注意的是，不同動作的執行結果僅和它們之間的優先級有關，與在代碼中的的順序無關。但是對與**相同**的動作，最後一個才會被成功執行。例如在同一 tick 中：
 
-        creep.moveTo(target); // 被覆盖(因为 [`Creep.moveTo()`](api/#Creep.moveTo) 源码中有调用 [`Creep.move()`](api/#Creep.move))
-        creep.move(RIGHT); // 被覆盖
-        creep.move(LEFT); // 被执行
+        creep.moveTo(target); // 被覆蓋(因為 [`Creep.moveTo()`](api/#Creep.moveTo) 源碼中有調用 [`Creep.move()`](api/#Creep.move))
+        creep.move(RIGHT); // 被覆蓋
+        creep.move(LEFT); // 被執行
 
-最终结果是这个 creep 会向左移动一格。
+最終結果是這個 creep 會向左移動一格。
 
 ## 更多
 
-1.  请注意，治疗一个满血的 creep 或修复满血的建筑会返回 `OK` 并可能覆盖其他优先级较低的动作。
-2.  尽管同时使用 `transfer` （传出）和 `drop` （丢弃）并不一定会产生优先级冲突，您却不能同时执行多个 `transfer`（比如传资源给多个建筑），以此类推。
-3.  同时执行需要 `CARRY` 部件的不同动作不会产生冲突。但资源的存量并没不会在玩家代码执行过程中被改变。参见[理解游戏循环、游戏时间、ticks](/game-loop.html)
+1.  請注意，治療一個滿血的 creep 或修復滿血的建築會返回 `OK` 並可能覆蓋其他優先級較低的動作。
+2.  盡管同時使用 `transfer` （傳出）和 `drop` （丟棄）並不一定會產生優先級沖突，您卻不能同時執行多個 `transfer`（比如傳資源給多個建築），以此類推。
+3.  同時執行需要 `CARRY` 部件的不同動作不會產生沖突。但資源的存量並沒不會在玩家代碼執行過程中被改變。參見[理解游戲循環、游戲時間、ticks](/game-loop.html)

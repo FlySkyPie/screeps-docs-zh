@@ -1,37 +1,37 @@
 title: 控制
 ---
 
-## 全局控制等级 （Global Control Level; 缩写：GCL）
+## 全局控制等級 （Global Control Level; 縮寫：GCL）
 
-为了扩展你在游戏世界中的疆土，你需要提升的一个主要指标是 **Global Control Level**（GCL）。他的主要影响有：
+為了擴展你在游戲世界中的疆土，你需要提升的一個主要指標是 **Global Control Level**（GCL）。他的主要影響有：
 
-* **您的 CPU 限制**。在官方服务器上，您将在开始游戏时获得 20 点 CPU 限额，您可以用其控制少量的单位。如果您通过使用 “CPU Unlock” 来解除了您的 CPU 限额，那么每提升一个 GCL 等级就可以多获得 10 点 CPU 资源，直到达到最大的 300 CPU 限制。
-* **控制房间数量**。比如说你想要控制 3 个房间就需要 3 级的 GCL。
+* **您的 CPU 限制**。在官方服務器上，您將在開始游戲時獲得 20 點 CPU 限額，您可以用其控制少量的單位。如果您通過使用 「CPU Unlock」 來解除了您的 CPU 限額，那麼每提升一個 GCL 等級就可以多獲得 10 點 CPU 資源，直到達到最大的 300 CPU 限制。
+* **控制房間數量**。比如說你想要控制 3 個房間就需要 3 級的 GCL。
 
 
 
-你当前的 GCL 等级在 [overview 页面](https://screeps.com/a/#!/overview) 显示.
+你當前的 GCL 等級在 [overview 頁面](https://screeps.com/a/#!/overview) 顯示.
 
 ![](img/gcl-cpu.png)
 
-## 房间控制等级 （Room Control Level; 缩写：RCL）
+## 房間控制等級 （Room Control Level; 縮寫：RCL）
 
-如果想要在房间里建造设施，首先需要控制这个房间。在大多数房间里都有一个被称为 **房间控制器**（Room Controller）的特殊装置。你第一个房间里的房间控制器默认归你所有，其他的中立房间控制器可以通过带有 `CLAIM` 部件的 creep [占有](/api/#Creep.claimController)以取得房间控制权。
+如果想要在房間裡建造設施，首先需要控制這個房間。在大多數房間裡都有一個被稱為 **房間控制器**（Room Controller）的特殊裝置。你第一個房間裡的房間控制器默認歸你所有，其他的中立房間控制器可以通過帶有 `CLAIM` 部件的 creep [佔有](/api/#Creep.claimController)以取得房間控制權。
 
 ![](img/c1.png)
 
-新占领的房间控制器可以让你在该房间建造一个 Spawn。如果需要建造额外的 Spawn 或者其他扩展就需要通过 [`Creep.upgradeController`](/api/#Creep.upgradeController)给控制器输入能量来提升房间控制器等级 （Room Controller Level，RCL）。
+新佔領的房間控制器可以讓你在該房間建造一個 Spawn。如果需要建造額外的 Spawn 或者其他擴展就需要通過 [`Creep.upgradeController`](/api/#Creep.upgradeController)給控制器輸入能量來提升房間控制器等級 （Room Controller Level，RCL）。
 
 ![](img/c2.png)
 
-## RCL 等级对应可建造建筑
+## RCL 等級對應可建造建築
 
 <table>
 <tbody>
 <tr>
 <th style="width: 10%;">RCL</th>
-<th style="width: 15%;">升级所需能量</th>
-<th>建筑</th>
+<th style="width: 15%;">升級所需能量</th>
+<th>建築</th>
 </tr>
 <tr>
 <td>0</td>
@@ -81,18 +81,18 @@ title: 控制
 </tbody>
 </table>
 
-## 攻击控制器
+## 攻擊控制器
 
-控制器无法被攻击或毁坏。然而，控制器在没有受到 [`upgradeController`](/api/#Creep.upgradeController) 的作用下会缓慢降级，比如说 RCL1 的时候 20,000 个游戏 tick 会降一级，具体的降级规则看 [`StructureController`](/api/#StructureController)。当 RCL 等级降为 0 时，该房间控制器即变为中立，其他玩家就可以占领了。
+控制器無法被攻擊或毀壞。然而，控制器在沒有受到 [`upgradeController`](/api/#Creep.upgradeController) 的作用下會緩慢降級，比如說 RCL1 的時候 20,000 個游戲 tick 會降一級，具體的降級規則看 [`StructureController`](/api/#StructureController)。當 RCL 等級降為 0 時，該房間控制器即變為中立，其他玩家就可以佔領了。
 
-当然你可以通过 [`attackController`](/api/#Creep.attackController) 影响别人的 RC 降级计时器。
+當然你可以通過 [`attackController`](/api/#Creep.attackController) 影響別人的 RC 降級計時器。
 
 ![](/img/controllerDowngrade.png)
 
 ## 提升GCL
 
-升级 GCL 需要向控制器中注入能量，GCL 与控制器的级别是同步增长的，即便控制器已经满级，往控制器中注入能量依旧会使 GCL 上涨。。
+升級 GCL 需要向控制器中注入能量，GCL 與控制器的級別是同步增長的，即便控制器已經滿級，往控制器中注入能量依舊會使 GCL 上漲。。
 
-一旦 GCL 级别提升就不会再降下来，即使游戏输到一个房间都不剩了。重新开始游戏时 GCL 仍然还是那么多，可以让你领先在起跑线上。
+一旦 GCL 級別提升就不會再降下來，即使游戲輸到一個房間都不剩了。重新開始游戲時 GCL 仍然還是那麼多，可以讓你領先在起跑線上。
 
-如果一个房间所需的 GCL 比你的高，你仍然可以[保留（reserve）](/api/#Creep.reserveController)它的控制器。此外，保留中立房间的控制器能够将能源恢复到最大容量。
+如果一個房間所需的 GCL 比你的高，你仍然可以[保留（reserve）](/api/#Creep.reserveController)它的控制器。此外，保留中立房間的控制器能夠將能源恢復到最大容量。

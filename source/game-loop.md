@@ -1,30 +1,30 @@
-title: 理解游戏循环、游戏时间、ticks
+title: 理解游戲循環、游戲時間、ticks
 ---
 
-Screeps 是个实时游戏。它游戏时间不等同于现实时间，而是自从开服以来所有 tick 的总和。当下的游戏时间可用([`Game.time`](/api/#Game.time))获得，这个时间只会随着游戏的发展而增加。
+Screeps 是個實時游戲。它游戲時間不等同於現實時間，而是自從開服以來所有 tick 的總和。當下的游戲時間可用([`Game.time`](/api/#Game.time))獲得，這個時間只會隨著游戲的發展而增加。
 
-就像其他大部分游戏一样， screeps 是由无穷无尽的 "tick"（循环、回合）拼接而成的。每 tick 内，服务器会轮番处理所有玩家写在 `main` 里的指令，只有当处理完后才会进入下 tick。
+就像其他大部分游戲一樣， screeps 是由無窮無盡的 "tick"（循環、回合）拼接而成的。每 tick 內，服務器會輪番處理所有玩家寫在 `main` 裡的指令，只有當處理完後才會進入下 tick。
 
-接下来我们来介绍单个 tick 的三个阶段，及初始、执行、结束阶段。
+接下來我們來介紹單個 tick 的三個階段，及初始、執行、結束階段。
 
 ![](img/game-loop.png)
 
-在**初始阶段**，服务器会重建所有的游戏对象 (object) 和记录这 tick 的游戏状态。比如 creep 的位置，被下令拆除的建筑，或是 creep 及建筑资源的存量 ([`creep.carry()`](api/#Creep.carry) / [`StructureExtension.energy()`](api/#StructureExtension.energy) / [`StructureContainer.store()`](api/#StructureContainer.store))。
+在**初始階段**，服務器會重建所有的游戲對象 (object) 和記錄這 tick 的游戲狀態。比如 creep 的位置，被下令拆除的建築，或是 creep 及建築資源的存量 ([`creep.carry()`](api/#Creep.carry) / [`StructureExtension.energy()`](api/#StructureExtension.energy) / [`StructureContainer.store()`](api/#StructureContainer.store))。
 
-在**执行阶段**，玩家代码的 `main` 及它所调用的模块会被执行，但部分改变游戏状态的指令并不会立即执行。如果玩家在同 tick 内先用了 `移动` ([`creep.move()`](api/#Creep.move)) 再用了 `攻击` ([`creep.attack()`](api/#Creep.attack))，creep 发出攻击的位置将会是移动前的位置，因为 creep 的位置属性 ([`creep.pos`](api/#Creep.pos)) 只能在初始阶段改变。
+在**執行階段**，玩家代碼的 `main` 及它所調用的模塊會被執行，但部分改變游戲狀態的指令並不會立即執行。如果玩家在同 tick 內先用了 `移動` ([`creep.move()`](api/#Creep.move)) 再用了 `攻擊` ([`creep.attack()`](api/#Creep.attack))，creep 發出攻擊的位置將會是移動前的位置，因為 creep 的位置屬性 ([`creep.pos`](api/#Creep.pos)) 只能在初始階段改變。
 
-在**结束阶段**，服务器会处理那些改变游戏状态的指令，然后被传达到下 tick 的初始阶段。如果玩家给了相互冲突的指令，像是多个 creep 尝试跑到同一位置，或是边修理边拆除，这些指令会按照[优先级](/simultaneous-actions.html)执行。但是玩家之间的指令并不一定会造成冲突，比如不同玩家的低血量 creep 相互攻击可能会导致他们同时战死。
+在**結束階段**，服務器會處理那些改變游戲狀態的指令，然後被傳達到下 tick 的初始階段。如果玩家給了相互沖突的指令，像是多個 creep 嘗試跑到同一位置，或是邊修理邊拆除，這些指令會按照[優先級](/simultaneous-actions.html)執行。但是玩家之間的指令並不一定會造成沖突，比如不同玩家的低血量 creep 相互攻擊可能會導致他們同時戰死。
 
 ## 更多
 
-*   玩家代码 `main` 的执行时间被 CPU 所限制(见[`Game.cpuLimit`](/api/#Game.cpuLimit))
+*   玩家代碼 `main` 的執行時間被 CPU 所限制(見[`Game.cpuLimit`](/api/#Game.cpuLimit))
 
-*   已使用 CPU 可由[`Game.getUsedCpu`](/api/#Game.getUsedCpu)获得。
-*   游戏内 tick 的耗时是由服务器吞吐量决定的。
-*   所有运行游戏对象及变量在每 tick 后都会被清除重建(见[全局对象](/global-objects.html))
-*   由控制台输入的指令遵循同样的规则：所以控制台输入的指令会在 `main` 之后执行。
+*   已使用 CPU 可由[`Game.getUsedCpu`](/api/#Game.getUsedCpu)獲得。
+*   游戲內 tick 的耗時是由服務器吞吐量決定的。
+*   所有運行游戲對象及變量在每 tick 後都會被清除重建(見[全局對象](/global-objects.html))
+*   由控制台輸入的指令遵循同樣的規則：所以控制台輸入的指令會在 `main` 之後執行。
 
-## 参见
+## 參見
 
-*   [什么是CPU限制](/cpu-limit.html)
-*   [服务器结构简览](/architecture.html)
+*   [什麼是CPU限制](/cpu-limit.html)
+*   [服務器結構簡覽](/architecture.html)

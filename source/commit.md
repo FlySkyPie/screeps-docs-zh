@@ -1,15 +1,15 @@
-title: 使用外部工具提交代码
+title: 使用外部工具提交代碼
 ---
 
-Screeps 拥有一个小巧的嵌入式编辑器来方便代码的编写。但是，在某些情况下（例如，您想使用 JavaScript 以外的语言或者想使用您的 IDE），您可能不得不使用其他方式将代码从外部提交至您的 Screeps 账户。
+Screeps 擁有一個小巧的嵌入式編輯器來方便代碼的編寫。但是，在某些情況下（例如，您想使用 JavaScript 以外的語言或者想使用您的 IDE），您可能不得不使用其他方式將代碼從外部提交至您的 Screeps 賬戶。
  
 {% note info %}
-您需要先在 [帐户设置](https://screeps.com/a/#!/account/auth-tokens) 中创建一个登录令牌（auth token）来使用外部提交。
+您需要先在 [帳戶設置](https://screeps.com/a/#!/account/auth-tokens) 中創建一個登錄令牌（auth token）來使用外部提交。
 {% endnote %}
 
-## 使用 Grunt 任务
+## 使用 Grunt 任務
 
-如果您以前从未使用过 [Grunt](http://gruntjs.com)，请务必查看 [Getting Started](http://gruntjs.com/getting-started) 指南，它会告诉您如何创建 [Gruntfile](http://gruntjs.com/sample-gruntfile) 以及如何安装和使用 Grunt 插件。在您有了一定的了解后，就可以使用以下命令安装此插件：
+如果您以前從未使用過 [Grunt](http://gruntjs.com)，請務必查看 [Getting Started](http://gruntjs.com/getting-started) 指南，它會告訴您如何創建 [Gruntfile](http://gruntjs.com/sample-gruntfile) 以及如何安裝和使用 Grunt 插件。在您有了一定的了解後，就可以使用以下命令安裝此插件：
 
     npm install grunt-screeps
 
@@ -34,15 +34,15 @@ Screeps 拥有一个小巧的嵌入式编辑器来方便代码的编写。但是
         });
     }
 
-现在，您可以执行以下命令来将您的代码从 `dist` 文件夹提交至 Screeps 账户：
+現在，您可以執行以下命令來將您的代碼從 `dist` 文件夾提交至 Screeps 賬戶：
 
     grunt screeps
 
-## 直接通过 API 进行访问
+## 直接通過 API 進行訪問
 
-Screeps Web API 有一个用于上传/下载代码的接口 `https://screeps.com/api/user/code`。支持通过 `POST` 上传代码和通过 `GET` 下载代码。这两种方法都接受[基本访问鉴权](http://en.wikipedia.org/wiki/Basic_access_authentication)。接口可以接受或返回一个包含所有模块的 JSON 数据，其中模块的名作为键，模块的内容作为值。
+Screeps Web API 有一個用於上傳/下載代碼的接口 `https://screeps.com/api/user/code`。支持通過 `POST` 上傳代碼和通過 `GET` 下載代碼。這兩種方法都接受[基本訪問鑑權](http://en.wikipedia.org/wiki/Basic_access_authentication)。接口可以接受或返回一個包含所有模塊的 JSON 數據，其中模塊的名作為鍵，模塊的內容作為值。
 
-使用 Node.js 提交代码的示例：
+使用 Node.js 提交代碼的示例：
 
     var https = require('https');
 
@@ -70,7 +70,7 @@ Screeps Web API 有一个用于上传/下载代码的接口 `https://screeps.com
     req.write(JSON.stringify(data));
     req.end();
 
-请求:
+請求:
 
     POST /api/user/code HTTP/1.1
     Content-Type: application/json; charset=utf-8
@@ -81,7 +81,7 @@ Screeps Web API 有一个用于上传/下载代码的接口 `https://screeps.com
 
     {"branch":"default","modules":{"main":"require(\"hello\");","hello":"console.log(\"Hello World!\");"}}
 
-响应:
+響應:
 
     X-Powered-By: Express
     Content-Type: application/json; charset=utf-8

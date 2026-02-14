@@ -2,13 +2,13 @@
 
 <img src="img/tombstone.gif" alt="" align="right" />
 
-死亡creep的遗物。这个对象不阻碍行走。
+死亡creep的遺物。這個對象不阻礙行走。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
         <td><strong>消失</strong></td>
-        <td>死去的creep每个身体部件5 tick</td>
+        <td>死去的creep每個身體部件5 tick</td>
     </tr>
     </tbody>
 </table>
@@ -33,25 +33,25 @@ room.find(FIND_TOMBSTONES).forEach(tombstone => {
 });
 ````
 
-一个内含死亡creep或超能creep的对象。
+一個內含死亡creep或超能creep的對象。
 
 {% api_property deathTime 'number' %}
 
-死亡时间。
+死亡時間。
 
 {% api_property id string %}
 
-一个唯一的对象标识。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法获取对象实例。
+一個唯一的對象標識。你可以使用<a href="#Game.getObjectById"><code>Game.getObjectById</code></a>方法獲取對象實例。
 
 
 {% api_property store '<a href="#Store">Store</a>' %}
 
-一个表示该结构所存储资源的 [`Store`](#Store) 对象。
+一個表示該結構所存儲資源的 [`Store`](#Store) 對象。
 
 
 {% api_property ticksToDecay 'number' %}
 
-这个墓碑消失的剩余时间。
+這個墓碑消失的剩余時間。
 
 
 

@@ -2,12 +2,12 @@
 
 <img src="img/observer.png" alt="" align="right" /> 
 
-为你的代码提供远处房间的视野。
+為你的代碼提供遠處房間的視野。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <td colspan="2"><strong>控制中心等级</strong></td>
+        <td colspan="2"><strong>控制中心等級</strong></td>
     </tr>
     <tr>
         <td>1-7</td>
@@ -15,10 +15,10 @@
     </tr>
     <tr>
         <td>8</td>
-        <td>1 观察者</td>
+        <td>1 觀察者</td>
     </tr>
     <tr>
-        <td><strong>建筑成本</strong></td>
+        <td><strong>建築成本</strong></td>
         <td>8,000</td>
     </tr>
     <tr>
@@ -26,8 +26,8 @@
         <td>500</td>
     </tr>
     <tr>
-        <td><strong>观察范围</strong></td>
-        <td>10个房间</td>
+        <td><strong>觀察范圍</strong></td>
+        <td>10個房間</td>
     </tr>
     </tbody>
 </table>
@@ -39,23 +39,23 @@
 
 
 
-为你的代码提供远处房间的视野。目标房间将在下一个tick可见。
+為你的代碼提供遠處房間的視野。目標房間將在下一個tick可見。
 
 {% api_method_params %}
 roomName : string
-目标房间名。
+目標房間名。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个建筑的拥有者。
-ERR_INVALID_ARGS | <code>roomName</code>参数不是一个有效的房间名。
-ERR_NOT_IN_RANGE | 房间<code>roomName</code>不在观察范围内。
-ERR_RCL_NOT_ENOUGH | 房间控制中心等级不足。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個建築的擁有者。
+ERR_INVALID_ARGS | <code>roomName</code>參數不是一個有效的房間名。
+ERR_NOT_IN_RANGE | 房間<code>roomName</code>不在觀察范圍內。
+ERR_RCL_NOT_ENOUGH | 房間控制中心等級不足。
 {% endapi_return_codes %}
 
 

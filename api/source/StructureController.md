@@ -2,16 +2,16 @@
 
 <img src="img/controller.png" alt="" align="right" />
 
-占领(claim) 这个建筑来控制其所在的房间。控制器无法被攻击或摧毁。
+佔領(claim) 這個建築來控制其所在的房間。控制器無法被攻擊或摧毀。
 
-你可以通过 [`Room.controller`](#Room.controller) 属性来快速访问到它。
+你可以通過 [`Room.controller`](#Room.controller) 屬性來快速訪問到它。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <th><strong>等级</strong></th>
-        <th>升级至下个等级</th>
-        <th>降级时间</th>
+        <th><strong>等級</strong></th>
+        <th>升級至下個等級</th>
+        <th>降級時間</th>
     </tr>
     <tr>
         <td>1</td>
@@ -62,24 +62,24 @@
     <tbody>
     <tr>
         <td style="width:60px;"><strong>效果</strong></td>
-        <td>阻止本房间中的所有敌对 creep 的 <code>attack</code>, <code>rangedAttack</code>, <code>rangedMassAttack</code>, <code>dismantle</code>, <code>heal</code>, <code>rangedHeal</code>, <code>attackController</code> and <code>withdraw</code> 方法。以及敌对 Power Creep 的 <code>enableRoom</code> 和 <code>usePower</code> 方法。同一时间内只能有一个房间激活安全模式。<br/>
-    当安全模式被激活时，所有的敌对 creep 都将变透明并且可通过, 您的 creep 可以自由的穿过他们 (反之亦然)。</td>
+        <td>阻止本房間中的所有敵對 creep 的 <code>attack</code>, <code>rangedAttack</code>, <code>rangedMassAttack</code>, <code>dismantle</code>, <code>heal</code>, <code>rangedHeal</code>, <code>attackController</code> and <code>withdraw</code> 方法。以及敵對 Power Creep 的 <code>enableRoom</code> 和 <code>usePower</code> 方法。同一時間內只能有一個房間激活安全模式。<br/>
+    當安全模式被激活時，所有的敵對 creep 都將變透明並且可通過, 您的 creep 可以自由的穿過他們 (反之亦然)。</td>
     </tr>
     <tr>
-        <td style="width:60px;"><strong>持续时间</strong></td>
+        <td style="width:60px;"><strong>持續時間</strong></td>
         <td>20,000 ticks</td>
     </tr>
     <tr>
-        <td style="width:60px;"><strong>冷却时间</strong></td>
-        <td>50,000 ticks (新手区 (Novice Areas) 以及您第一个房间的初始安全模式都没有冷却时间)</td>
+        <td style="width:60px;"><strong>冷卻時間</strong></td>
+        <td>50,000 ticks (新手區 (Novice Areas) 以及您第一個房間的初始安全模式都沒有冷卻時間)</td>
     </tr>
     <tr>
-        <td style="width:60px;"><strong>获取途径</strong></td>
+        <td style="width:60px;"><strong>獲取途徑</strong></td>
         <td>
             <ul>
-                <li>每次控制器升级时提供一次可用次数</li>
-                <li>可以使用 1,000 ghodium 化合物来生成一个可用次数</li>
-                <li>控制器降级时将会重置所有可用次数</li>
+                <li>每次控制器升級時提供一次可用次數</li>
+                <li>可以使用 1,000 ghodium 化合物來生成一個可用次數</li>
+                <li>控制器降級時將會重置所有可用次數</li>
             </ul>
         </td>
     </tr>
@@ -89,13 +89,13 @@
 {% page inherited/OwnedStructure.md %}
 
 {% api_property isPowerEnabled 'boolean' %}
-该房间是否启用了超能 (power)。使用 [`PowerCreep.enableRoom`](#PowerCreep.enableRoom) 来启用超能。
+該房間是否啟用了超能 (power)。使用 [`PowerCreep.enableRoom`](#PowerCreep.enableRoom) 來啟用超能。
 
 {% api_property level 'number' %}
 
 
 
-当前的控制器等级，从 0 到 8。
+當前的控制器等級，從 0 到 8。
 
 
 
@@ -103,7 +103,7 @@
 
 
 
-当前控制器升级到下个等级的进度。
+當前控制器升級到下個等級的進度。
 
 
 
@@ -111,7 +111,7 @@
 
 
 
-控制器升级到下个等级所需的总进度。
+控制器升級到下個等級所需的總進度。
 
 
 
@@ -119,14 +119,14 @@
 
 
 
-如果控制器被预定，则该对象表示预定的信息:
+如果控制器被預定，則該對象表示預定的信息:
 
 {% api_method_params %}
 username : string
-预定了该房间的玩家名称。
+預定了該房間的玩家名稱。
 ===
 ticksToEnd : number
-预定时间还有多少 tick 结束。
+預定時間還有多少 tick 結束。
 {% endapi_method_params %}
 
 
@@ -134,7 +134,7 @@ ticksToEnd : number
 
 
 
-安全模式还有多少 tick 结束。没激活安全模式时返回 undefined。
+安全模式還有多少 tick 結束。沒激活安全模式時返回 undefined。
 
 
 
@@ -142,7 +142,7 @@ ticksToEnd : number
 
 
 
-可用的安全模式激活次数。
+可用的安全模式激活次數。
 
 
 
@@ -150,7 +150,7 @@ ticksToEnd : number
 
 
 
-安全模式的冷却时间还有多少 tick。冷却结束前将无法激活安全模式，当安全模式没有冷却时返回 undefined。
+安全模式的冷卻時間還有多少 tick。冷卻結束前將無法激活安全模式，當安全模式沒有冷卻時返回 undefined。
 
 
 
@@ -158,20 +158,20 @@ ticksToEnd : number
 
 
 
-如果控制器被签名，则该对象表示签名的信息：
+如果控制器被簽名，則該對象表示簽名的信息：
 
 {% api_method_params %}
 username : string
-将控制器签名的玩家名称。
+將控制器簽名的玩家名稱。
 ===
 text : string
-签名的文本内容。
+簽名的文本內容。
 ===
 time : number
-进行签名的游戏 tick 时间。
+進行簽名的游戲 tick 時間。
 ===
 datetime : Date
-进行签名的现实时间。
+進行簽名的現實時間。
 {% endapi_method_params %}
 
 
@@ -179,7 +179,7 @@ datetime : Date
 
 
 
-该控制器还有多少 tick 将要降级。当控制器升级或者降级时, 该计时器将被设置为总降级时间的 50%。可以使用 <code><a href="#Creep.upgradeController">Creep.upgradeController</a></code> 来增加该计时器的时间。控制器想要升级必须先保证该计时器满额。
+該控制器還有多少 tick 將要降級。當控制器升級或者降級時, 該計時器將被設置為總降級時間的 50%。可以使用 <code><a href="#Creep.upgradeController">Creep.upgradeController</a></code> 來增加該計時器的時間。控制器想要升級必須先保證該計時器滿額。
 
 
 
@@ -187,7 +187,7 @@ datetime : Date
 
 
 
-还有多少 tick 就能从控制器被攻击从而无法升级的状态中恢复过来。在此期间安全模式也不可用。
+還有多少 tick 就能從控制器被攻擊從而無法升級的狀態中恢復過來。在此期間安全模式也不可用。
 
 
 
@@ -197,19 +197,19 @@ datetime : Date
 room.controller.activateSafeMode();
 ```
 
-激活安全模式 (如果有的话)。
+激活安全模式 (如果有的話)。
 
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是该控制器的所有者。
-ERR_BUSY | 已经有其他房间处于安全模式下了。
-ERR_NOT_ENOUGH_RESOURCES | 没有足够的可用激活次数。
-ERR_TIRED | 上一个安全模式仍在冷却中，或者控制器正处于 `upgradeBlocked` 状态，或者控制器的降级计时器已经超过了 50% + 5000 tick 甚至更久。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是該控制器的所有者。
+ERR_BUSY | 已經有其他房間處於安全模式下了。
+ERR_NOT_ENOUGH_RESOURCES | 沒有足夠的可用激活次數。
+ERR_TIRED | 上一個安全模式仍在冷卻中，或者控制器正處於 `upgradeBlocked` 狀態，或者控制器的降級計時器已經超過了 50% + 5000 tick 甚至更久。
 {% endapi_return_codes %}
 
 
@@ -220,16 +220,16 @@ ERR_TIRED | 上一个安全模式仍在冷却中，或者控制器正处于 `upg
 room.controller.unclaim();
 ```
 
-放弃该房间，使得控制器重新变为中立状态。
+放棄該房間，使得控制器重新變為中立狀態。
 
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是该控制器的所有者。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是該控制器的所有者。
 {% endapi_return_codes %}
 
 

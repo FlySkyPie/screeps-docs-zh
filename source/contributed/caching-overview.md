@@ -1,42 +1,42 @@
 ---
-title: 缓存概述
+title: 緩存概述
 contributed:
     name: tedivm
     link: https://github.com/tedivm
     date: 2017-06-14
 ---
 
-Screeps 是一个以性能为中心的游戏 - 性能越好，每个 tick 就能完成更多的工作。而缓存则是性能优化中极其重要的元素，在 Screeps 里使用缓存将会让你接触到许多独特的机遇和挑战。
+Screeps 是一個以性能為中心的游戲 - 性能越好，每個 tick 就能完成更多的工作。而緩存則是性能優化中極其重要的元素，在 Screeps 裡使用緩存將會讓你接觸到許多獨特的機遇和挑戰。
 
-从本质上来说，缓存的概念十分简单 - 通过把昂贵的代码执行结果保存起来，来让之后的调用变得更加简单。缓存还有另外一个好处，它可以使得运行的函数在无法得出结果的时候也正常给出返回值。这里有个简单的例子：缓存寻路结果可以使得 creep 在没有房间视野的情况下也可以正常移动，所以说，缓存可以使代码的性能更好也更加的健壮。
+從本質上來說，緩存的概念十分簡單 - 通過把昂貴的代碼執行結果保存起來，來讓之後的調用變得更加簡單。緩存還有另外一個好處，它可以使得運行的函數在無法得出結果的時候也正常給出返回值。這裡有個簡單的例子：緩存尋路結果可以使得 creep 在沒有房間視野的情況下也可以正常移動，所以說，緩存可以使代碼的性能更好也更加的健壯。
 
-## 数据存储位置
+## 數據存儲位置
 
-### 内存（Memory）
+### 內存（Memory）
 
-存储缓存数据最常见位置就是 [Memory](/global-objects.html#Memory-object) 了。只有这里可以真正持久的保存数据 - 存储在 [Memory](/global-objects.html#Memory-object) 中的所有数据会一直保留直到被删除。因此，如果数据非常珍贵或必须保存，则可以把它放到内存里。
+存儲緩存數據最常見位置就是 [Memory](/global-objects.html#Memory-object) 了。只有這裡可以真正持久的保存數據 - 存儲在 [Memory](/global-objects.html#Memory-object) 中的所有數據會一直保留直到被刪除。因此，如果數據非常珍貴或必須保存，則可以把它放到內存裡。
 
-[Memory](/global-objects.html#Memory-object) 有两个主要缺点：
+[Memory](/global-objects.html#Memory-object) 有兩個主要缺點：
 
-*   [Memory](/global-objects.html#Memory-object) 的空间最大只有 2048kb。
-*   [Memory](/global-objects.html#Memory-object) 在被首次访问时会使用 JSON.parse 进行数据解析，保存的数据越多，解析开销就越大。
+*   [Memory](/global-objects.html#Memory-object) 的空間最大只有 2048kb。
+*   [Memory](/global-objects.html#Memory-object) 在被首次訪問時會使用 JSON.parse 進行數據解析，保存的數據越多，解析開銷就越大。
 
-因为这些原因，我们很有必要限制 [Memory](/global-objects.html#Memory-object) 中保存的数据。
+因為這些原因，我們很有必要限制 [Memory](/global-objects.html#Memory-object) 中保存的數據。
 
 
 ### 全局（Global）
 
-[游戏循环](/game-loop.html)架构允许您在 ”loop“ 中定义每个 tick 都会执行的代码。此外，它还允许您在外部定义开销较大的一次性运行代码。这是最常用的`require` 模块 -
+[游戲循環](/game-loop.html)架構允許您在 」loop「 中定義每個 tick 都會執行的代碼。此外，它還允許您在外部定義開銷較大的一次性運行代碼。這是最常用的`require` 模塊 -
 
-    // 仅在新的全局变量新建时执行
+    // 僅在新的全局變量新建時執行
     var mod = require('mod');
 
     module.exports.loop = function() {
-        // 每个 tick 都会执行
+        // 每個 tick 都會執行
         mod.foo();
     }
 
-另一个示例说明了如何保存性能损耗较大的函数的执行结果。在第一次执行之后，后续调用都会返回之前缓存下来的结果：
+另一個示例說明了如何保存性能損耗較大的函數的執行結果。在第一次執行之後，後續調用都會返回之前緩存下來的結果：
 
     let runExpensiveCodeResults = false
     function runExpensiveCode() {
@@ -46,7 +46,7 @@ Screeps 是一个以性能为中心的游戏 - 性能越好，每个 tick 就能
         return runExpensiveCodeResults;
     }
 
-这两个示例的缺点在于，它们仅在代码首次加载 "require" 时才运行或定义。您可以通过访问 [`global`](https://nodejs.org/api/globals.html#globals_global)  对象来让代码更加简洁，该对象是 Node 中的一个特殊对象，可以在任何地方进行访问。
+這兩個示例的缺點在於，它們僅在代碼首次加載 "require" 時才運行或定義。您可以通過訪問 [`global`](https://nodejs.org/api/globals.html#globals_global)  對象來讓代碼更加簡潔，該對象是 Node 中的一個特殊對象，可以在任何地方進行訪問。
 
     function runExpensiveCode() {
         if(!global.runExpensiveCodeResults) {
@@ -56,25 +56,25 @@ Screeps 是一个以性能为中心的游戏 - 性能越好，每个 tick 就能
     }
 
 
-global 缓存还有一些严格的限制：
+global 緩存還有一些嚴格的限制：
 
-*   `global` 对象会定期重置，这意味着所有数据都会被周期性清除。所以 `global` 对象不能视为持久性存储。
-*   将大量数据放入 `global` 缓存中可能会导致 node 的垃圾回收器被更频繁地调用并消耗更多的 CPU。
+*   `global` 對象會定期重置，這意味著所有數據都會被周期性清除。所以 `global` 對象不能視為持久性存儲。
+*   將大量數據放入 `global` 緩存中可能會導致 node 的垃圾回收器被更頻繁地調用並消耗更多的 CPU。
 
-这些限制使得 `global` 对象成为某些类型缓存的理想选择，例如，函数的执行结果始终是相同的，或者使用“老旧”的数据也无关紧要，那么这种就更适合在 `global` 里进行存储。而对于结果可能会更改并且会导致数据变得无效的情况下，就必须将元数据（例如 TTL 或版本标识符）与结果保存在一起来方便进行过期检查。
+這些限制使得 `global` 對象成為某些類型緩存的理想選擇，例如，函數的執行結果始終是相同的，或者使用「老舊」的數據也無關緊要，那麼這種就更適合在 `global` 裡進行存儲。而對於結果可能會更改並且會導致數據變得無效的情況下，就必須將元數據（例如 TTL 或版本標識符）與結果保存在一起來方便進行過期檢查。
 
 
-## 代码引入缓存（Require Cache）
+## 代碼引入緩存（Require Cache）
 
-每次调用`require`时其执行结果都会被缓存。这会减少服务器和脚本的运行消耗，因为它避免了每个 tick 都必须编译各种 javascript 模块。require 缓存和 `global` 缓存有着很高的相关性并且会被同时清除。但是在某些情况下，`require` 缓存会被（全部或部分）清除而 `global` 不会。
+每次調用`require`時其執行結果都會被緩存。這會減少服務器和腳本的運行消耗，因為它避免了每個 tick 都必須編譯各種 javascript 模塊。require 緩存和 `global` 緩存有著很高的相關性並且會被同時清除。但是在某些情況下，`require` 緩存會被（全部或部分）清除而 `global` 不會。
 
-站在性能的角度来看，`require` 和 `global` 缓存会被清除这个事实意味着 `global resets` 是一个尤其耗费性能的事件。
+站在性能的角度來看，`require` 和 `global` 緩存會被清除這個事實意味著 `global resets` 是一個尤其耗費性能的事件。
 
 
 ## 提示
 
-*   请不要随意往 Memory 里添加您的缓存，因为内存解析时间可能会比较昂贵。
-*   解析对象要比解析字符串的损耗更大。在储存之前想办法把 [RoomPositions](/api/#RoomPosition) 之类的对象转换为字符串，然后在需要时再将其转换回来。这种操作可能会带来令人惊讶的性能提升。
-*   你可以压缩具有重复数据的超大对象例如 [CostMatrixes](/api/#PathFinder-CostMatrix) 来节省大量的内存空间。经常利用这些对象的玩家最好学会使用 [lzstring](http://pieroxy.net/blog/pages/lz-string/index.html)，并且还应该保证最大限度的利用 `global` 缓存来尽可能的减少缓存所需的解压次数。
-*   通常来讲，大多数缓存系统会把 TTL 放进 `set` 方法里，但是对于 Screeps 来说，把它放在 `get` 方法里可能更有意义。这样就可以根据需要调整 TTL。例如，可以把没有视野的房间已缓存 Costmax 的 TTL 设置为无限（Infinity）并且对其进行压缩来保证数据始终可用，尽管这些数据可能会比较老旧。
-*   不要忘了添加一些逻辑来自动清理过时的缓存信息，不然您的 Memory 将随着时间推移而变得越来越臃肿。
+*   請不要隨意往 Memory 裡添加您的緩存，因為內存解析時間可能會比較昂貴。
+*   解析對象要比解析字符串的損耗更大。在儲存之前想辦法把 [RoomPositions](/api/#RoomPosition) 之類的對象轉換為字符串，然後在需要時再將其轉換回來。這種操作可能會帶來令人驚訝的性能提升。
+*   你可以壓縮具有重復數據的超大對象例如 [CostMatrixes](/api/#PathFinder-CostMatrix) 來節省大量的內存空間。經常利用這些對象的玩家最好學會使用 [lzstring](http://pieroxy.net/blog/pages/lz-string/index.html)，並且還應該保證最大限度的利用 `global` 緩存來盡可能的減少緩存所需的解壓次數。
+*   通常來講，大多數緩存系統會把 TTL 放進 `set` 方法裡，但是對於 Screeps 來說，把它放在 `get` 方法裡可能更有意義。這樣就可以根據需要調整 TTL。例如，可以把沒有視野的房間已緩存 Costmax 的 TTL 設置為無限（Infinity）並且對其進行壓縮來保證數據始終可用，盡管這些數據可能會比較老舊。
+*   不要忘了添加一些邏輯來自動清理過時的緩存信息，不然您的 Memory 將隨著時間推移而變得越來越臃腫。

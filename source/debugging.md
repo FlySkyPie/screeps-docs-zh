@@ -1,4 +1,4 @@
-title: 调试
+title: 調試
 ---
 
 Javascript 源生的 `console.log()` 。
@@ -7,7 +7,7 @@ Javascript 源生的 `console.log()` 。
         console.log(Game.creeps[i]);
     }
 
-对于所以的动作指令，若被执行了，则返回值为 `OK`，如果无法被执行，则会返回相应的错误代码 `ERR_*` 。
+對於所以的動作指令，若被執行了，則返回值為 `OK`，如果無法被執行，則會返回相應的錯誤代碼 `ERR_*` 。
 
 	var result = creep.attack(target);
     if(result != OK) {
@@ -16,23 +16,23 @@ Javascript 源生的 `console.log()` 。
     }
 
 
-注意，一个看似合理的指令并不一定能被执行。（比如， creep 遇见了未被其代码声明的障碍）
+注意，一個看似合理的指令並不一定能被執行。（比如， creep 遇見了未被其代碼聲明的障礙）
 
-玩家可用并行世界副本[公共测试领域](/ptr.html)来测试其代码。
+玩家可用並行世界副本[公共測試領域](/ptr.html)來測試其代碼。
 
-## 在浏览器端调试
+## 在瀏覽器端調試
 
-当用浏览器玩此游戏时，所有控制台输出都会被转发到浏览器控制台。在 Simulation 模式下，玩家的代码由浏览器，所以玩家得以扩展，查看和遍历对象及其属性等。
+當用瀏覽器玩此游戲時，所有控制台輸出都會被轉發到瀏覽器控制台。在 Simulation 模式下，玩家的代碼由瀏覽器，所以玩家得以擴展，查看和遍歷對象及其屬性等。
 
-在 Chrome 浏览器里，您可以使用 `debugger` Javascript 关键词来暂停执行并进行调试:
+在 Chrome 瀏覽器裡，您可以使用 `debugger` Javascript 關鍵詞來暫停執行並進行調試:
 
 	var result = creep.attack(target);
     if(result != OK) {
         debugger;
     }
 
-## 监测 Memory
+## 監測 Memory
 
-如果玩家想实时观察变量，可选择把它们写入 Memory 并将其加入监测器面板。监测器面板每 tick 会自动更新。
+如果玩家想實時觀察變量，可選擇把它們寫入 Memory 並將其加入監測器面板。監測器面板每 tick 會自動更新。
 
 ![](img/chrome_2016-06-21_22-21-36.png)

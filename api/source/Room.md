@@ -1,13 +1,13 @@
 # Room
 
-一个代表了你的单位和建筑所在房间的对象。
-它可以被用来“环顾四周”，查找路径等。所有 `RoomObject` 都有一个链接到其所在房间 `Room` 实例的属性 `room`。
+一個代表了你的單位和建築所在房間的對象。
+它可以被用來「環顧四周」，查找路徑等。所有 `RoomObject` 都有一個鏈接到其所在房間 `Room` 實例的屬性 `room`。
 
 {% api_property controller '<a href="#StructureController">StructureController</a>' %}
 
 
 
-该房间中的控制器（Controller）建筑，如果其不存在则返回 undefined。
+該房間中的控制器（Controller）建築，如果其不存在則返回 undefined。
 
 
 
@@ -15,7 +15,7 @@
 
 
 
-本房间中所有 spawn 和 extension 中的可用能量总额。
+本房間中所有 spawn 和 extension 中的可用能量總額。
 
 
 
@@ -23,7 +23,7 @@
 
 
 
-本房间中所有 spawn 和 extension 的容量上限 <code>energyCapacity</code> 总额。
+本房間中所有 spawn 和 extension 的容量上限 <code>energyCapacity</code> 總額。
 
 
 {% api_property memory 'any' %}
@@ -32,7 +32,7 @@
 room.memory.stage = 2;
 ```
 
-<code>Memory.rooms[room.name]</code> 的简写。你可以用它来快速访问到该房间特定的内存数据对象。<a href="/global-objects.html#Memory-object">点此了解有关内存的更多信息</a>。
+<code>Memory.rooms[room.name]</code> 的簡寫。你可以用它來快速訪問到該房間特定的內存數據對象。<a href="/global-objects.html#Memory-object">點此了解有關內存的更多信息</a>。
 
 
 
@@ -40,7 +40,7 @@ room.memory.stage = 2;
 
 
 
-房间名称。
+房間名稱。
 
 
 
@@ -48,7 +48,7 @@ room.memory.stage = 2;
 
 
 
-该房间中的 Storage 建筑，如果其不存在则返回 undefined。
+該房間中的 Storage 建築，如果其不存在則返回 undefined。
 
 
 
@@ -56,14 +56,14 @@ room.memory.stage = 2;
 
 
 
-该房间中的 Terminal 建筑，如果其不存在则返回 undefined。
+該房間中的 Terminal 建築，如果其不存在則返回 undefined。
 
 
 
 {% api_property visual '<a href="#RoomVisual">RoomVisual</a>' %}
 
 
-该房间的 <a href="#RoomVisual">RoomVisual</a> 对象。您可以使用该对象在房间中绘制简单的形状 (线条，圆，文本标签)。
+該房間的 <a href="#RoomVisual">RoomVisual</a> 對象。您可以使用該對象在房間中繪制簡單的形狀 (線條，圓，文本標簽)。
 
 
 
@@ -75,17 +75,17 @@ Memory.path = Room.serializePath(path);
 creep.moveByPath(Memory.path);
 ```
 
-将路径数组序列化为适合存储在内存中的短字符串形式。
+將路徑數組序列化為適合存儲在內存中的短字符串形式。
 
 {% api_method_params %}
 path : array
-<code><a href="#Room.findPath">Room.findPath</a></code> 返回的路径数组。
+<code><a href="#Room.findPath">Room.findPath</a></code> 返回的路徑數組。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-参数路径的序列化字符串。
+參數路徑的序列化字符串。
 
 {% api_method Room.deserializePath 'path' 1 %}
 
@@ -94,17 +94,17 @@ const path = Room.deserializePath(Memory.path);
 creep.moveByPath(path);
 ```
 
-将短字符串形式的路径反序列化为路径数组。
+將短字符串形式的路徑反序列化為路徑數組。
 
 {% api_method_params %}
 path : string
-一个序列化路径字符串。
+一個序列化路徑字符串。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-一个路径数组
+一個路徑數組
 
 {% api_method createConstructionSite 'x, y, structureType, [name]|pos, structureType, [name]' A %}
 
@@ -117,36 +117,36 @@ Game.rooms.sim.createConstructionSite(10, 15, STRUCTURE_SPAWN,
     'MySpawn2');
 ```
 
-在指定位置创建一个新的 <a href="#ConstructionSite">ConstructionSite</a>。
+在指定位置創建一個新的 <a href="#ConstructionSite">ConstructionSite</a>。
 
 {% api_method_params %}
 x : number
-X 坐标。
+X 坐標。
 ===
 y : number
-Y 坐标。
+Y 坐標。
 ===
 pos : object
-可以为 <a href="#RoomPosition">RoomPosition</a>  对象或任何包含 <a href="#RoomPosition">RoomPosition</a> 的对象。
+可以為 <a href="#RoomPosition">RoomPosition</a>  對象或任何包含 <a href="#RoomPosition">RoomPosition</a> 的對象。
 ===
 structureType : string
 <code>STRUCTURE_*</code> 常量之一。
 ===
-name (可选) : string
-建筑的名称，该建筑必须支持设置名字（当前仅有 spawn）。最长不能超过 100 个字符。
+name (可選) : string
+建築的名稱，該建築必須支持設置名字（當前僅有 spawn）。最長不能超過 100 個字符。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_INVALID_TARGET | T该建筑无法被放置在指定位置。
-ERR_FULL | 你已经放置了太多建筑工地。其上限为 100。
-ERR_INVALID_ARGS | 不正确的位置。
-ERR_NOT_OWNER | 该房间被敌对玩家占领（claim）或预定（reserve）。
-ERR_RCL_NOT_ENOUGH | 房间控制器级别不足。<a href="/control.html">了解更多</a>
+OK | 這個操作已經成功納入計劃。
+ERR_INVALID_TARGET | T該建築無法被放置在指定位置。
+ERR_FULL | 你已經放置了太多建築工地。其上限為 100。
+ERR_INVALID_ARGS | 不正確的位置。
+ERR_NOT_OWNER | 該房間被敵對玩家佔領（claim）或預定（reserve）。
+ERR_RCL_NOT_ENOUGH | 房間控制器級別不足。<a href="/control.html">了解更多</a>
 {% endapi_return_codes %}
 
 
@@ -157,36 +157,36 @@ ERR_RCL_NOT_ENOUGH | 房间控制器级别不足。<a href="/control.html">了�
 Game.rooms.sim.createFlag(5, 12, 'Flag1');
 ```
 
-在指定位置创建一个新的 <a href="#Flag">Flag</a>。
+在指定位置創建一個新的 <a href="#Flag">Flag</a>。
 
 {% api_method_params %}
 x : number
-X 坐标。
+X 坐標。
 ===
 y : number
-Y 坐标。
+Y 坐標。
 ===
 pos : object
-可以为 <a href="#RoomPosition">RoomPosition</a>  对象或任何包含 <a href="#RoomPosition">RoomPosition</a> 的对象。
+可以為 <a href="#RoomPosition">RoomPosition</a>  對象或任何包含 <a href="#RoomPosition">RoomPosition</a> 的對象。
 ===
-name (可选) : string
-新旗帜的名称。它应该是唯一的，即 <code>Game.flags</code> 不应该包含拥有相同名称（哈希键）的其他旗帜。如果未定义，则会生成随机名称。最长不得超过 100 字符。
+name (可選) : string
+新旗幟的名稱。它應該是唯一的，即 <code>Game.flags</code> 不應該包含擁有相同名稱（哈希鍵）的其他旗幟。如果未定義，則會生成隨機名稱。最長不得超過 100 字符。
 ===
-color (可选) : string
-新旗帜的颜色。应为 <code>COLOR_*</code> 常量之一。默认值为 <code>COLOR_WHITE</code>。
+color (可選) : string
+新旗幟的顏色。應為 <code>COLOR_*</code> 常量之一。默認值為 <code>COLOR_WHITE</code>。
 ===
-secondaryColor (可选) : string
-新旗帜的次要颜色。应为 <code>COLOR_*</code> 常量之一。默认值等于 <code>color</code> 属性值。
+secondaryColor (可選) : string
+新旗幟的次要顏色。應為 <code>COLOR_*</code> 常量之一。默認值等於 <code>color</code> 屬性值。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-新旗帜的名称，或者下列错误码之一：
+新旗幟的名稱，或者下列錯誤碼之一：
 {% api_return_codes %}
-ERR_NAME_EXISTS | 该名称已被现有的旗帜使用。
-ERR_INVALID_ARGS | 位置、名称或者颜色不正确。
-ERR_FULL | 你放置了太多旗帜，每个玩家最多允许放置 10000 个旗帜。
+ERR_NAME_EXISTS | 該名稱已被現有的旗幟使用。
+ERR_INVALID_ARGS | 位置、名稱或者顏色不正確。
+ERR_FULL | 你放置了太多旗幟，每個玩家最多允許放置 10000 個旗幟。
 {% endapi_return_codes %}
 
 
@@ -216,19 +216,19 @@ const targets = creep.room.find(FIND_HOSTILE_CREEPS, {
 });
 ```
 
-查找房间中指定类型的所有对象。在应用自定义的 filter 之前，搜索结果会被自动缓存到指定的房间和类型，自动缓存将持续到本 tick 结束。
+查找房間中指定類型的所有對象。在應用自定義的 filter 之前，搜索結果會被自動緩存到指定的房間和類型，自動緩存將持續到本 tick 結束。
 
 {% api_method_params %}
 type : number
 <code>FIND_*</code> 常量之一。
 ===
-opts (可选) : object
-包含下列可选项的对象：
+opts (可選) : object
+包含下列可選項的對象：
 					<ul>
 						<li>
 							<div class="api-arg-title">filter</div>
 							<div class="api-arg-type">object, function, string</div>
-							<div class="api-arg-desc">将会使用 <a href="https://lodash.com/docs#filter">Lodash.filter</a> 方法对结果列表进行筛选。</div>
+							<div class="api-arg-desc">將會使用 <a href="https://lodash.com/docs#filter">Lodash.filter</a> 方法對結果列表進行篩選。</div>
 						</li>
 					</ul>
 
@@ -237,34 +237,34 @@ opts (可选) : object
 
 ### 返回值
 
-找到的对象数组
+找到的對象數組
 
-常量|类型|介绍
+常量|類型|介紹
 ---|---|---
-`FIND_EXIT_TOP` | RoomPosition | 位于房间顶部的出口位置。
-`FIND_EXIT_RIGHT` | RoomPosition | 位于房间右侧的出口位置。
-`FIND_EXIT_BOTTOM` | RoomPosition | 位于房间底部的出口位置。
-`FIND_EXIT_LEFT` | RoomPosition | 位于房间左侧的出口位置。
+`FIND_EXIT_TOP` | RoomPosition | 位於房間頂部的出口位置。
+`FIND_EXIT_RIGHT` | RoomPosition | 位於房間右側的出口位置。
+`FIND_EXIT_BOTTOM` | RoomPosition | 位於房間底部的出口位置。
+`FIND_EXIT_LEFT` | RoomPosition | 位於房間左側的出口位置。
 `FIND_EXIT` | RoomPosition | 所有出口位置。
 `FIND_CREEPS` | Creep | 所有 creep。
-`FIND_MY_CREEPS` | Creep | 所有属于您的 creep。
-`FIND_HOSTILE_CREEPS` | Creep | 所有不属于您的 creep。
+`FIND_MY_CREEPS` | Creep | 所有屬於您的 creep。
+`FIND_HOSTILE_CREEPS` | Creep | 所有不屬於您的 creep。
 `FIND_SOURCES_ACTIVE` | Source | 仍有能量的 source。
 `FIND_SOURCES` | Source | 所有 source。
-`FIND_DROPPED_RESOURCES` | Resource | 所有掉落的资源。
-`FIND_STRUCTURES` | Structure | 所有建筑。
-`FIND_MY_STRUCTURES` | Structure | 所有属于您的建筑，不包含中立建筑。
-`FIND_HOSTILE_STRUCTURES` | Structure | 所有其他玩家的建筑，不包含中立建筑。
-`FIND_FLAGS` | Flag | 所有旗帜。
-`FIND_MY_SPAWNS` | StructureSpawn | 所有属于您的 spawn。
+`FIND_DROPPED_RESOURCES` | Resource | 所有掉落的資源。
+`FIND_STRUCTURES` | Structure | 所有建築。
+`FIND_MY_STRUCTURES` | Structure | 所有屬於您的建築，不包含中立建築。
+`FIND_HOSTILE_STRUCTURES` | Structure | 所有其他玩家的建築，不包含中立建築。
+`FIND_FLAGS` | Flag | 所有旗幟。
+`FIND_MY_SPAWNS` | StructureSpawn | 所有屬於您的 spawn。
 `FIND_HOSTILE_SPAWNS` | StructureSpawn | 所有其他玩家的 spawn。
-`FIND_CONSTRUCTION_SITES` | ConstructionSite | 所有建筑工地。
-`FIND_MY_CONSTRUCTION_SITES` | ConstructionSite | 所有属于您的建筑工地。
-`FIND_HOSTILE_CONSTRUCTION_SITES` | ConstructionSite | 所有其他玩家的建筑工地。
-`FIND_MINERALS` | Mineral | 所有矿床。
-`FIND_NUKES` | Nuke | 所有将落地的核弹。
+`FIND_CONSTRUCTION_SITES` | ConstructionSite | 所有建築工地。
+`FIND_MY_CONSTRUCTION_SITES` | ConstructionSite | 所有屬於您的建築工地。
+`FIND_HOSTILE_CONSTRUCTION_SITES` | ConstructionSite | 所有其他玩家的建築工地。
+`FIND_MINERALS` | Mineral | 所有礦床。
+`FIND_NUKES` | Nuke | 所有將落地的核彈。
 `FIND_TOMBSTONES` | Tombstone | 所有墓碑。
-`FIND_RUINS` | Ruin | 所有废墟。
+`FIND_RUINS` | Ruin | 所有廢墟。
 
 {% api_method findExitTo 'room' 3 %}
 
@@ -273,16 +273,16 @@ const exitDir = creep.room.findExitTo(anotherCreep.room);
 const exit = creep.pos.findClosestByRange(exitDir);
 creep.moveTo(exit);
 
-// 或简写为：
+// 或簡寫為：
 creep.moveTo(anotherCreep);
 creep.moveTo(new RoomPosition(25,25, anotherCreep.pos.roomName));
 ```
 
-找到通往另一个房间的出口方向。请注意，房间之间的移动不需要此方法，您只需将另一个房间中的目标传递给 <a href="#Creep.moveTo"><code>Creep.moveTo</code></a> 方法即可。
+找到通往另一個房間的出口方向。請注意，房間之間的移動不需要此方法，您只需將另一個房間中的目標傳遞給 <a href="#Creep.moveTo"><code>Creep.moveTo</code></a> 方法即可。
 
 {% api_method_params %}
 room : string, <a href="#Room">Room</a>
-其他房间的名称或者房间对象。
+其他房間的名稱或者房間對象。
 {% endapi_method_params %}
 
 
@@ -295,10 +295,10 @@ room : string, <a href="#Room">Room</a>
 * `FIND_EXIT_BOTTOM`
 * `FIND_EXIT_LEFT`
 
-或者下列错误码之一：
+或者下列錯誤碼之一：
 {% api_return_codes %}
-ERR_NO_PATH | 无法找到路径。
-ERR_INVALID_ARGS | 不正确的位置。
+ERR_NO_PATH | 無法找到路徑。
+ERR_INVALID_ARGS | 不正確的位置。
 {% endapi_return_codes %}
 
 
@@ -315,11 +315,11 @@ PathFinder.use(true);
 const path = creep.room.findPath(creep.pos, targetPos, {
     costCallback: function(roomName, costMatrix) {
 	    if(roomName == 'W1N5') {
-		    // 将其他 creep 所处位置设置为可通过
+		    // 將其他 creep 所處位置設置為可通過
 			costMatrix.set(anotherCreep.pos.x, anotherCreep.pos.y, 0);
-			// 将旗帜的位置设置为障碍
+			// 將旗幟的位置設置為障礙
 			costMatrix.set(flag.pos.x, flag.pos.y, 255);
-			// 将位置 (25,20) 的移动成本设置为 50
+			// 將位置 (25,20) 的移動成本設置為 50
 			costMatrix.set(25, 20, 50);
 		}
 	}
@@ -339,82 +339,82 @@ if( path.length ) {
 }
 ```
 
-使用跳点搜索算法 (<a href="http://en.wikipedia.org/wiki/Jump_point_search" target="_blank">Jump Point Search</a>) 在 fromPos 和 toPos 之间找到房间内的最佳路径。
+使用跳點搜索算法 (<a href="http://en.wikipedia.org/wiki/Jump_point_search" target="_blank">Jump Point Search</a>) 在 fromPos 和 toPos 之間找到房間內的最佳路徑。
 
 {% api_method_params %}
 fromPos : <a href="#RoomPosition">RoomPosition</a>
 起始位置。
 ===
 toPos : <a href="#RoomPosition">RoomPosition</a>
-结束位置。
+結束位置。
 ===
-opts (可选) : object
-包含下列寻路可选项的对象：
+opts (可選) : object
+包含下列尋路可選項的對象：
 <ul>
     <li>
         <div class="api-arg-title">ignoreCreeps</div>
         <div class="api-arg-type">boolean</div>
-        <div class="api-arg-desc">将其他 creep 所处的地块视作可通行的。在附近有大量移动的 creep 或者其他一些情况时会很有用。默认值为 false。</div>
+        <div class="api-arg-desc">將其他 creep 所處的地塊視作可通行的。在附近有大量移動的 creep 或者其他一些情況時會很有用。默認值為 false。</div>
     </li>
     <li>
         <div class="api-arg-title">ignoreDestructibleStructures</div>
         <div class="api-arg-type">boolean</div>
-        <div class="api-arg-desc">将可破坏的建筑 (constructed walls, ramparts, spawns, extensions) 所在的地块视作可通行的。默认为 false。</div>
+        <div class="api-arg-desc">將可破壞的建築 (constructed walls, ramparts, spawns, extensions) 所在的地塊視作可通行的。默認為 false。</div>
     </li>
     <li>
         <div class="api-arg-title">ignoreRoads</div>
         <div class="api-arg-type">boolean</div>
-        <div class="api-arg-desc">无视道路。启用该项将加快搜索速度。默认值为 false。仅当新的 <a href="#PathFinder"><code>PathFinder</code></a> 启用时才可用。</div>
+        <div class="api-arg-desc">無視道路。啟用該項將加快搜索速度。默認值為 false。僅當新的 <a href="#PathFinder"><code>PathFinder</code></a> 啟用時才可用。</div>
     </li>
     <li>
         <div class="api-arg-title">costCallback</div>
         <div class="api-arg-type">function(string, CostMatrix)</div>
-        <div class="api-arg-desc">你可以使用该回调在搜索过程中为任意房间修改 <a href="#PathFinder-CostMatrix"><code>CostMatrix</code></a>。回调接受两个参数，<code>roomName</code> 和 <code>costMatrix</code>。使用 <code>costMatrix</code> 实例来修改地形移动成本。如果你从回调中返回了一个新的 matrix。它将会代替内置的缓存 matrix。仅当新的 <a href="#PathFinder"><code>PathFinder</code></a> 启用时才可用。</div>
+        <div class="api-arg-desc">你可以使用該回調在搜索過程中為任意房間修改 <a href="#PathFinder-CostMatrix"><code>CostMatrix</code></a>。回調接受兩個參數，<code>roomName</code> 和 <code>costMatrix</code>。使用 <code>costMatrix</code> 實例來修改地形移動成本。如果你從回調中返回了一個新的 matrix。它將會代替內置的緩存 matrix。僅當新的 <a href="#PathFinder"><code>PathFinder</code></a> 啟用時才可用。</div>
     </li>
     <li>
         <div class="api-arg-title">ignore</div>
         <div class="api-arg-type">array</div>
-        <div class="api-arg-desc">一个数组，其元素为房间中的对象或者 <a href="#RoomPosition">RoomPosition</a> 对象，在搜索时会将该数组中的对象位置视作可通行的地块。当启用新的 <a href="#PathFinder"><code>PathFinder</code></a> 时无法使用。（请用 <code>costCallback</code> 选项代替）。</div>
+        <div class="api-arg-desc">一個數組，其元素為房間中的對象或者 <a href="#RoomPosition">RoomPosition</a> 對象，在搜索時會將該數組中的對象位置視作可通行的地塊。當啟用新的 <a href="#PathFinder"><code>PathFinder</code></a> 時無法使用。（請用 <code>costCallback</code> 選項代替）。</div>
     </li>
     <li>
         <div class="api-arg-title">avoid</div>
         <div class="api-arg-type">array</div>
-        <div class="api-arg-desc">一个数组，其元素为房间中的对象或者 <a href="#RoomPosition">RoomPosition</a> 对象，在搜索时会将该数组中的对象位置视作无法通行的地块。当启用新的 <a href="#PathFinder"><code>PathFinder</code></a> 时无法使用。（请用 <code>costCallback</code> 选项代替）。</div>
+        <div class="api-arg-desc">一個數組，其元素為房間中的對象或者 <a href="#RoomPosition">RoomPosition</a> 對象，在搜索時會將該數組中的對象位置視作無法通行的地塊。當啟用新的 <a href="#PathFinder"><code>PathFinder</code></a> 時無法使用。（請用 <code>costCallback</code> 選項代替）。</div>
     </li>
     <li>
         <div class="api-arg-title">maxOps</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">用于寻路的消耗上限。你可以限制在寻路上花费的 CPU 时间，基于 1 op ~ 0.001 CPU 的比例。默认值为 2000。</div>
+        <div class="api-arg-desc">用於尋路的消耗上限。你可以限制在尋路上花費的 CPU 時間，基於 1 op ~ 0.001 CPU 的比例。默認值為 2000。</div>
     </li>
     <li>
         <div class="api-arg-title">heuristicWeight</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">应用于 A\* 算法 <code>F = G + weight \* H</code> 中的启发式权重(weight)。在使用该选项之前您最好已经了解了 A\* 算法的底层实现！默认值为 1.2。</div>
+        <div class="api-arg-desc">應用於 A\* 算法 <code>F = G + weight \* H</code> 中的啟發式權重(weight)。在使用該選項之前您最好已經了解了 A\* 算法的底層實現！默認值為 1.2。</div>
     </li>
     <li>
         <div class="api-arg-title">serialize</div>
         <div class="api-arg-type">boolean</div>
-        <div class="api-arg-desc">如果为 true，将会使用 <code><a href="#Room.serializePath">Room.serializePath</a></code> 对结果路径进行序列化。默认值为 false。</div>
+        <div class="api-arg-desc">如果為 true，將會使用 <code><a href="#Room.serializePath">Room.serializePath</a></code> 對結果路徑進行序列化。默認值為 false。</div>
     </li>
     <li>
         <div class="api-arg-title">maxRooms</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">寻路所允许的最大房间数。默认值为 16。仅当新的 <a href="#PathFinder"><code>PathFinder</code></a> 启用时才可用。</div>
+        <div class="api-arg-desc">尋路所允許的最大房間數。默認值為 16。僅當新的 <a href="#PathFinder"><code>PathFinder</code></a> 啟用時才可用。</div>
     </li>
     <li>
         <div class="api-arg-title">range</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">找到到达位于目标指定线性区域内位置的路径。默认值为 0.</div>
+        <div class="api-arg-desc">找到到達位於目標指定線性區域內位置的路徑。默認值為 0.</div>
     </li>
     <li>
         <div class="api-arg-title">plainCost</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">平原地形的移动成本。默认为 1。</div>
+        <div class="api-arg-desc">平原地形的移動成本。默認為 1。</div>
     </li>
     <li>
         <div class="api-arg-title">swampCost</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">沼泽地形的移动成本。默认为 5。</div>
+        <div class="api-arg-desc">沼澤地形的移動成本。默認為 5。</div>
     </li>
 </ul>
 
@@ -423,7 +423,7 @@ opts (可选) : object
 
 ### 返回值
 
-一个数组，其元素为如下形式的路径步骤：
+一個數組，其元素為如下形式的路徑步驟：
 
 ```javascript-content
 [
@@ -437,12 +437,12 @@ opts (可选) : object
 {% api_method getEventLog '[raw]' 1 %}
 
 ```javascript
-// 追踪特定 creep 执行的事件
+// 追蹤特定 creep 執行的事件
 _.filter(creep.room.getEventLog(), {objectId: creep.id});
 ```
 
 ```javascript
-// 查找针对您的 creep 和建筑的所有敌对行动
+// 查找針對您的 creep 和建築的所有敵對行動
 _.forEach(Game.rooms, room => {
     let eventLog = room.getEventLog();
     let attackEvents = _.filter(eventLog, {event: EVENT_ATTACK});
@@ -455,17 +455,17 @@ _.forEach(Game.rooms, room => {
 });
 ```
 
-返回该房间中前一个 tick 发生的事件数组。
+返回該房間中前一個 tick 發生的事件數組。
 
 {% api_method_params %}
 raw : boolean
-如果该参数为 false 或者未定义，则本方法将会返回使用 `JSON.parse` 解析后的对象，在首次访问时可能会造成一些 CPU 消耗（返回值会被缓存以方便后续调用）。如果 `raw` 为 true。则原始的 JSON 字符串将会被返回。
+如果該參數為 false 或者未定義，則本方法將會返回使用 `JSON.parse` 解析後的對象，在首次訪問時可能會造成一些 CPU 消耗（返回值會被緩存以方便後續調用）。如果 `raw` 為 true。則原始的 JSON 字符串將會被返回。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-事件数组。每个事件都代表一个游戏动作，其格式如下：
+事件數組。每個事件都代表一個游戲動作，其格式如下：
 
 ```javascript-content
 {
@@ -475,26 +475,26 @@ raw : boolean
 }
 ```
 
-不同类型事件的 `data` 属性都是不相同的，详见下表：
+不同類型事件的 `data` 屬性都是不相同的，詳見下表：
 <table>
     <tr>
-        <th>事件</th><th>介绍</th>
+        <th>事件</th><th>介紹</th>
     </tr>
     <tr>
         <td>`EVENT_ATTACK`</td>
         <td>
-            一个 creep 或者建筑攻击了另一个对象。
+            一個 creep 或者建築攻擊了另一個對象。
             <ul>
-                <li>`targetId` - 目标对象 ID</li>
-                <li>`damage` - 造成的 hit 伤害量</li>
+                <li>`targetId` - 目標對象 ID</li>
+                <li>`damage` - 造成的 hit 傷害量</li>
                 <li>`attackType` - 下列常量之一：
                     <ul>
-                        <li>`EVENT_ATTACK_TYPE_MELEE` - creep 使用 [attack](#Creep.attack) 进行了攻击</li>
-                        <li>`EVENT_ATTACK_TYPE_RANGED` - creep 使用 [rangedAttack](#Creep.rangedAttack) 进行了攻击，或者 tower 使用 [attack](#StructureTower.attack) 进行了攻击</li>
-                        <li>`EVENT_ATTACK_TYPE_RANGED_MASS` - creep 使用 [rangedMassAttack](#Creep.rangedMassAttack) 进行了攻击</li>
-                        <li>`EVENT_ATTACK_TYPE_DISMANTLE` - creep 使用 [dismantle](#Creep.dismantle) 进行了攻击</li>
-                        <li>`EVENT_ATTACK_TYPE_HIT_BACK` - creep 反击了其他 creep 的 [attack](#Creep.attack) 攻击</li>
-                        <li>`EVENT_ATTACK_TYPE_NUKE` - 核弹着陆</li>
+                        <li>`EVENT_ATTACK_TYPE_MELEE` - creep 使用 [attack](#Creep.attack) 進行了攻擊</li>
+                        <li>`EVENT_ATTACK_TYPE_RANGED` - creep 使用 [rangedAttack](#Creep.rangedAttack) 進行了攻擊，或者 tower 使用 [attack](#StructureTower.attack) 進行了攻擊</li>
+                        <li>`EVENT_ATTACK_TYPE_RANGED_MASS` - creep 使用 [rangedMassAttack](#Creep.rangedMassAttack) 進行了攻擊</li>
+                        <li>`EVENT_ATTACK_TYPE_DISMANTLE` - creep 使用 [dismantle](#Creep.dismantle) 進行了攻擊</li>
+                        <li>`EVENT_ATTACK_TYPE_HIT_BACK` - creep 反擊了其他 creep 的 [attack](#Creep.attack) 攻擊</li>
+                        <li>`EVENT_ATTACK_TYPE_NUKE` - 核彈著陸</li>
                     </ul>
                 </li></ul>
         </td>
@@ -502,44 +502,44 @@ raw : boolean
     <tr>
         <td>`EVENT_OBJECT_DESTROYED`</td>
         <td>
-            一个游戏对象被摧毁或是被消灭。
-            <ul><li>`type` - 被摧毁对象的类型</li></ul>
+            一個游戲對象被摧毀或是被消滅。
+            <ul><li>`type` - 被摧毀對象的類型</li></ul>
         </td>
     </tr>
     <tr>
         <td>`EVENT_ATTACK_CONTROLLER`</td>
-        <td>一个 creep 在该房间执行了 [`attackController`](#Creep.attackController)</td>
+        <td>一個 creep 在該房間執行了 [`attackController`](#Creep.attackController)</td>
     </tr>
     <tr>
         <td>`EVENT_BUILD`</td>
         <td>
-            一个 creep 在该房间执行了 [`build`](#Creep.build)。
+            一個 creep 在該房間執行了 [`build`](#Creep.build)。
             <ul>
-                <li>`targetId` - 目标对象的 ID</li>
-                <li>`amount` - 取得的建造进度</li>
-                <li>`energySpent` - 此次行动消耗的能量</li></ul>
+                <li>`targetId` - 目標對象的 ID</li>
+                <li>`amount` - 取得的建造進度</li>
+                <li>`energySpent` - 此次行動消耗的能量</li></ul>
         </td>
     </tr>
     <tr>
         <td>`EVENT_HARVEST`</td>
         <td>
-            一个 creep 在该房间执行了 [`harvest`](#Creep.harvest)。
+            一個 creep 在該房間執行了 [`harvest`](#Creep.harvest)。
             <ul>
-                <li>`targetId` - 目标对象的 ID</li>
-                <li>`amount` - 资源采集量</li></ul>
+                <li>`targetId` - 目標對象的 ID</li>
+                <li>`amount` - 資源采集量</li></ul>
         </td>
     </tr>
     <tr>
         <td>`EVENT_HEAL`</td>
         <td>
-            一个 creep 或者 tower 治疗了另一个 creep。
+            一個 creep 或者 tower 治療了另一個 creep。
             <ul>
-                <li>`targetId` - 目标对象的 ID</li>
-                <li>`amount` - hit 治疗量</li>
+                <li>`targetId` - 目標對象的 ID</li>
+                <li>`amount` - hit 治療量</li>
                 <li>`healType` - 下列常量之一:
                     <ul>
-                        <li>`EVENT_HEAL_TYPE_MELEE` - 一个 creep 使用 [heal](#Creep.heal) 进行了治疗</li>
-                        <li>`EVENT_HEAL_TYPE_RANGED` - 一个 creep 使用 [rangedHeal](#Creep.rangedHeal)进行了治疗，或者一个 tower 使用 [heal](#StructureTower.heal) 进行了治疗</li>
+                        <li>`EVENT_HEAL_TYPE_MELEE` - 一個 creep 使用 [heal](#Creep.heal) 進行了治療</li>
+                        <li>`EVENT_HEAL_TYPE_RANGED` - 一個 creep 使用 [rangedHeal](#Creep.rangedHeal)進行了治療，或者一個 tower 使用 [heal](#StructureTower.heal) 進行了治療</li>
                     </ul>
                 </li></ul>
         </td>
@@ -547,50 +547,50 @@ raw : boolean
     <tr>
         <td>`EVENT_REPAIR`</td>
         <td>
-            一个 creep 或者 tower 修复了建筑。
+            一個 creep 或者 tower 修復了建築。
             <ul>
-                <li>`targetId` - 目标对象 ID</li>
-                <li>`amount` - hit 修复量</li>
-                <li>`energySpent` - 此次行动消耗的能量</li></ul>
+                <li>`targetId` - 目標對象 ID</li>
+                <li>`amount` - hit 修復量</li>
+                <li>`energySpent` - 此次行動消耗的能量</li></ul>
             </ul>
         </td>
     </tr>
     <tr>
         <td>`EVENT_RESERVE_CONTROLLER`</td>
         <td>
-            一个 creep 在该房间执行了 [`reserveController`](#Creep.reserveController)。
+            一個 creep 在該房間執行了 [`reserveController`](#Creep.reserveController)。
             <ul>
-                <li>`amount` - 取得的预定时间</li></ul>
+                <li>`amount` - 取得的預定時間</li></ul>
         </td>
     </tr>
     <tr>
         <td>`EVENT_UPGRADE_CONTROLLER`</td>
         <td>
-            一个 creep 在该房间执行了 [`upgradeController`](#Creep.upgradeController)。
+            一個 creep 在該房間執行了 [`upgradeController`](#Creep.upgradeController)。
             <ul>
-                <li>`amount` - 获得的控制点数（control points）</li>
-                <li>`energySpent` - 此次行动消耗的能量</li></ul>
+                <li>`amount` - 獲得的控制點數（control points）</li>
+                <li>`energySpent` - 此次行動消耗的能量</li></ul>
             </ul>
         </td>
     </tr>
     <tr>
         <td>`EVENT_EXIT`</td>
         <td>
-            一个 creep 移动到了其他房间。
+            一個 creep 移動到了其他房間。
             <ul>
-                <li>`room` - 目标房间的名称</li>
-                <li>`x`, `y` - creep 将要出现在其他房间的坐标位置</li></ul>
+                <li>`room` - 目標房間的名稱</li>
+                <li>`x`, `y` - creep 將要出現在其他房間的坐標位置</li></ul>
             </ul>
         </td>
     </tr>
     <tr>
         <td>`EVENT_TRANSFER`</td>
         <td>
-            一个 link 执行了 [`transferEnergy`](https://docs.screeps.com/api/#StructureLink.transferEnergy) 或者一个 creep 执行了 [`transfer`](#Creep.transfer) 或 [`withdraw`](#Creep.withdraw)。
+            一個 link 執行了 [`transferEnergy`](https://docs.screeps.com/api/#StructureLink.transferEnergy) 或者一個 creep 執行了 [`transfer`](#Creep.transfer) 或 [`withdraw`](#Creep.withdraw)。
             <ul>
-                <li>`targetId` - 目标对象 ID</li>
-                <li>`resourceType` - 被转移的资源类型</li>
-                <li>`amount` - 被转移的资源总量</li>
+                <li>`targetId` - 目標對象 ID</li>
+                <li>`resourceType` - 被轉移的資源類型</li>
+                <li>`amount` - 被轉移的資源總量</li>
             </ul>
         </td>
     </tr>
@@ -603,22 +603,22 @@ const pos = Game.rooms.sim.getPositionAt(5,12);
 const source = pos.findClosestByRange(FIND_SOURCES_ACTIVE);
 ```
 
-获取指定位置的 <a href="#RoomPosition">RoomPosition</a>  对象。
+獲取指定位置的 <a href="#RoomPosition">RoomPosition</a>  對象。
 
 {% api_method_params %}
 x : number
-X 坐标。
+X 坐標。
 ===
 y : number
-Y 坐标。
+Y 坐標。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-一个
+一個
 <a href="#RoomPosition">RoomPosition</a>
-对象，如果无法获取则返回 null。
+對象，如果無法獲取則返回 null。
 
 {% api_method getTerrain '' 0 %}
 
@@ -634,11 +634,11 @@ switch(terrain.get(10,15)) {
 }
 ```
 
-获取一个 <a href="#Room-Terrain">`Room.Terrain`</a> 对象，可以用它来快速访问房间内的静态地形数据。即使没有指定房间的视野，您依旧可以使用该方法访问它的地形数据，该方法适用于游戏世界中的所有房间。
+獲取一個 <a href="#Room-Terrain">`Room.Terrain`</a> 對象，可以用它來快速訪問房間內的靜態地形數據。即使沒有指定房間的視野，您依舊可以使用該方法訪問它的地形數據，該方法適用於游戲世界中的所有房間。
 
 ### 返回值
 
-返回一个新的 <a href="#Room-Terrain">`Room.Terrain`</a> 对象。
+返回一個新的 <a href="#Room-Terrain">`Room.Terrain`</a> 對象。
 
 {% api_method lookAt 'x, y|target' 2 %}
 
@@ -652,23 +652,23 @@ look.forEach(function(lookObject) {
 });
 ```
 
-获取指定房间位置的对象数组。
+獲取指定房間位置的對象數組。
 
 {% api_method_params %}
 x : number
-该房间中的 X 坐标。
+該房間中的 X 坐標。
 ===
 y : number
-该房间中的 Y 坐标。
+該房間中的 Y 坐標。
 ===
 target : object
-可以是 <a href="#RoomPosition">RoomPosition</a> 对象或者任何包含 <a href="#RoomPosition">RoomPosition</a> 属性的对象。
+可以是 <a href="#RoomPosition">RoomPosition</a> 對象或者任何包含 <a href="#RoomPosition">RoomPosition</a> 屬性的對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-一个位于指定位置的对象数组，格式如下：
+一個位於指定位置的對象數組，格式如下：
 
 ```javascript-content
 [
@@ -686,29 +686,29 @@ target : object
 const look = creep.room.lookAtArea(10,5,11,7);
 ```
 
-获取指定房间区域内的对象列表。
+獲取指定房間區域內的對象列表。
 
 {% api_method_params %}
 top : number
-区域顶部边界的 Y 坐标。
+區域頂部邊界的 Y 坐標。
 ===
 left : number
-区域左侧边界的 X 坐标。
+區域左側邊界的 X 坐標。
 ===
 bottom : number
-区域底部边界的 Y 坐标。
+區域底部邊界的 Y 坐標。
 ===
 right : number
-区域右侧边界的 X 坐标。
+區域右側邊界的 X 坐標。
 ===
-asArray (可选) : boolean
-设为 true 来获得纯数组形式。
+asArray (可選) : boolean
+設為 true 來獲得純數組形式。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如果 `asArray` 值为 false 或者未定义，则该方法以如下格式返回指定区域内的对象：
+如果 `asArray` 值為 false 或者未定義，則該方法以如下格式返回指定區域內的對象：
 
 ```javascript-content
 // 10,5,11,7
@@ -729,7 +729,7 @@ asArray (可选) : boolean
 }
 ```
 
-如果 `asArray` 值为 true，则该方法以如下格式返回指定区域内的对象数组：
+如果 `asArray` 值為 true，則該方法以如下格式返回指定區域內的對象數組：
 
 ```javascript-content
 [
@@ -754,26 +754,26 @@ if(found.length && found[0].getActiveBodyparts(ATTACK) == 0) {
 }
 ```
 
-在指定位置查找指定类型的对象。
+在指定位置查找指定類型的對象。
 
 {% api_method_params %}
 type : string
 <code>LOOK_*</code> 常量之一。
 ===
 x : number
-该房间中的 X 坐标。
+該房間中的 X 坐標。
 ===
 y : number
-该房间中的 Y 坐标。
+該房間中的 Y 坐標。
 ===
 target : object
-可以是 <a href="#RoomPosition">RoomPosition</a> 对象或者任何包含 <a href="#RoomPosition">RoomPosition</a> 属性的对象。
+可以是 <a href="#RoomPosition">RoomPosition</a> 對象或者任何包含 <a href="#RoomPosition">RoomPosition</a> 屬性的對象。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-在指定位置找到的指定类型的对象数组。
+在指定位置找到的指定類型的對象數組。
 
 {% api_method lookForAtArea 'type, top, left, bottom, right, [asArray]' 1 %}
 
@@ -781,32 +781,32 @@ target : object
 const look = creep.room.lookForAtArea(LOOK_STRUCTURES,10,5,11,7);
 ```
 
-在指定房间区域查找指定类型的对象列表。
+在指定房間區域查找指定類型的對象列表。
 
 {% api_method_params %}
 type : string
 <code>LOOK_*</code> 常量之一
 ===
 top : number
-区域顶部边界的 Y 坐标。
+區域頂部邊界的 Y 坐標。
 ===
 left : number
-区域左侧边界的 X 坐标。
+區域左側邊界的 X 坐標。
 ===
 bottom : number
-区域底部边界的 Y 坐标。
+區域底部邊界的 Y 坐標。
 ===
 right : number
-区域右侧边界的 X 坐标。
+區域右側邊界的 X 坐標。
 ===
-asArray (可选) : boolean
-设为 true 来获得纯数组形式。
+asArray (可選) : boolean
+設為 true 來獲得純數組形式。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如果 `asArray` 值为 false 或者未定义，则该方法以如下格式返回指定区域内的对象：
+如果 `asArray` 值為 false 或者未定義，則該方法以如下格式返回指定區域內的對象：
 
 ```javascript-content
 // 10,5,11,7
@@ -825,7 +825,7 @@ asArray (可选) : boolean
 }
 ```
 
-如果 `asArray` 值为 true，则该方法以如下格式返回指定区域内的对象数组：
+如果 `asArray` 值為 true，則該方法以如下格式返回指定區域內的對象數組：
 
 ```javascript-content
 [

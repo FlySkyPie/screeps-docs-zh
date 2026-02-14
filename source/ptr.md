@@ -1,34 +1,34 @@
-title: 公共测试领域 (PTR)
+title: 公共測試領域 (PTR)
 ---
 
-公共测试领域 (Public Test Realm) 是一个独立的游戏服务器, 拥有单独的世界数据, 玩家脚本, Memory 和设置。 它的创建有两个目的:
+公共測試領域 (Public Test Realm) 是一個獨立的游戲服務器, 擁有單獨的世界數據, 玩家腳本, Memory 和設置。 它的創建有兩個目的:
 
-1) 测试主服务器将发生的变化和新的特性,
+1) 測試主服務器將發生的變化和新的特性,
 
-2) 为玩家提供一个平台，以便在一个多房间环境中安全地测试他们的脚本。
+2) 為玩家提供一個平台，以便在一個多房間環境中安全地測試他們的腳本。
 
 ---
 
 <div style="text-align: center">
 
-<p><strong style="font-size: 20px; background: #eee; padding: 10px 40px;">[链接](https://screeps.com/ptr/)</strong></p>
+<p><strong style="font-size: 20px; background: #eee; padding: 10px 40px;">[鏈接](https://screeps.com/ptr/)</strong></p>
 
 <p>[更新日志](https://screeps.com/forum/category/8/)</p>
 
-<p>[API 参考](http://docs-ptr.screeps.com/api/)</p> 
+<p>[API 參考](http://docs-ptr.screeps.com/api/)</p> 
 </div>
 
 ---
 
-世界模式和模拟模式都在 PTR 上可用。 所有的游戏世界数据会在每周一 UTC 0:00 从主服务器复制到 PTR, 旧的 PTR 数据(包括玩家脚本) 会被清除。 **不要将 PTR 用于长期存储代码!**
+世界模式和模擬模式都在 PTR 上可用。 所有的游戲世界數據會在每周一 UTC 0:00 從主服務器復制到 PTR, 舊的 PTR 數據(包括玩家腳本) 會被清除。 **不要將 PTR 用於長期存儲代碼!**
 
-PTR 不接受新账户注册。 每次当数据被从主服务器复制到 PTR 时, 现有的玩家账户也会被复制。 默认情况下，您的帐户 CPU 订阅处于停用状态。单击 [订购页面](https://screeps.com/ptr/#!/order) 上的激活按钮以启用免费的 PTR 订阅, 订阅将持续到下一次 PTR 重置。
+PTR 不接受新賬戶注冊。 每次當數據被從主服務器復制到 PTR 時, 現有的玩家賬戶也會被復制。 默認情況下，您的帳戶 CPU 訂閱處於停用狀態。單擊 [訂購頁面](https://screeps.com/ptr/#!/order) 上的激活按鈕以啟用免費的 PTR 訂閱, 訂閱將持續到下一次 PTR 重置。
 
-请留意, 在 PTR 中建造任何 structure 仅需要 1 energy, controller 的升级需要 1000 energy。 它允许快速创造测试所需的基础架构。
+請留意, 在 PTR 中建造任何 structure 僅需要 1 energy, controller 的升級需要 1000 energy。 它允許快速創造測試所需的基礎架構。
 
-如果您使用 [grunt-screeps](/commit.html) 来从本地计算机提交脚本, 您可以通过添加 <code style="white-space: nowrap;">ptr: true</code> 选项来提交您的代码至 PTR
+如果您使用 [grunt-screeps](/commit.html) 來從本地計算機提交腳本, 您可以通過添加 <code style="white-space: nowrap;">ptr: true</code> 選項來提交您的代碼至 PTR
 
-PTR 引擎代码的更改会定期部署至 npm 上私有服务器软件包的 `ptr` 分支, 因此您可以用以下命令在本地运行:
+PTR 引擎代碼的更改會定期部署至 npm 上私有服務器軟件包的 `ptr` 分支, 因此您可以用以下命令在本地運行:
 
 ```
 npm install screeps@ptr

@@ -1,14 +1,14 @@
 # Game.market
 
-描述游戏内市场的全局变量。您可以使用该对象追踪从您的终端接收/发送的资源交易，以及您的购买/出售订单。
+描述游戲內市場的全局變量。您可以使用該對象追蹤從您的終端接收/發送的資源交易，以及您的購買/出售訂單。
 
-点击 [本文](/market.html) 来了解更多关于市场系统的信息。
+點擊 [本文](/market.html) 來了解更多關於市場系統的信息。
 
 {% api_property Game.market.credits 'number' %}
 
 
 
-您当前的 credit 余额。
+您當前的 credit 余額。
 
 
 
@@ -25,7 +25,7 @@
     from : "W0N0",
     to : "W10N10",
     description : "trade contract #1",
-	order: {		// 可选的
+	order: {		// 可選的
 		id : "55c34a6b5be41a0a6e80c68b",
 		type : "sell",
 		price : 2.95
@@ -33,7 +33,7 @@
 }]
 ```
 
-一个数组，内容为您终端接收的最近 100 笔交易，格式详见右侧：
+一個數組，內容為您終端接收的最近 100 筆交易，格式詳見右側：
 
 
 
@@ -50,7 +50,7 @@
     from : "W0N0",
     to : "W10N10",
     description : "trade contract #1",
-	order: {		// 可选的
+	order: {		// 可選的
 		id : "55c34a6b5be41a0a6e80c68b",
 		type : "sell",
 		price : 2.95
@@ -58,7 +58,7 @@
 }]
 ```
 
-一个数组，内容为您终端发送的最近 100 笔交易，格式详见右侧：
+一個數組，內容為您終端發送的最近 100 筆交易，格式詳見右側：
 
 
 
@@ -104,17 +104,17 @@
 }
 ```
 
-一个对象，包含了您在市场中活跃 (activated) 和非活跃 (deactivated) 的购买/出售订单。
+一個對象，包含了您在市場中活躍 (activated) 和非活躍 (deactivated) 的購買/出售訂單。
 查看
 <a href="#Game.market.getAllOrders"><code>getAllOrders</code></a>
-来了解其详细说明。
+來了解其詳細說明。
 
 
 {% api_method Game.market.calcTransactionCost 'amount, roomName1, roomName2' 0 %}
 
 ```javascript
 const cost = Game.market.calcTransactionCost(1000, 'W0N0', 'W10N5');
-// -> 284 单位能量
+// -> 284 單位能量
 ```
 
 估算 <a href="#StructureTerminal.send"><code>StructureTerminal.send</code></a> 和 <a href="#Game.market.deal"><code>Game.market.deal</code></a> 方法的能量交易成本。
@@ -126,19 +126,19 @@ Math.ceil( amount * ( 1 - Math.exp(-distanceBetweenRooms/30) ) )
 
 {% api_method_params %}
 amount : number
-要发送的资源数量。
+要發送的資源數量。
 ===
 roomName1 : string
-第一个房间的名称。
+第一個房間的名稱。
 ===
 roomName2 : string
-第二个房间的名称。
+第二個房間的名稱。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-进行交易所需的能量。
+進行交易所需的能量。
 
 {% api_method Game.market.cancelOrder 'orderId' A %}
 
@@ -148,20 +148,20 @@ for(const id in Game.market.orders) {
 }
 ```
 
-取消先前创建的订单。5% 的费用将不予退还。
+取消先前創建的訂單。5% 的費用將不予退還。
 
 {% api_method_params %}
 orderId : string
-<code>Game.market.orders</code> 中提供的订单 ID。
+<code>Game.market.orders</code> 中提供的訂單 ID。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_INVALID_ARGS | 无效的订单 ID。
+OK | 這個操作已經成功納入計劃。
+ERR_INVALID_ARGS | 無效的訂單 ID。
 {% endapi_return_codes %}
 
 
@@ -172,25 +172,25 @@ ERR_INVALID_ARGS | 无效的订单 ID。
 Game.market.changeOrderPrice('57bec1bf77f4d17c4c011960', 9.95);
 ```
 
-修改一个已存在订单的单价。如果 <code>newPrice</code> 大于之前的单价，将向您收取 <code>(newPrice-oldPrice)\*remainingAmount\*0.05</code> credit 的费用。
+修改一個已存在訂單的單價。如果 <code>newPrice</code> 大於之前的單價，將向您收取 <code>(newPrice-oldPrice)\*remainingAmount\*0.05</code> credit 的費用。
 
 {% api_method_params %}
 orderId : string
-<code>Game.market.orders</code> 提供的订单 ID。
+<code>Game.market.orders</code> 提供的訂單 ID。
 ===
 newPrice : number
-新的订单单价。
+新的訂單單價。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 您不是该房间终端的所有者或者该房间没有终端。
-ERR_NOT_ENOUGH_RESOURCES | 您没有足够的 credit 来缴纳费用。
-ERR_INVALID_ARGS | 提供了无效的参数。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 您不是該房間終端的所有者或者該房間沒有終端。
+ERR_NOT_ENOUGH_RESOURCES | 您沒有足夠的 credit 來繳納費用。
+ERR_INVALID_ARGS | 提供了無效的參數。
 {% endapi_return_codes %}
 
 
@@ -206,16 +206,16 @@ Game.market.createOrder({
 });
 ```
 
-从您的终端创建一个市场订单。下单时将向您收取 <code>price\*amount\*0.05</code> credit 的费用。每个玩家最多可以拥有 300 个订单。您可以在任意时刻使用任意数量创建一个订单。之后会自动根据其可用资源量和 credit 来将其状态设置为活跃和非活跃。
+從您的終端創建一個市場訂單。下單時將向您收取 <code>price\*amount\*0.05</code> credit 的費用。每個玩家最多可以擁有 300 個訂單。您可以在任意時刻使用任意數量創建一個訂單。之後會自動根據其可用資源量和 credit 來將其狀態設置為活躍和非活躍。
 
 {% api_method_params %}
 params : object
-包含下列参数的对象：
+包含下列參數的對象：
 <ul>
     <li>
         <div class="api-arg-title">type</div>
         <div class="api-arg-type">string</div>
-        <div class="api-arg-desc">订单类型，<code>ORDER_SELL</code> 或者 <code>ORDER\_BUY</code>。</div>
+        <div class="api-arg-desc">訂單類型，<code>ORDER_SELL</code> 或者 <code>ORDER\_BUY</code>。</div>
     </li>
     <li>
         <div class="api-arg-title">resourceType</div>
@@ -225,17 +225,17 @@ params : object
     <li>
         <div class="api-arg-title">price</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">资源的单价（单位: credit）。可以包含小数。</div>
+        <div class="api-arg-desc">資源的單價（單位: credit）。可以包含小數。</div>
     </li>
     <li>
         <div class="api-arg-title">totalAmount</div>
         <div class="api-arg-type">number</div>
-        <div class="api-arg-desc">要交易的资源总量。</div>
+        <div class="api-arg-desc">要交易的資源總量。</div>
     </li>
     <li>
-        <div class="api-arg-title">roomName (可选)</div>
+        <div class="api-arg-title">roomName (可選)</div>
         <div class="api-arg-type">string</div>
-        <div class="api-arg-desc">在创建订单时指定的房间中必须存在一个属于您的终端（Terminal），否则该订单将暂时无效。当 <code>resourceType</code> 参数的值为账户绑定资源之一（见 <code>INTERSHARD_RESOURCES</code> 常量）时本参数不使用。</div>
+        <div class="api-arg-desc">在創建訂單時指定的房間中必須存在一個屬於您的終端（Terminal），否則該訂單將暫時無效。當 <code>resourceType</code> 參數的值為賬戶綁定資源之一（見 <code>INTERSHARD_RESOURCES</code> 常量）時本參數不使用。</div>
     </li>        
 </ul>
 {% endapi_method_params %}
@@ -243,13 +243,13 @@ params : object
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 您不是该房间终端的所有者或者该房间没有终端。
-ERR_NOT_ENOUGH_RESOURCES | 您没有足够的 credit 来缴纳费用。
-ERR_FULL | 您不能创建超过 300 个订单。
-ERR_INVALID_ARGS | 提供了无效的参数。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 您不是該房間終端的所有者或者該房間沒有終端。
+ERR_NOT_ENOUGH_RESOURCES | 您沒有足夠的 credit 來繳納費用。
+ERR_FULL | 您不能創建超過 300 個訂單。
+ERR_INVALID_ARGS | 提供了無效的參數。
 {% endapi_return_codes %}
 
 
@@ -275,30 +275,30 @@ for(let i=0; i<orders.length; i++) {
 }
 ```
 
-使用 <code>yourRoomName</code> 房间中的终端处理一个贸易订单，根据订单类型(购入/卖出)来和其他玩家的终端进行交易。无论订单类型如何，您的终端都将承担本次资源交易所产生的能量消耗。您可以使用 <a href="#calcTransactionCost"><code>Game.market.calcTransactionCost</code></a> 方法估算运输成本。当多个玩家尝试处理同一个订单时，距离更近的玩家优先。您每 tick 不能处理超过 10 笔交易。
+使用 <code>yourRoomName</code> 房間中的終端處理一個貿易訂單，根據訂單類型(購入/賣出)來和其他玩家的終端進行交易。無論訂單類型如何，您的終端都將承擔本次資源交易所產生的能量消耗。您可以使用 <a href="#calcTransactionCost"><code>Game.market.calcTransactionCost</code></a> 方法估算運輸成本。當多個玩家嘗試處理同一個訂單時，距離更近的玩家優先。您每 tick 不能處理超過 10 筆交易。
 
 {% api_method_params %}
 orderId : string
-来自 <code>Game.market.getAllOrders</code> 的订单 ID。
+來自 <code>Game.market.getAllOrders</code> 的訂單 ID。
 ===
 amount : number
-要转移的资源数量。
+要轉移的資源數量。
 ===
-yourRoomName (可选) : string
-您某个房间的名称，该房间应该存在一个可用终端且该终端存放了足够的能量。当订单的资源类型为账户绑定资源之一（见 <code>INTERSHARD_RESOURCES</code> 常量）时本参数不使用。
+yourRoomName (可選) : string
+您某個房間的名稱，該房間應該存在一個可用終端且該終端存放了足夠的能量。當訂單的資源類型為賬戶綁定資源之一（見 <code>INTERSHARD_RESOURCES</code> 常量）時本參數不使用。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 目标房间中不存在属于您的终端。
-ERR_NOT_ENOUGH_RESOURCES | 您没有足够的 credit 或者资源。
-ERR_FULL | 您每 tick 不能处理超过 10 笔交易。
-ERR_INVALID_ARGS | 提供了无效的参数。
-ERR_TIRED | 目标终端仍在冷却。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 目標房間中不存在屬於您的終端。
+ERR_NOT_ENOUGH_RESOURCES | 您沒有足夠的 credit 或者資源。
+ERR_FULL | 您每 tick 不能處理超過 10 筆交易。
+ERR_INVALID_ARGS | 提供了無效的參數。
+ERR_TIRED | 目標終端仍在冷卻。
 {% endapi_return_codes %}
 
 
@@ -309,24 +309,24 @@ ERR_TIRED | 目标终端仍在冷却。
 Game.market.extendOrder('57bec1bf77f4d17c4c011960', 10000);
 ```
 
-为一个已存在的订单添加容量。它将影响 <code>remainingAmount</code> 和 <code>totalAmount</code> 属性。您将要为此支付 <code>price\*addAmount\*0.05</code> credit 的手续费。
+為一個已存在的訂單添加容量。它將影響 <code>remainingAmount</code> 和 <code>totalAmount</code> 屬性。您將要為此支付 <code>price\*addAmount\*0.05</code> credit 的手續費。
 
 {% api_method_params %}
 orderId : string
-<code>Game.market.orders</code> 中提供的订单 ID。
+<code>Game.market.orders</code> 中提供的訂單 ID。
 ===
 addAmount : number
-要增加多少容量。不能为负数。
+要增加多少容量。不能為負數。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_ENOUGH_RESOURCES | 您没有足够的 credit 来缴纳费用。
-ERR_INVALID_ARGS | 提供了无效的参数。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_ENOUGH_RESOURCES | 您沒有足夠的 credit 來繳納費用。
+ERR_INVALID_ARGS | 提供了無效的參數。
 {% endapi_return_codes %}
 
 
@@ -350,7 +350,7 @@ Game.market.getAllOrders(order => order.resourceType == RESOURCE_GHODIUM &&
 ```
 
 ```javascript
-// 输出：
+// 輸出：
 
 [{
 	id : "55c34a6b5be41a0a6e80c68b",
@@ -382,44 +382,44 @@ Game.market.getAllOrders(order => order.resourceType == RESOURCE_GHODIUM &&
 }]
 ```
 
-获取当前市场上其他玩家活跃的订单。该方法支持 `resourceType` 内置索引。
+獲取當前市場上其他玩家活躍的訂單。該方法支持 `resourceType` 內置索引。
 
 {% api_method_params %}
-filter (可选) : object, function
-一个对象或者函数，将使用 <a href="https://lodash.com/docs#filter"><code>lodash.filter</code></a> 方法对结果列表进行筛选。
+filter (可選) : object, function
+一個對象或者函數，將使用 <a href="https://lodash.com/docs#filter"><code>lodash.filter</code></a> 方法對結果列表進行篩選。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-一个订单数组，订单格式如下：
+一個訂單數組，訂單格式如下：
 
-属性 | 介绍
+屬性 | 介紹
 ---|---
-`id` | 唯一的订单 ID。
-`created` | 订单创建时的游戏 tick。inter-shard 市场中的订单不存在该属性。
-`createdTimestamp` | 订单创建时的 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">UNIX 毫秒时间戳</a>。老版本的订单不存在该属性。
+`id` | 唯一的訂單 ID。
+`created` | 訂單創建時的游戲 tick。inter-shard 市場中的訂單不存在該屬性。
+`createdTimestamp` | 訂單創建時的 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">UNIX 毫秒時間戳</a>。老版本的訂單不存在該屬性。
 `type` | <code>ORDER_SELL</code> 或 <code>ORDER_BUY</code>。
-`resourceType` | <code>RESOURCE_*</code> 常量之一或者账户绑定资源之一（见 <code>INTERSHARD_RESOURCES</code> 常量）。
-`roomName` | 下订单的房间。
-`amount` | 当前可用的交易量。
-`remainingAmount` | 该订单还可以交易多少资源。(How many resources are left to trade via this order.)
-`price` | 当前的交易单价。
+`resourceType` | <code>RESOURCE_*</code> 常量之一或者賬戶綁定資源之一（見 <code>INTERSHARD_RESOURCES</code> 常量）。
+`roomName` | 下訂單的房間。
+`amount` | 當前可用的交易量。
+`remainingAmount` | 該訂單還可以交易多少資源。(How many resources are left to trade via this order.)
+`price` | 當前的交易單價。
 
 
 {% api_method Game.market.getHistory '[resourceType]' 1 %}
 
-获取最近 14 天以来市场中指定资源的每日价格记录。
+獲取最近 14 天以來市場中指定資源的每日價格記錄。
 
 {% api_method_params %}
-resourceType (可选) : string
-`RESOURCE_*` 常量之一。如果为 undefined，则返回所有资源的历史数据。
+resourceType (可選) : string
+`RESOURCE_*` 常量之一。如果為 undefined，則返回所有資源的歷史數據。
 {% endapi_method_params %}
 
 
 ### Return value
 
-返回具有以下格式的对象数组：
+返回具有以下格式的對象數組：
 ```json-content
 [{
     "resourceType": "L",
@@ -438,16 +438,16 @@ resourceType (可选) : string
 const order = Game.market.getOrderById('55c34a6b5be41a0a6e80c123');
 ```
 
-检索指定的市场订单。
+檢索指定的市場訂單。
 
 {% api_method_params %}
 id : string
-订单 ID。
+訂單 ID。
 {% endapi_method_params %}
 
 
 ### 返回值
 
-订单信息对象。查看
+訂單信息對象。查看
 <a href="#Game.market.getAllOrders"><code>getAllOrders</code></a>
-来了解其属性说明。
+來了解其屬性說明。

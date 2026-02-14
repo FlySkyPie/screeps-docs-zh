@@ -1,7 +1,7 @@
-title: 服务条款
+title: 服務條款
 ---
 
-**注**：为了保证信息的准确性和可靠性，该章节内容不予翻译。
+**注**：為了保證信息的准確性和可靠性，該章節內容不予翻譯。
 
 Any and all uses of the game Screeps (hereinafter referred to as the "Game") are governed by the following Terms of Service between you, the user, and Screeps, LLC (hereinafter referred to as the "Screeps"). You hereby acknowledge that you have read and understand all the terms and conditions in this agreement and agree to be bound by them.
 
@@ -29,7 +29,7 @@ You understand that violation of any of these clauses, as well as any harmful or
 
 **PAYMENTS**
 
-You pay for playing in the multiplayer online mode (“World Mode”) by purchasing a subscription for the time period. After your subscription is activated, you obtain the right to use the online mode within the subscription period.
+You pay for playing in the multiplayer online mode (「World Mode」) by purchasing a subscription for the time period. After your subscription is activated, you obtain the right to use the online mode within the subscription period.
 
 All payments are processed by the billing company Xsolla Inc. The Screeps does not control any payment related issues and does not provide any support or help regarding payments, billing, etc. You understand and agree that you should [contact Xsolla](https://help.xsolla.com) for any support or help you need regarding these issues.
 

@@ -2,14 +2,14 @@
 
 {% api_property OwnedStructure:my 'boolean' %}
 
-是否是你拥有的建筑。
+是否是你擁有的建築。
 
 {% api_property OwnedStructure:owner 'object' %}
 
-建筑拥有者信息，一个包含如下属性的对象：
+建築擁有者信息，一個包含如下屬性的對象：
 
 {% api_method_params %}
 username : string
-拥有者姓名。
+擁有者姓名。
 {% endapi_method_params %}
 

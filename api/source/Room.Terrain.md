@@ -1,8 +1,8 @@
 # Room.Terrain
 
-提供快速访问房间地形数据的对象。您可以为游戏世界中的任何房间构造这些对象，即使没有该房间的视野。
+提供快速訪問房間地形數據的對象。您可以為游戲世界中的任何房間構造這些對象，即使沒有該房間的視野。
 
-从技术上讲，每个 `Room.Terrain` 对象都是一个非常轻量级的适配器，用于提供具有最小访问权限的静态地形缓冲区。
+從技術上講，每個 `Room.Terrain` 對象都是一個非常輕量級的適配器，用於提供具有最小訪問權限的靜態地形緩沖區。
 
 
 {% api_method constructor 'roomName' 0 %}
@@ -15,11 +15,11 @@ const terrain = new Room.Terrain("E2S7");
 const terrain = new Room.Terrain(Game.creeps.John.room.name);
 ```
 
-通过房间名称创建一个新的 `Terrain`。`Terrain` 对象可以从游戏世界中的任何房间构造，即使没有该房间的视野。
+通過房間名稱創建一個新的 `Terrain`。`Terrain` 對象可以從游戲世界中的任何房間構造，即使沒有該房間的視野。
 
 {% api_method_params %}
 roomName : string
-房间名称。
+房間名稱。
 {% endapi_method_params %}
 
 
@@ -42,14 +42,14 @@ const terrain = new Room.Terrain(roomName);
 const matrix = new PathFinder.CostMatrix;
 const visual = new RoomVisual(roomName);
 
-// 用默认地形成本填充 CostMatrix，以供将来分析：
+// 用默認地形成本填充 CostMatrix，以供將來分析：
 for(let y = 0; y < 50; y++) {
     for(let x = 0; x < 50; x++) {
         const tile = terrain.get(x, y);
         const weight =
-            tile === TERRAIN_MASK_WALL  ? 255 : // 墙壁 => 无法通行
-            tile === TERRAIN_MASK_SWAMP ?   5 : // 沼泽 => 移动成本:  5
-                                            1 ; // 平原 => 移动成本:  1
+            tile === TERRAIN_MASK_WALL  ? 255 : // 牆壁 => 無法通行
+            tile === TERRAIN_MASK_SWAMP ?   5 : // 沼澤 => 移動成本:  5
+                                            1 ; // 平原 => 移動成本:  1
         matrix.set(x, y, weight);
         visual.text(weight, x, y);
     }
@@ -57,11 +57,11 @@ for(let y = 0; y < 50; y++) {
 ```
 
 ```javascript
-// 绑定到 WASM module heap
+// 綁定到 WASM module heap
 const heapView = new Uint8Array(wasmModule.HEAPU8.buffer, ...); 
 const terrain = new Room.Terrain("E2S7");
 
-// 将地形数据复制到二进制 WASM module heap：
+// 將地形數據復制到二進制 WASM module heap：
 for(let y = 0; y < 50; y++) {
     for(let x = 0; x < 50; x++) {
         heapView[y * 50 + x] = terrain.get(x, y);
@@ -69,25 +69,25 @@ for(let y = 0; y < 50; y++) {
 }
 ```
 
-通过 `(x,y)` 坐标获取指定房间位置处的地形。和 <a href="#Game.map.getTerrainAt">`Game.map.getTerrainAt(...)`</a> 方法不同，此方法不执行任何字符串操作，并返回整数 terrain 类型值（详见下文）。
+通過 `(x,y)` 坐標獲取指定房間位置處的地形。和 <a href="#Game.map.getTerrainAt">`Game.map.getTerrainAt(...)`</a> 方法不同，此方法不執行任何字符串操作，並返回整數 terrain 類型值（詳見下文）。
 
 {% api_method_params %}
 x : number
-该房间中的 X 坐标。
+該房間中的 X 坐標。
 ===
 y : number
-该房间中的 Y 坐标。
+該房間中的 Y 坐標。
 {% endapi_method_params %}
 
 ### 返回值
 
-以下整数值之一：
+以下整數值之一：
 
-| 值 | <a href="#Constants">常量名</a> (*如果存在*) | 介绍 |
+| 值 | <a href="#Constants">常量名</a> (*如果存在*) | 介紹 |
 |-|-|-|
-| 0 | *不存在* | 地形为 `plain` |
-| 1 | `TERRAIN_MASK_WALL` | 地形为 `wall`|
-| 2 | `TERRAIN_MASK_SWAMP` | 地形为 `swamp`|
+| 0 | *不存在* | 地形為 `plain` |
+| 1 | `TERRAIN_MASK_WALL` | 地形為 `wall`|
+| 2 | `TERRAIN_MASK_SWAMP` | 地形為 `swamp`|
 
 
 {% api_method getRawBuffer '[destinationArray]' 1 %}
@@ -111,48 +111,48 @@ myPrintRawTerain(raw);
 ```
 
 ```javascript
-// 绑定到 WASM module heap
+// 綁定到 WASM module heap
 const heapView = new Uint8Array(wasmModule.HEAPU8.buffer, ...); 
 const terrain = new Room.Terrain("E2S7");
 
-// 快速将地形数据复制到 WASM module heap:
+// 快速將地形數據復制到 WASM module heap:
 const t = Game.cpu.getUsed();
 const result = terrain.getRawBuffer(heapView);
 if(result !== ERR_INVALID_ARGS) {
-    // 复制成功，在此处调用 WASM 函数：
-    // wasmModule.myFunc(...); // 修改 "heapView" 的原始内存
+    // 復制成功，在此處調用 WASM 函數：
+    // wasmModule.myFunc(...); // 修改 "heapView" 的原始內存
     console.log("Distance transform done in", Game.cpu.getUsed() - t);
     myPrintRawTerain(heapView);
 }
 ```
 
 ```cpp
-// 二进制模块内的某处源代码...
+// 二進制模塊內的某處源代碼...
 void myFunc(void* ptr) {
     auto u8ptr = static_cast<uint8_t*>(ptr);
-    // 在这里进行计算...
+    // 在這裡進行計算...
 }
 ```
 
-获取基础静态地形缓冲区的副本。 **当前使用的基础类型为 `Uint8Array`**。
+獲取基礎靜態地形緩沖區的副本。 **當前使用的基礎類型為 `Uint8Array`**。
 
 {% api_method_params %}
-destinationArray (可选) : Uint8Array
-地形数据要拷贝到的已定义的数组视图。
+destinationArray (可選) : Uint8Array
+地形數據要拷貝到的已定義的數組視圖。
 {% endapi_method_params %}
 
-***警告:*** *此方法依赖于地形数据的基础类型。此方法是获取整个房间（2500 地块）地形数据的最快方法，但是使用者需要始终牢记，该方法可能随时会被标记为已弃用。或者返回值的类型可能会因为基础类型的改变而改变。*
+***警告:*** *此方法依賴於地形數據的基礎類型。此方法是獲取整個房間（2500 地塊）地形數據的最快方法，但是使用者需要始終牢記，該方法可能隨時會被標記為已棄用。或者返回值的類型可能會因為基礎類型的改變而改變。*
 
-请查看使用示例。点击 <a href="/modules.html#Binary-modules">_二进制模块_</a> 来了解更多。
+請查看使用示例。點擊 <a href="/modules.html#Binary-modules">_二進制模塊_</a> 來了解更多。
 
 ### 返回值
 
-基础房间地形数据的副本，存放在大小为 2500 的新 `Uint8Array` [类型数组（typed array）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)中。
+基礎房間地形數據的副本，存放在大小為 2500 的新 `Uint8Array` [類型數組（typed array）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)中。
 
-每一个元素都是整数，地形类型可以通过对相应的 `TERRAIN_MASK_*` 常量执行位运算“与”（`&`）来获得。房间地块按行存储。
+每一個元素都是整數，地形類型可以通過對相應的 `TERRAIN_MASK_*` 常量執行位運算「與」（`&`）來獲得。房間地塊按行存儲。
 
-如果指定了 `destinationArray` 并且成功复制，则函数将会返回已填充 `destinationArray` 的引用，否则返回下列错误码：
+如果指定了 `destinationArray` 並且成功復制，則函數將會返回已填充 `destinationArray` 的引用，否則返回下列錯誤碼：
 
 {% api_return_codes %}
-ERR_INVALID_ARGS | `destinationArray` 类型不兼容。
+ERR_INVALID_ARGS | `destinationArray` 類型不兼容。
 {% endapi_return_codes %}

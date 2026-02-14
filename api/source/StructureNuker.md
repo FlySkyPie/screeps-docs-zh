@@ -2,15 +2,15 @@
 
 <img src="img/nuke.png" alt="" align="right" />
 
-向其他房间发射一枚核弹，对着落区域造成大量伤害。
-发射后需要时间冷却且需重新装填能量和 ghodium 资源。
-发射后将会在目标房间位置创建一个对任何玩家可见的 [Nuke](#Nuke) 对象，直至其着陆。
-已发射的核弹无法移动或者取消。核弹不能从新手房间发射或者发射向新手房间。放置到 StructureNuker 中的资源无法被取出 (withdraw)。
+向其他房間發射一枚核彈，對著落區域造成大量傷害。
+發射後需要時間冷卻且需重新裝填能量和 ghodium 資源。
+發射後將會在目標房間位置創建一個對任何玩家可見的 [Nuke](#Nuke) 對象，直至其著陸。
+已發射的核彈無法移動或者取消。核彈不能從新手房間發射或者發射向新手房間。放置到 StructureNuker 中的資源無法被取出 (withdraw)。
 
 <table class="table gameplay-info">
     <tbody>
     <tr>
-        <td colspan="2" style="width: 70px;"><strong>控制器等级</strong></td>
+        <td colspan="2" style="width: 70px;"><strong>控制器等級</strong></td>
     </tr>
     <tr>
         <td>1-7</td>
@@ -21,7 +21,7 @@
         <td>1 nuke</td>
     </tr>
     <tr>
-        <td style="width: 70px;"><strong>建造花费</strong></td>
+        <td style="width: 70px;"><strong>建造花費</strong></td>
         <td>100,000</td>
     </tr>
     <tr>
@@ -29,32 +29,32 @@
         <td>1,000</td>
     </tr>
     <tr>
-        <td style="width: 70px;"><strong>攻击范围</strong></td>
+        <td style="width: 70px;"><strong>攻擊范圍</strong></td>
         <td>10 rooms</td>
     </tr>
     <tr>
-        <td style="width: 70px;"><strong>发射花费</strong></td>
+        <td style="width: 70px;"><strong>發射花費</strong></td>
         <td>300,000 energy<br /> 5,000 ghodium</td>
     </tr>
     <tr>
-        <td style="width: 70px;"><strong>发射冷却</strong></td>
+        <td style="width: 70px;"><strong>發射冷卻</strong></td>
         <td>100,000 ticks</td>
     </tr>
     <tr>
-        <td style="width: 70px;"><strong>着陆时间</strong></td>
+        <td style="width: 70px;"><strong>著陸時間</strong></td>
         <td>50,000 ticks</td>
     </tr>
     <tr>
         <td style="width: 70px;"><strong>效果</strong></td>
-        <td>立刻清除所有的 creep，建筑工地(construction site)和掉落的资源，即使它位于 rampart 之下。并对建筑造成如下伤害：
+        <td>立刻清除所有的 creep，建築工地(construction site)和掉落的資源，即使它位於 rampart 之下。並對建築造成如下傷害：
             <ul>
-                <li>对着落位置造成 10,000,000 hits 伤害。</li>
-                <li>对周围 5x5 区域中的建筑造成 5,000,000 hits 伤害。</li>
+                <li>對著落位置造成 10,000,000 hits 傷害。</li>
+                <li>對周圍 5x5 區域中的建築造成 5,000,000 hits 傷害。</li>
             </ul>
-            <p>注意，您可以将来自多个不同房间的核弹叠加到同一位置来增强伤害。</p>
-            <p>Nuke 着落不会产生墓碑（tombstone）和遗迹（ruin），并且会销毁房间中所有存在的墓碑和遗迹。</p>
-            <p>如果核弹着落时房间正处于安全模式，则会立刻取消安全模式，并将安全模式的冷却时间重置为 0。</p>
-            <p>房间控制器将会触发 <code>upgradeBlocked</code> 计时，这意味着在接下来的 200 tick 中将无法再次使用安全模式。</p>
+            <p>注意，您可以將來自多個不同房間的核彈疊加到同一位置來增強傷害。</p>
+            <p>Nuke 著落不會產生墓碑（tombstone）和遺跡（ruin），並且會銷毀房間中所有存在的墓碑和遺跡。</p>
+            <p>如果核彈著落時房間正處於安全模式，則會立刻取消安全模式，並將安全模式的冷卻時間重置為 0。</p>
+            <p>房間控制器將會觸發 <code>upgradeBlocked</code> 計時，這意味著在接下來的 200 tick 中將無法再次使用安全模式。</p>
         </td>
     </tr>
     </tbody>
@@ -65,25 +65,25 @@
 
 {% api_property energy 'number' '{"deprecated": true}' %}
 
-[`.store[RESOURCE_ENERGY]`](#StructureExtension.store) 的别名。
+[`.store[RESOURCE_ENERGY]`](#StructureExtension.store) 的別名。
 
 
 
 {% api_property energyCapacity 'number' '{"deprecated": true}' %}
 
-[`.store.getCapacity(RESOURCE_ENERGY)`](#Store.getCapacity) 的别名。
+[`.store.getCapacity(RESOURCE_ENERGY)`](#Store.getCapacity) 的別名。
 
 
 
 {% api_property ghodium 'number' '{"deprecated": true}' %}
 
-[`.store[RESOURCE_GHODIUM]`](#StructureExtension.store) 的别名。
+[`.store[RESOURCE_GHODIUM]`](#StructureExtension.store) 的別名。
 
 
 
 {% api_property ghodiumCapacity 'number' '{"deprecated": true}' %}
 
-[`.store.getCapacity(RESOURCE_GHODIUM)`](#Store.getCapacity) 的别名。
+[`.store.getCapacity(RESOURCE_GHODIUM)`](#Store.getCapacity) 的別名。
 
 
 
@@ -91,7 +91,7 @@
 
 
 
-下次发射前还需多少 tick 的冷却时间。
+下次發射前還需多少 tick 的冷卻時間。
 
 
 {% api_property store '<a href="#Store">Store</a>' %}
@@ -103,7 +103,7 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 ```
 
 
-一个包含了该建筑中所存储资源的 [`Store`](#Store) 对象。
+一個包含了該建築中所存儲資源的 [`Store`](#Store) 對象。
 
 
 
@@ -113,26 +113,26 @@ if(structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
 nuker.launchNuke(new RoomPosition(20,30, 'W1N1'));
 ```
 
-向指定位置发射核弹。
+向指定位置發射核彈。
 
 {% api_method_params %}
 pos : <a href="#RoomPosition">RoomPosition</a>
-目标房间位置
+目標房間位置
 {% endapi_method_params %}
 
 
 ### 返回值
 
-如下错误码之一：
+如下錯誤碼之一：
 {% api_return_codes %}
-OK | 这个操作已经成功纳入计划。
-ERR_NOT_OWNER | 你不是这个建筑的拥有者。
-ERR_NOT_ENOUGH_RESOURCES | 该建筑没有足够的能量和/或 ghodium。
-ERR_INVALID_ARGS | 目标不是有效的 RoomPosition。
-ERR_INVALID_TARGET | nuke 无法发射至指定的 RoomPosition（见 [起始区域](/start-areas.html)）
-ERR_NOT_IN_RANGE | 目标房间超出打击范围。
-ERR_TIRED | 该建筑仍在冷却。
-ERR_RCL_NOT_ENOUGH | 房间控制中心等级不足。
+OK | 這個操作已經成功納入計劃。
+ERR_NOT_OWNER | 你不是這個建築的擁有者。
+ERR_NOT_ENOUGH_RESOURCES | 該建築沒有足夠的能量和/或 ghodium。
+ERR_INVALID_ARGS | 目標不是有效的 RoomPosition。
+ERR_INVALID_TARGET | nuke 無法發射至指定的 RoomPosition（見 [起始區域](/start-areas.html)）
+ERR_NOT_IN_RANGE | 目標房間超出打擊范圍。
+ERR_TIRED | 該建築仍在冷卻。
+ERR_RCL_NOT_ENOUGH | 房間控制中心等級不足。
 {% endapi_return_codes %}
 
 
