@@ -1,6 +1,11 @@
 import path from 'node:path';
 import { glob } from 'glob';
 import { copy, ensureFile, readFile, writeFile } from 'fs-extra';
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkStringify from 'remark-stringify'
+import yaml from 'js-yaml'
 
 /**
  * Get all markdown files (`.md`) under current workspace.
@@ -57,7 +62,29 @@ const migrate = async (sourceRootPath: string, targetRootPath, files: string[]) 
         // Read source file content
         const sourceContent = await readFile(sourcePath, 'utf8');
 
-        // Extract title from YAML front matter
+        const res = unified()
+            .use(remarkParse)
+            .use(remarkFrontmatter, ['yaml'])
+            .use(() => (tree, vFile) => {
+                console.log(tree)
+                // unist-util-visit 提供了更多便捷訪問AST的工具，這裡我們先簡單獲取
+                const node = tree.children.find(n => n.type == 'yaml')
+                if (node) {
+                    // 使用yaml解析器解析yaml格式字串
+                    const meta = yaml.load(node.value)
+                    // { title: 'I AM TITLE', tags: [ 'unified', 'good' ] }
+                    console.log(meta)
+                    // 賦值到該檔案的解析資料中返回給外部使用
+                    vFile.data.meta = meta
+                }
+            })
+            .use(remarkStringify)
+            .processSync(sourceContent)
+
+        /**
+         * Extract title from YAML front matter
+         * @todo Replace this implementation with AST approach.
+         */
         const yamlMatch = sourceContent.match(/^---\s*\n(.*?)\n---\s*\n(.*)$/s);
         let title = "";
         let contentWithoutYaml = sourceContent;
