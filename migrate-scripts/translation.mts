@@ -7,7 +7,7 @@ import { tify } from 'chinese-conv'
  * Recursively search folders.
  * The process would ignore stuff in `.gitignore`.
  */
-const getFiles = async (): Promise<string[]> => {
+export const getFiles = async (): Promise<string[]> => {
 
 
     // Read .gitignore file
