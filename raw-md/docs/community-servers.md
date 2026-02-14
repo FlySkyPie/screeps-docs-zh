@@ -6,7 +6,7 @@ Screeps 並不僅僅是指由官方維護的開放式 MMO 游戲世界。我們�
 
 我們喜歡這種社區行為，所以我們在游戲的登錄頁面中的社區服務器列表（Community Servers）中展示了一部分較為可靠的公共服務器。
 
-![](img/community-servers.png)
+![](#community-servers.webp)
 
 如果您想將自己的服務器添加到此列表中，請發送郵件至 [contact@screeps.com](mailto:contact@screeps.com)。您的服務器必須遵守以下規定：
 

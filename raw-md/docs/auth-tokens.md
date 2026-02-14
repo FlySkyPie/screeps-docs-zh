@@ -10,7 +10,7 @@ Screeps 並沒有一個文檔化的公共 Web API。但是，如果您想使用�
 
 您可以通過 [賬戶設置](https://screeps.com/a/#!/account/auth-tokens) 來生成一個驗證令牌：
 
-![](img/auth_tokens.png) 
+![](#auth_tokens.webp) 
 
 一個 **完全權限** 的令牌的訪問范圍和您用身份驗證憑據登錄的訪問范圍相同。您也可以限制該令牌的訪問范圍，包括**指定的接口**，**websockets 事件**和**內存分段**。
 
@@ -77,7 +77,7 @@ X-RateLimit-Reset: 1514539728
 
 如果您開發的第三方工具需要進行人工干預，那麼您可以通過集成一個特殊流程來暫時關閉特定令牌的請求頻率限制。為此，您必須為用戶提供一個鏈接 `https://screeps.com/a/#!/account/auth-tokens/noratelimit?token=XXX`，並且引導用戶導航到該鏈接。在用戶點擊該頁面中的 」Proceed「 按鈕後，該令牌將被授予兩個小時的無限速率訪問時間。
 
-![](img/token-noratelimit.png) 
+![](#token-noratelimit.webp) 
 
 如果您的工具是基於 web 開發的，那麼您可以將該頁面通過 `<iframe>` 嵌入進來並且監聽 `screepsTokenSuccess` 事件信息：
 

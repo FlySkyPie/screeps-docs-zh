@@ -5,7 +5,7 @@ title: 開始區域
  
 為了保護新玩家的發展起步，我們定期會在地圖上劃出臨時區域。在地圖上這些新手區會被標<font color="green"><b>綠</b></font>且當鼠標指針移動到區域內時，會彈出寫有 「**Novice Area**」 （新手區）字樣的標簽
 
-![](img/novice.png)
+![](#novice.webp)
 
 以下為新手區的額外規則：
 
@@ -23,7 +23,7 @@ title: 開始區域
 
 類似新手區，地圖上存在**重生區**（ Respawn Areas ），在地圖上被標<font color="blue"><b>藍</b></font>，與新手區不同的是，這些重生區只禁止使用[Nukers （核彈發射井）](/api/#StructureNuker)。任何 [GCL](control.html) 的玩家均可在此區域重生並佔領其所 GCL 所允許的房間。
 
-![chrome_2017-03-06_14-40-11.png](img/chrome_2017-03-06_14-40-11.png)
+![chrome_2017-03-06_14-40-11.png](#chrome_2017-03-06_14-40-11.webp)
 
 ## 開始區域的規劃
 
@@ -34,7 +34,7 @@ title: 開始區域
 
 所有將被規劃為開始區域的中立房間會被標注以下消息：
 
-![chrome_2017-03-08_13-01-20.png](img/chrome_2017-03-08_13-01-20.png)
+![chrome_2017-03-08_13-01-20.png](#chrome_2017-03-08_13-01-20.webp)
 
 玩家可用游戲常數 `SYSTEM_USERNAME`, `SIGN_NOVICE_AREA`, 和 `SIGN_RESPAWN_AREA` 來在其代碼中以檢測房間是否被規劃為開始區域。
 **譯者注：**若游戲將玩家所在的 sector 被規劃為未來的開始區域，則其將會避開玩家的房間及使其通向外界的房間。

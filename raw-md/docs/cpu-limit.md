@@ -15,7 +15,7 @@ Screeps 游戲引擎有兩種運行模式：一種是基於瀏覽器的**單機�
 
 方便起見，玩家每 tick 所省下的 CPU 會被存在 `bucket` 中以備不時之需。這樣，玩家仍可執行超過其 CPU 限制的代碼。
 
-![](img/cpu-bucket.png)
+![](#cpu-bucket.webp)
 
 如果玩家的代碼在 CPU 限制內執行完了，那麼其剩余的 CPU 便會被存起來。玩家最多可以存 10,000 CPU ，但每 tick 最多可用 500 CPU 。
 

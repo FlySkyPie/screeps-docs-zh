@@ -19,7 +19,7 @@ title: 超能
 
 ## Global Power Level
 
-![](img/gpl.png) 
+![](#gpl.webp) 
 
 8 級的房間將會解鎖叫 [超能母巢（Power Spawn）](/api/#StructurePowerSpawn)的建築。它允許執行[`StructurePowerSpawn.processPower`](/api/#StructurePowerSpawn.processPower)方法。將 50 單位的能量與 1 單位的超能進行融合，你可以增加你的**全局超能等級 GPL**。通過提升等級，你將會解鎖開發**超能creep（PC）**的能力。
 
@@ -39,19 +39,19 @@ title: 超能
 
 <table>
 <tr>
-<td style="padding: 10px; background: #141414"><img src="img/operator.png"></td>
+<td style="padding: 10px; background: #141414"><img src="#operator.webp"></td>
 <td><strong>操作員 Operator</strong><br>
 一種在後方基地工作的 creep，雖然它可以在進攻時作為破壞者使用。
 </td>
 </tr>
 <tr style="background: none">
-<td style="padding: 10px; background: #141414"><img src="img/commander.png"></td>
+<td style="padding: 10px; background: #141414"><img src="#commander.webp"></td>
 <td><strong>司令官 Commander</strong><br>
 這種超能 creep 是團隊輔助，單獨使用時發揮不出來。它可以給己方常規 creep 施加增益效果，給敵方常規 creep 施加減益效果。
 </td>
 </tr>
 <tr>
-<td style="padding: 10px; background: #141414"><img src="img/executor.png"></td>
+<td style="padding: 10px; background: #141414"><img src="#executor.webp"></td>
 <td><strong>執行官 Executor</strong><br>
 這類 creep 喜好獨來獨往。鑑於它的技能特點，它可以在和平時期加速經濟發展，或在戰爭時期變身戰爭機器。
 </td>

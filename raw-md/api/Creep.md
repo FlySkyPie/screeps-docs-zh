@@ -3,7 +3,7 @@
 
 creep 是你的單位, creep 可以移動、采集能量、建造建築、攻擊其他 creep 以及執行其他動作。每個 creep 都由最多 50 個身體部件構成，身體部件的類型如下：
 
-![](img/bodyparts.png)   
+![](#bodyparts.webp)   
 
 <table class="table gameplay-info">
     <tbody>

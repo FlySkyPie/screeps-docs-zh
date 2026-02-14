@@ -31,17 +31,17 @@ title: 資源
 
 下圖為游戲中所有的七種基本元素
 
-![](img/minerals-01.png)
+![](#minerals-01.webp)
  
 單個房間只會有一個元素礦產，所以若想獲得多種礦產，玩家則得控制多個房間或與其他玩家建立貿易關系。
 
-<img src="img/mining_minerals.png" align="right">右圖即為礦的示意圖（灰色圓形），其上的字母代表了其種類。礦上需要建造[Extractor（礦機）](/api/#StructureExtractor)（綠色虛線圓環，解鎖於房間控制等級 6 級）方可進行開采。礦機建造後，玩家的 Creep 便可像采集能量源般的對礦用 [`harvest`（采集）](/api/#Creep.harvest)並采取相應的元素。
+<img src="#mining_minerals.webp" align="right">右圖即為礦的示意圖（灰色圓形），其上的字母代表了其種類。礦上需要建造[Extractor（礦機）](/api/#StructureExtractor)（綠色虛線圓環，解鎖於房間控制等級 6 級）方可進行開采。礦機建造後，玩家的 Creep 便可像采集能量源般的對礦用 [`harvest`（采集）](/api/#Creep.harvest)並采取相應的元素。
 
 ### 礦物合成
 
 基本元素本身無法被使用，得按照指定的合成路線被[**Lab（實驗室）**](/api/#StructureLab)轉化為化合物才能得以利用。
 
-![](img/minerals-02.png)
+![](#minerals-02.webp)
 
 完成一個反應需要三個 lab ：兩個提供底物，一個進行反應及收集產物，lab 的間距不得超過兩格。同一 lab 不可混合放置多種化合物，但卻能同時為多個反應提供底物。
 
@@ -530,7 +530,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 
 您可以從「高速公路」房間中的沉積物中提取原始資源，「高速公路」是指地圖上不同區域之間的房間。有4種原始資源：金屬(Metal)，硅(Silicon)，生物質(Biomass)，迷霧(Mist)。 它們在世界地圖上並不是均勻分布的：每個地圖象限（西北，東北，西南，東南）一種資源類型。
 
-![](img/commodities.png)
+![](#commodities.webp)
 
 與礦物不同，這些沉積物(deposits)在采集(harvest)時會耗盡：采集的數量越多，其冷卻時間也就越長。當您停止采集一段時間後，沉積物將會消失並重新出現在附近的其他地方。此外，如果某區塊的沉積物都被消耗到一定水平之下，則會出現新的沉積物。
 
@@ -546,7 +546,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 <i class="fa fa-plus-square"></i>
 <span>壓縮商品</span>
 <em>(點擊展開)</em>
-![](img/commodities1.png)
+![](#commodities1.webp)
 </div>
 
 <div class="collapsible-table__content"> 
@@ -578,7 +578,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
  <i class="fa fa-plus-square"></i>
  <span>解壓商品</span>
  <em>(點擊展開)</em>
- ![](img/commodities2.png)
+ ![](#commodities2.webp)
  </div>
  
  <div class="collapsible-table__content">
@@ -606,7 +606,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 <i class="fa fa-plus-square"></i>
 <span>基本區域性商品</span>
 <em>(點擊展開)</em>
-![](img/commodities3.png)
+![](#commodities3.webp)
 </div>
 
 <div class="collapsible-table__content">
@@ -642,7 +642,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 <i class="fa fa-plus-square"></i>
 <span>常規高等商品</span>
 <em>(點擊展開)</em>
-![](img/commodities4.png)
+![](#commodities4.webp)
 </div>
 
 <div class="collapsible-table__content">
@@ -660,7 +660,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 <i class="fa fa-plus-square"></i>
 <span>機械 (Mechanical) 產業鏈</span>
 <em>(點擊展開)</em>
-![](img/commodities5.png)
+![](#commodities5.webp)
 </div>
 
 <div class="collapsible-table__content">
@@ -680,7 +680,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 <i class="fa fa-plus-square"></i>
 <span>生物 (Biological) 產業鏈</span>
 <em>(點擊展開)</em>
-![](img/commodities6.png)
+![](#commodities6.webp)
 </div>
 
 <div class="collapsible-table__content">
@@ -700,7 +700,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 <i class="fa fa-plus-square"></i>
 <span>電子 (Electronical) 產業鏈</span>
 <em>(點擊展開)</em>
-![](img/commodities7.png)
+![](#commodities7.webp)
 </div>
 
 <div class="collapsible-table__content">
@@ -720,7 +720,7 @@ lab 除了能跑反應，還可用其存著的化合物來強化 Creep 的部件
 <i class="fa fa-plus-square"></i>
 <span>奧秘 (Mystical) 產業鏈</span>
 <em>(點擊展開)</em>
-![](img/commodities8.png)
+![](#commodities8.webp)
 </div>
 
 <div class="collapsible-table__content">

@@ -7,7 +7,7 @@ Screeps 是個實時游戲。它游戲時間不等同於現實時間，而是自
 
 接下來我們來介紹單個 tick 的三個階段，及初始、執行、結束階段。
 
-![](img/game-loop.png)
+![](#game-loop.webp)
 
 在**初始階段**，服務器會重建所有的游戲對象 (object) 和記錄這 tick 的游戲狀態。比如 creep 的位置，被下令拆除的建築，或是 creep 及建築資源的存量 ([`creep.carry()`](api/#Creep.carry) / [`StructureExtension.energy()`](api/#StructureExtension.energy) / [`StructureContainer.store()`](api/#StructureContainer.store))。
 

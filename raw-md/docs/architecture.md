@@ -22,9 +22,9 @@ title: 服務器架構總覽
 
 下面是一張階段處理流程圖:
 
-![](img/architecture_stage1.png)
+![](#architecture_stage1.webp)
 
-![](img/architecture_stage2.png)
+![](#architecture_stage2.webp)
 
 每一個階段都會創建一個任務隊列。第一階段的任務是執行所有活躍玩家的腳本，而第二階段是處理游戲世界的房間。隊列存儲為一個 redis 列表，每個任務都由單獨的計算機單獨處理。
 
@@ -47,7 +47,7 @@ title: 服務器架構總覽
 
 Node.JS 的 [`vm`](https://nodejs.org/api/vm.html) 庫在計算游戲腳本階段執行任務時使用. 每個節點實例進程都啟動一個單獨的 fork，該 fork 不能訪問其父進程。在啟動後，fork 會立即向數據庫發出一個預先請求，以獲取計算所需的數據。 然後它為用戶創建一個 context 並執行 [`vm.runInContext`](https://nodejs.org/api/vm.html#vm_vm_runincontext_code_contextifiedsandbox_options). context 會保存在 fork 中以備將來使用，這允許您在腳本中重復使用 `global` 對象和 `require` 緩存。 而且，編譯[緩存腳本代碼](http://v8project.blogspot.com.by/2015/07/code-caching.html)可以加快之後的代碼編譯速度。
 
-![](img/architecture_run.png)
+![](#architecture_run.webp)
 
 盡管 `runincontext` 是特定於每個玩家的代碼執行超時才會被調用的，但它並不總是能夠在某些工作負載類型下優雅地完成腳本執行。如果出現這種情況，則在超時時終止整個 fork 而不是 vm。這個過程中的所有玩家 context 都會消失，然後從頭開始重新創建。
 

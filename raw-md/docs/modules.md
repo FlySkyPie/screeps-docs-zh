@@ -57,12 +57,12 @@ emcc -s WASM=1 -s SIDE_MODULE=1 -O3 addTwo.c -o addTwo.wasm
 
 點擊此按鈕添加新的二進制模組 `addTwo`：
 
-![](img/binary1.png)
+![](#binary1.webp)
 
 以二進制模組的形式上傳 `addTwo.wasm`：
 Upload your `addTwo.wasm` file as binary module contents, so that it looks as follows:
 
-![](img/binary2.png)
+![](#binary2.webp)
 
 點擊 ✔️ 提交代碼。
 Click the ✔️ button to commit your modules.
@@ -71,7 +71,7 @@ Click the ✔️ button to commit your modules.
 
 如果您正確上傳了你的二進制模塊，您應該能在游戲內置 IDE 看見下圖：
 
-![](img/binary3.png)
+![](#binary3.webp)
 
 現在可通過 WebAssembly API 將二進制代碼導入您的 `main`
 

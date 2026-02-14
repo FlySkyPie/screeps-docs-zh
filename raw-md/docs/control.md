@@ -12,17 +12,17 @@ title: 控制
 
 你當前的 GCL 等級在 [overview 頁面](https://screeps.com/a/#!/overview) 顯示.
 
-![](img/gcl-cpu.png)
+![](#gcl-cpu.webp)
 
 ## 房間控制等級 （Room Control Level; 縮寫：RCL）
 
 如果想要在房間裡建造設施，首先需要控制這個房間。在大多數房間裡都有一個被稱為 **房間控制器**（Room Controller）的特殊裝置。你第一個房間裡的房間控制器默認歸你所有，其他的中立房間控制器可以通過帶有 `CLAIM` 部件的 creep [佔有](/api/#Creep.claimController)以取得房間控制權。
 
-![](img/c1.png)
+![](#c1.webp)
 
 新佔領的房間控制器可以讓你在該房間建造一個 Spawn。如果需要建造額外的 Spawn 或者其他擴展就需要通過 [`Creep.upgradeController`](/api/#Creep.upgradeController)給控制器輸入能量來提升房間控制器等級 （Room Controller Level，RCL）。
 
-![](img/c2.png)
+![](#c2.webp)
 
 ## RCL 等級對應可建造建築
 
@@ -87,7 +87,7 @@ title: 控制
 
 當然你可以通過 [`attackController`](/api/#Creep.attackController) 影響別人的 RC 降級計時器。
 
-![](/img/controllerDowngrade.png)
+![](#controllerDowngrade.webp)
 
 ## 提升GCL
 
