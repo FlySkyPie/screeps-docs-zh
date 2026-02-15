@@ -1,6 +1,12 @@
+import type {Literal, Node, Parent} from 'unist'
 import path from 'node:path';
 import { glob } from 'glob';
 import { copy, ensureFile, readFile, writeFile } from 'fs-extra';
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkStringify from 'remark-stringify'
+import yaml from 'js-yaml'
 
 /**
  * Get all markdown files (`.md`) under current workspace.
@@ -57,30 +63,25 @@ const migrate = async (sourceRootPath: string, targetRootPath, files: string[]) 
         // Read source file content
         const sourceContent = await readFile(sourcePath, 'utf8');
 
-        // Extract title from YAML front matter
-        const yamlMatch = sourceContent.match(/^---\s*\n(.*?)\n---\s*\n(.*)$/s);
-        let title = "";
-        let contentWithoutYaml = sourceContent;
+        const res = unified()
+            .use(remarkParse)
+            .use(remarkFrontmatter, ['yaml'])
+            .use(() => (tree: Parent, vFile) => {
+                const node = tree .children.find(n => n.type == 'yaml')
+                if (node) {
+                    const meta = yaml.load((node as Literal).value);
+                    vFile.data.meta = meta
+                }
+                console.log(vFile)
+            })
+            .use(remarkStringify)
+            .processSync(sourceContent)
 
-        if (yamlMatch) {
-            const yamlFrontMatter = yamlMatch[1];
-            const content = yamlMatch[2];
 
-            // Extract title from YAML front matter
-            const titleMatch = yamlFrontMatter.match(/title:\s*(.+)/);
-            if (titleMatch) {
-                title = titleMatch[1].trim();
-            }
+        const contentWithoutYaml = res.value;
+        // console.log(res);
 
-            // Use content without YAML front matter
-            contentWithoutYaml = content;
-        } else {
-            // If no YAML front matter, try to extract title from first heading
-            const headingMatch = sourceContent.match(/^#\s+(.+)/);
-            if (headingMatch) {
-                title = headingMatch[1].trim();
-            }
-        }
+        const title="";
 
         await ensureFile(targetPath);
 
@@ -114,5 +115,5 @@ const migrate = async (sourceRootPath: string, targetRootPath, files: string[]) 
 const files = await getFiles("./raw-md/docs");
 await migrate("./raw-md/docs", "./tiddlers/docs", files);
 
-const apiFiles = await getFiles("./raw-md/api");
-await migrate("./raw-md/api", "./tiddlers/api", apiFiles);
+// const apiFiles = await getFiles("./raw-md/api");
+// await migrate("./raw-md/api", "./tiddlers/api", apiFiles);
