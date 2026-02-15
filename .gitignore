@@ -10,3 +10,7 @@ public/
 .idea
 .ptr
 .cache/
+
+
+tiddlers/docs/
+tiddlers/api/

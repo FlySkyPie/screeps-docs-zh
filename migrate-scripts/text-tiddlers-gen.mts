@@ -1,7 +1,7 @@
-import type {Literal, Node, Parent} from 'unist'
+import type { Literal, Parent } from 'unist'
 import path from 'node:path';
 import { glob } from 'glob';
-import { copy, ensureFile, readFile, writeFile } from 'fs-extra';
+import { ensureFile, readFile, writeFile } from 'fs-extra';
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkFrontmatter from 'remark-frontmatter'
@@ -67,21 +67,20 @@ const migrate = async (sourceRootPath: string, targetRootPath, files: string[]) 
             .use(remarkParse)
             .use(remarkFrontmatter, ['yaml'])
             .use(() => (tree: Parent, vFile) => {
-                const node = tree .children.find(n => n.type == 'yaml')
+                const node = tree.children.find(n => n.type == 'yaml')
                 if (node) {
                     const meta = yaml.load((node as Literal).value);
-                    vFile.data.meta = meta
+                    vFile.data.meta = meta;
+
+                    tree.children = tree.children.filter(item => item !== node);
                 }
-                console.log(vFile)
             })
             .use(remarkStringify)
             .processSync(sourceContent)
 
-
         const contentWithoutYaml = res.value;
-        // console.log(res);
 
-        const title="";
+        const title = (res.data.meta as any).title;
 
         await ensureFile(targetPath);
 
